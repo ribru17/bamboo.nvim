@@ -164,7 +164,7 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
     ['@namespace'] = colors.Yellow,
     ['@none'] = colors.Fg,
     ['@number'] = colors.Orange,
-    ['@operator'] = colors.Fg,
+    ['@operator'] = { fg = util.lighten(c.purple, 0.7) },
     ['@parameter'] = { fg = c.red, fmt = 'italic' },
     ['@parameter.reference'] = colors.Fg,
     ['@property'] = colors.Cyan,
@@ -209,6 +209,10 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
     ['@type.builtin'] = colors.Orange,
     ['@variable'] = { fg = c.fg, fmt = cfg.code_style.variables },
     ['@variable.builtin'] = { fg = c.red, fmt = cfg.code_style.variables },
+    ['@variable.global'] = { fg = util.lighten(c.red, 0.5), fmt = cfg
+        .code_style.variables, },
+    ['@variable.static'] = { fg = util.lighten(c.orange, 0.5), fmt = cfg
+        .code_style.variables, },
   }
   if vim.api.nvim_call_function('has', { 'nvim-0.9' }) == 1 then
     hl.lsp = {
@@ -227,12 +231,19 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
       ['@lsp.type.number'] = hl.treesitter['@number'],
       ['@lsp.type.generic'] = hl.treesitter['@text'],
       ['@lsp.type.builtinType'] = hl.treesitter['@type.builtin'],
-      ['@lsp.typemod.method.defaultLibrary'] = hl.treesitter['@function'],
-      ['@lsp.typemod.function.defaultLibrary'] = hl.treesitter['@function'],
+      ['@lsp.typemod.class.defaultLibrary'] = hl.treesitter['@type.builtin'],
+      ['@lsp.typemod.enum.defaultLibrary'] = hl.treesitter['@type.builtin'],
+      ['@lsp.typemod.enumMember.defaultLibrary'] = hl.treesitter['@constant.builtin'],
+      ['@lsp.typemod.method.defaultLibrary'] = hl.treesitter['@function.builtin'],
+      ['@lsp.typemod.function.defaultLibrary'] = hl.treesitter['@function.builtin'],
+      ['@lsp.typemod.macro.defaultLibrary'] = hl.treesitter['@function.builtin'],
       ['@lsp.typemod.operator.injected'] = hl.treesitter['@operator'],
       ['@lsp.typemod.string.injected'] = hl.treesitter['@string'],
       ['@lsp.typemod.variable.defaultLibrary'] = hl.treesitter['@variable.builtin'],
       ['@lsp.typemod.variable.injected'] = hl.treesitter['@variable'],
+      ['@lsp.typemod.variable.global'] = hl.treesitter['@variable.global'],
+      ['@lsp.typemod.variable.globalScope'] = hl.treesitter['@variable.global'],
+      ['@lsp.typemod.variable.fileScope'] = hl.treesitter['@variable.static'],
     }
   end
 else
@@ -263,7 +274,7 @@ else
     TSNamespace = colors.Yellow,
     TSNone = colors.Fg,
     TSNumber = colors.Orange,
-    TSOperator = colors.Fg,
+    TSOperator = { fg = util.lighten(c.purple, 0.7) },
     TSParameter = colors.Red,
     TSParameterReference = colors.Fg,
     TSProperty = colors.Cyan,

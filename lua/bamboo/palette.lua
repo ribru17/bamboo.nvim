@@ -1,10 +1,10 @@
 return {
-  warmer = {
-    black = '#101210',
-    bg0 = '#232623',
-    bg1 = '#2d312c',
-    bg2 = '#363b35',
-    bg3 = '#383d37',
+  bamboo = {
+    black = '#111210',
+    bg0 = '#252623',
+    bg1 = '#2f312c',
+    bg2 = '#383b35',
+    bg3 = '#3a3d37',
     bg_d = '#1b1c1e',
     bg_blue = '#68aee8',
     bg_yellow = '#e2c792',
