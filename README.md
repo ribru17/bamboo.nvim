@@ -1,8 +1,3 @@
-<h1 align="left">
-<span> &nbsp;&nbsp;&nbsp; </span>
-<img height="100" src="https://user-images.githubusercontent.com/20145075/127218526-44b107db-92b9-4a47-86a3-132b4c1e45d1.png" alt="OneDark.nvim">
-</h1>
-
 <h4><div align="right">
     <a href="#installation">Installation</a>
     <span> | </span>
@@ -12,19 +7,31 @@
     <span> &nbsp;&nbsp;&nbsp; &nbsp; </span>
 </div></h4>
 
-**Dark** and **Light** Themes for neovim >= 0.5 based on [Atom One Dark](https://github.com/atom/atom/tree/master/packages/one-dark-ui) & [Atom One Light](https://github.com/atom/atom/tree/master/packages/one-light-ui) theme written in lua with [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter) syntax highlight.
+**Dark** and **Light** Themes for neovim >= 0.5 based on
+[Atom One Dark](https://github.com/atom/atom/tree/master/packages/one-dark-ui) &
+[Atom One Light](https://github.com/atom/atom/tree/master/packages/one-light-ui)
+theme written in lua with
+[TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter) syntax
+highlight.
 
-*For Vim / Neovim < 0.5, prefer [joshdick/onedark.vim](https://github.com/joshdick/onedark.vim)*
+_For Vim / Neovim < 0.5, prefer
+[joshdick/onedark.vim](https://github.com/joshdick/onedark.vim)_
 
-*For latest [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter) syntax highlight, upgraded to Neovim 0.8.0 or later built with tree-sitter 0.20.3+*
+_For latest [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)
+syntax highlight, upgraded to Neovim 0.8.0 or later built with tree-sitter
+0.20.3+_
 
 ### Features
-  * 8 theme styles (One Dark + 5 variants) and (One Light + 1 variant)
-  * Supporting multiple plugins with hand picked proper colors
-  * Customize `Colors`, `Highlights` and `Code style` of the theme as you like (Refer [Customization](#customization))
-  * Toggle the theme style without exiting Neovim using `toggle_style_key` (Refer [Config](#default-configuration))
+
+- 8 theme styles (One Dark + 5 variants) and (One Light + 1 variant)
+- Supporting multiple plugins with hand picked proper colors
+- Customize `Colors`, `Highlights` and `Code style` of the theme as you like
+  (Refer [Customization](#customization))
+- Toggle the theme style without exiting Neovim using `toggle_style_key` (Refer
+  [Config](#default-configuration))
 
 ## Themes
+
 <p float="left">
 <img width="412" alt="Onedark - dark" src="https://user-images.githubusercontent.com/20145075/144289835-cbbbcb22-4eae-41f1-a5a3-e1800a37ae41.png">
 <img width="412" alt="Onedark - darker" src="https://user-images.githubusercontent.com/20145075/144293945-ee3b7dca-b119-4709-96d3-50391c7b8aba.png">
@@ -39,7 +46,9 @@
 </div></p>
 
 ## Installation
+
 Install via your favourite package manager
+
 ```vim
 " Using Vim-Plug
 Plug 'navarasu/onedark.nvim'
@@ -82,7 +91,7 @@ let g:onedark_config = {
 colorscheme onedark
 ```
 
-> **Options:**  dark, darker, cool, deep, warm, warmer, light
+> **Options:** dark, darker, cool, deep, warm, warmer, light
 
 ## Default Configuration
 
@@ -131,11 +140,13 @@ require('onedark').setup  {
 
 ### Vimscript configuration
 
-Onedark can be configured also with Vimscript, using the global dictionary `g:onedark_config`.
-**NOTE**: when setting boolean values use `v:true` and `v:false` instead of 0 and 1
+Onedark can be configured also with Vimscript, using the global dictionary
+`g:onedark_config`. **NOTE**: when setting boolean values use `v:true` and
+`v:false` instead of 0 and 1
 
 Example:
-``` vim
+
+```vim
 let g:onedark_config = {
   \ 'style': 'deep',
   \ 'toggle_style_key': '<leader>ts',
@@ -166,11 +177,14 @@ require('onedark').setup {
   }
 }
 ```
-Note that TreeSitter keywords have been changed after neovim version 0.8 and onwards.
-TS prefix is trimmed and lowercase words should be used separated with '.'
 
-The old way before neovim 0.8 looks like this.
-For all keywords see [this](https://github.com/navarasu/onedark.nvim/blob/master/lua/onedark/highlights.lua#L133-L257) file from line 133 to 257
+Note that TreeSitter keywords have been changed after neovim version 0.8 and
+onwards. TS prefix is trimmed and lowercase words should be used separated with
+'.'
+
+The old way before neovim 0.8 looks like this. For all keywords see
+[this](https://github.com/navarasu/onedark.nvim/blob/master/lua/onedark/highlights.lua#L133-L257)
+file from line 133 to 257
 
 ```lua
 require('onedark').setup {
@@ -190,6 +204,7 @@ require('onedark').setup {
 ## Plugins Configuration
 
 ### Enable lualine
+
 To Enable the `onedark` theme for `Lualine`, specify theme as `onedark`:
 
 ```lua
@@ -202,26 +217,28 @@ require('lualine').setup {
 ```
 
 ## Plugins Supported
-  + [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)
-  + [LSPDiagnostics](https://neovim.io/doc/user/lsp.html)
-  + [NvimTree](https://github.com/kyazdani42/nvim-tree.lua)
-  + [Telescope](https://github.com/nvim-telescope/telescope.nvim)
-  + [WhichKey](https://github.com/folke/which-key.nvim)
-  + [Dashboard](https://github.com/glepnir/dashboard-nvim)
-  + [Lualine](https://github.com/hoob3rt/lualine.nvim)
-  + [GitGutter](https://github.com/airblade/vim-gitgutter)
-  + [GitSigns](https://github.com/lewis6991/gitsigns.nvim)
-  + [VimFugitive](https://github.com/tpope/vim-fugitive)
-  + [DiffView](https://github.com/sindrets/diffview.nvim)
-  + [Hop](https://github.com/phaazon/hop.nvim)
-  + [Mini](https://github.com/echasnovski/mini.nvim)
-  + [Neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim)
-  + [Neotest](https://github.com/nvim-neotest/neotest)
-  + [Barbecue](https://github.com/utilyre/barbecue.nvim)
+
+- [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- [LSPDiagnostics](https://neovim.io/doc/user/lsp.html)
+- [NvimTree](https://github.com/kyazdani42/nvim-tree.lua)
+- [Telescope](https://github.com/nvim-telescope/telescope.nvim)
+- [WhichKey](https://github.com/folke/which-key.nvim)
+- [Dashboard](https://github.com/glepnir/dashboard-nvim)
+- [Lualine](https://github.com/hoob3rt/lualine.nvim)
+- [GitGutter](https://github.com/airblade/vim-gitgutter)
+- [GitSigns](https://github.com/lewis6991/gitsigns.nvim)
+- [VimFugitive](https://github.com/tpope/vim-fugitive)
+- [DiffView](https://github.com/sindrets/diffview.nvim)
+- [Hop](https://github.com/phaazon/hop.nvim)
+- [Mini](https://github.com/echasnovski/mini.nvim)
+- [Neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim)
+- [Neotest](https://github.com/nvim-neotest/neotest)
+- [Barbecue](https://github.com/utilyre/barbecue.nvim)
 
 ## Reference
-* [tokyodark.nvim](https://github.com/tiagovla/tokyodark.nvim)
-* [one-dark-theme](https://github.com/andresmichel/one-dark-theme)
+
+- [tokyodark.nvim](https://github.com/tiagovla/tokyodark.nvim)
+- [one-dark-theme](https://github.com/andresmichel/one-dark-theme)
 
 ## Contributing
 
