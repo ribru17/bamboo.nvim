@@ -1,14 +1,15 @@
 local util = {}
 
-util.bg = "#000000"
-util.fg = "#ffffff"
+util.bg = '#000000'
+util.fg = '#ffffff'
 
 local function hexToRgb(hex_str)
-  local hex = "[abcdef0-9][abcdef0-9]"
-  local pat = "^#(" .. hex .. ")(" .. hex .. ")(" .. hex .. ")$"
+  local hex = '[abcdef0-9][abcdef0-9]'
+  local pat = '^#(' .. hex .. ')(' .. hex .. ')(' .. hex .. ')$'
   hex_str = string.lower(hex_str)
 
-  assert(string.find(hex_str, pat) ~= nil, "hex_to_rgb: invalid hex_str: " .. tostring(hex_str))
+  assert(string.find(hex_str, pat) ~= nil,
+    'hex_to_rgb: invalid hex_str: ' .. tostring(hex_str))
 
   local r, g, b = string.match(hex_str, pat)
   return { tonumber(r, 16), tonumber(g, 16), tonumber(b, 16) }
@@ -26,7 +27,8 @@ function util.blend(fg, bg, alpha)
     return math.floor(math.min(math.max(0, ret), 255) + 0.5)
   end
 
-  return string.format("#%02X%02X%02X", blendChannel(1), blendChannel(2), blendChannel(3))
+  return string.format('#%02X%02X%02X', blendChannel(1), blendChannel(2),
+    blendChannel(3))
 end
 
 function util.darken(hex, amount, bg)
