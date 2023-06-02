@@ -20,8 +20,8 @@ syntax highlighting, upgrade to Neovim 0.8.0 or later, built with Tree-sitter
 - `Colors`, `Highlights` and `Code style` of the theme can be customized as you
   like (Refer to [Customization](#customization))
 
-![MarkdownShowcase](https://github.com/ribru17/bamboo.nvim/assets/55766287/25296ba8-b83e-4b68-990b-5f97f243b4c7)
-![CodeShowcase](https://github.com/ribru17/bamboo.nvim/assets/55766287/0907a59d-cb2c-455e-9911-5a690bd25116)
+![bamboomdshowcase](https://github.com/ribru17/bamboo.nvim/assets/55766287/c2ce1883-d4ad-4ae0-a248-ef668d69aa87)
+![bamboocodeshowcase](https://github.com/ribru17/bamboo.nvim/assets/55766287/5eb2c125-13cd-46d6-841a-8af3f4406fc1)
 
 _NOTE:_ The above screenshots utilize Tree-sitter parsers for `lua`, `markdown`,
 `markdown_inline`, `mermaid`, and `latex`.
