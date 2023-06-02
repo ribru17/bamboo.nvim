@@ -20,8 +20,8 @@ syntax highlighting, upgrade to Neovim 0.8.0 or later, built with Tree-sitter
 - `Colors`, `Highlights` and `Code style` of the theme can be customized as you
   like (Refer to [Customization](#customization))
 
-![MarkdownShowcase](https://github-production-user-asset-6210df.s3.amazonaws.com/55766287/242768819-25296ba8-b83e-4b68-990b-5f97f243b4c7.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230602%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230602T023332Z&X-Amz-Expires=300&X-Amz-Signature=26f0ce42142bd9fb2833293833aa1cc068004fcc57069b10823f2000f4414384&X-Amz-SignedHeaders=host&actor_id=55766287&key_id=0&repo_id=648040825)
-![CodeShowcase](https://github-production-user-asset-6210df.s3.amazonaws.com/55766287/242768827-0907a59d-cb2c-455e-9911-5a690bd25116.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230602%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230602T023404Z&X-Amz-Expires=300&X-Amz-Signature=fd51bea72f875fd23bb761d6faf94db3d0f1ac7348b4c6c6c335f51ae85c11d5&X-Amz-SignedHeaders=host&actor_id=55766287&key_id=0&repo_id=648040825)
+![MarkdownShowcase](https://github.com/ribru17/bamboo.nvim/assets/55766287/25296ba8-b83e-4b68-990b-5f97f243b4c7)
+![CodeShowcase](https://github.com/ribru17/bamboo.nvim/assets/55766287/0907a59d-cb2c-455e-9911-5a690bd25116)
 
 _NOTE:_ The above screenshots utilize Tree-sitter parsers for `lua`, `markdown`,
 `markdown_inline`, `mermaid`, and `latex`.
