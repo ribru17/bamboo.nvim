@@ -1,25 +1,23 @@
 # Bamboo.nvim
 
-Dark green theme for Neovim >= 0.5 based on
-[Atom One Dark](https://github.com/atom/atom/tree/master/packages/one-dark-ui) &
-[Atom One Light](https://github.com/atom/atom/tree/master/packages/one-light-ui)
-theme written in lua with
-[TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter) syntax
-highlight.
+Dark green theme for Neovim $\ge$ 0.5 forked from
+[OneDark.nvim](https://github.com/navarasu/onedark.nvim). Theme written in Lua
+with [Tree-sitter](https://github.com/nvim-treesitter/nvim-treesitter) syntax
+highlighting.
 
-_For latest [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)
-syntax highlighting, upgrade to Neovim 0.8.0 or later built with Tree-sitter
-0.20.3+_
+_For latest [Tree-sitter](https://github.com/nvim-treesitter/nvim-treesitter)
+syntax highlighting, upgrade to Neovim 0.8.0 or later, built with Tree-sitter
+0.20.3+._
 
 ### Features
 
-- Supports multiple plugins with hand-picked proper colors
-- Customize `Colors`, `Highlights` and `Code style` of the theme as you like
+- Supports multiple plugins with hand-picked, proper colors
+- Customize the `Colors`, `Highlights` and `Code style` of the theme as you like
   (Refer to [Customization](#customization))
 
 ## Installation
 
-Install via your favorite package manager
+Install via your favorite package manager:
 
 ```lua
 -- Using lazy.nvim
@@ -27,6 +25,12 @@ Install via your favorite package manager
   'ribru17/bamboo.nvim',
   lazy = false,
   priority = 1000,
+  config = function()
+    require('bamboo').setup {
+      -- optional configuration here
+    }
+    require('bamboo').load()
+  end,
 }
 ```
 
@@ -43,26 +47,6 @@ require('bamboo').load()
 " Vim
 colorscheme bamboo
 ```
-
-### Change default style
-
-```lua
--- Lua
-require('bamboo').setup {
-    style = 'darker'
-}
-require('bamboo').load()
-```
-
-```vim
-" Vim
-let g:bamboo_config = {
-    \ 'style': 'darker',
-\}
-colorscheme bamboo
-```
-
-> **Options:** dark, darker, cool, deep, warm, warmer, light
 
 ## Default Configuration
 
@@ -104,21 +88,19 @@ require('bamboo').setup  {
 }
 ```
 
-### Vimscript configuration
+### Vimscript Configuration
 
 Bamboo can be configured also with Vimscript, using the global dictionary
 `g:bamboo_config`. **NOTE**: when setting boolean values use `v:true` and
-`v:false` instead of 0 and 1
+`v:false` instead of 0 and 1.
 
 Example:
 
 ```vim
 let g:bamboo_config = {
-  \ 'style': 'deep',
-  \ 'toggle_style_key': '<leader>ts',
   \ 'ending_tildes': v:true,
   \ 'diagnostics': {
-    \ 'darker': v:false,
+    \ 'darker': v:true,
     \ 'background': v:false,
   \ },
 \ }
@@ -127,7 +109,7 @@ colorscheme bamboo
 
 ## Customization
 
-Example custom colors and Highlights config
+Example using custom colors and highlights:
 
 ```lua
 require('bamboo').setup {
@@ -144,13 +126,12 @@ require('bamboo').setup {
 }
 ```
 
-Note that TreeSitter keywords have been changed after neovim version 0.8 and
-onwards. TS prefix is trimmed and lowercase words should be used separated with
-'.'
+Note that Tree-sitter keywords have been changed after Neovim version 0.8 and
+onwards. TS prefix is trimmed and lowercase words are separated with `.`.
 
-The old way before neovim 0.8 looks like this. For all keywords see
-[this](https://github.com/navarasu/bamboo.nvim/blob/master/lua/bamboo/highlights.lua#L133-L257)
-file from line 133 to 257
+The old way before neovim 0.8 looks like this. All highlights used in this
+colorscheme can be found in
+[this file](https://github.com/ribru17/bamboo.nvim/blob/master/lua/bamboo/highlights.lua).
 
 ```lua
 require('bamboo').setup {
@@ -167,24 +148,9 @@ require('bamboo').setup {
 }
 ```
 
-## Plugins Configuration
-
-### Enable lualine
-
-To Enable the `bamboo` theme for `Lualine`, specify theme as `bamboo`:
-
-```lua
-require('lualine').setup {
-  options = {
-    theme = 'bamboo'
-    -- ... your lualine config
-  }
-}
-```
-
 ## Plugins Supported
 
-- [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- [Tree-sitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [LSPDiagnostics](https://neovim.io/doc/user/lsp.html)
 - [NvimTree](https://github.com/kyazdani42/nvim-tree.lua)
 - [Telescope](https://github.com/nvim-telescope/telescope.nvim)
@@ -204,6 +170,7 @@ require('lualine').setup {
 ## Reference
 
 - [onedark.nvim](https://github.com/navarasu/onedark.nvim)
+- [Catppuccin for Neovim](https://github.com/catppuccin/nvim)
 - [tokyodark.nvim](https://github.com/tiagovla/tokyodark.nvim)
 - [one-dark-theme](https://github.com/andresmichel/one-dark-theme)
 
