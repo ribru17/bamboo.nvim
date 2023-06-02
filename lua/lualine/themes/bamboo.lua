@@ -12,7 +12,7 @@ local colors = {
   gray = c.grey,
 }
 
-local one_dark = {
+local bamboo = {
   inactive = {
     a = { fg = colors.gray, bg = colors.bg, gui = 'bold' },
     b = { fg = colors.gray, bg = colors.bg },
@@ -29,4 +29,4 @@ local one_dark = {
   command = { a = { fg = colors.bg, bg = colors.yellow, gui = 'bold' } },
   terminal = { a = { fg = colors.bg, bg = colors.cyan, gui = 'bold' } },
 }
-return one_dark;
+return bamboo;
