@@ -95,8 +95,8 @@ hl.common = {
   debugPC = { fg = c.bg0, bg = c.green },
   debugBreakpoint = { fg = c.bg0, bg = c.red },
   ToolbarButton = { fg = c.bg0, bg = c.bg_blue },
-  FloatBorder = { fg = c.grey, bg = c.bg1 },
-  NormalFloat = { fg = c.fg, bg = c.bg1 },
+  FloatBorder = { fg = c.purple, bg = c.bg0 },
+  NormalFloat = { fg = c.fg, bg = c.bg0 },
 }
 
 hl.syntax = {
@@ -164,7 +164,7 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
     ['@namespace'] = colors.Yellow,
     ['@none'] = colors.Fg,
     ['@number'] = colors.Orange,
-    ['@operator'] = { fg = util.lighten(c.purple, 0.7) },
+    ['@operator'] = { fg = util.lighten(c.purple, 0.5) },
     ['@parameter'] = { fg = c.red, fmt = 'italic' },
     ['@parameter.reference'] = colors.Fg,
     ['@property'] = colors.Cyan,
@@ -192,6 +192,7 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
     ['@text.title.5.markdown'] = { fg = c.blue, fmt = 'bold' },
     ['@text.title.6.markdown'] = { fg = c.purple, fmt = 'bold' },
     ['@text.literal'] = colors.Green,
+    ['@none.markdown'] = {},
     ['@text.uri'] = { fg = c.cyan, fmt = 'underline' },
     ['@text.todo'] = { fg = c.red, fmt = cfg.code_style.comments },
     ['@text.math'] = colors.Blue,
@@ -234,9 +235,13 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
       ['@lsp.typemod.class.defaultLibrary'] = hl.treesitter['@type.builtin'],
       ['@lsp.typemod.enum.defaultLibrary'] = hl.treesitter['@type.builtin'],
       ['@lsp.typemod.enumMember.defaultLibrary'] = hl.treesitter['@constant.builtin'],
+      ['@lsp.mod.readonly'] = hl.treesitter['@constant'],
+      ['@lsp.mod.typeHint'] = hl.treesitter['@type'],
+      ['@lsp.type.builtinConstant'] = hl.treesitter['@constant.builtin'],
       ['@lsp.typemod.method.defaultLibrary'] = hl.treesitter['@function.builtin'],
       ['@lsp.typemod.function.defaultLibrary'] = hl.treesitter['@function.builtin'],
       ['@lsp.typemod.macro.defaultLibrary'] = hl.treesitter['@function.builtin'],
+      ['@lsp.type.magicFunction'] = hl.treesitter['@function.builtin'],
       ['@lsp.typemod.operator.injected'] = hl.treesitter['@operator'],
       ['@lsp.typemod.string.injected'] = hl.treesitter['@string'],
       ['@lsp.typemod.variable.defaultLibrary'] = hl.treesitter['@variable.builtin'],
@@ -274,7 +279,7 @@ else
     TSNamespace = colors.Yellow,
     TSNone = colors.Fg,
     TSNumber = colors.Orange,
-    TSOperator = { fg = util.lighten(c.purple, 0.7) },
+    TSOperator = { fg = util.lighten(c.purple, 0.5) },
     TSParameter = colors.Red,
     TSParameterReference = colors.Fg,
     TSProperty = colors.Cyan,
@@ -526,11 +531,11 @@ hl.plugins.neotest = {
 }
 
 hl.plugins.nvim_tree = {
-  NvimTreeNormal = { fg = c.fg, bg = cfg.transparent and c.none or c.bg_d },
+  NvimTreeNormal = { fg = c.fg, bg = cfg.transparent and c.none or c.bg0 },
   NvimTreeVertSplit = { fg = c.bg_d, bg = cfg.transparent and c.none or c.bg_d },
   NvimTreeEndOfBuffer = {
-    fg = cfg.ending_tildes and c.bg2 or c.bg_d,
-    bg = cfg.transparent and c.none or c.bg_d,
+    fg = cfg.ending_tildes and c.bg2 or c.bg0,
+    bg = cfg.transparent and c.none or c.bg0,
   },
   NvimTreeRootFolder = { fg = c.orange, fmt = 'bold' },
   NvimTreeGitDirty = colors.Yellow,
@@ -544,9 +549,9 @@ hl.plugins.nvim_tree = {
 }
 hl.plugins.telescope = {
   TelescopeBorder = colors.Red,
-  TelescopePromptBorder = colors.Cyan,
-  TelescopeResultsBorder = colors.Cyan,
-  TelescopePreviewBorder = colors.Cyan,
+  TelescopePromptBorder = colors.Purple,
+  TelescopeResultsBorder = colors.Purple,
+  TelescopePreviewBorder = colors.Purple,
   TelescopeMatching = { fg = c.orange, fmt = 'bold' },
   TelescopePromptPrefix = colors.Green,
   TelescopeSelection = { bg = c.bg2 },
