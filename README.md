@@ -1,4 +1,4 @@
-# Bamboo.nvim
+# bamboo.nvim
 
 Dark green theme for Neovim $\ge$ 0.5 forked from
 [OneDark.nvim](https://github.com/navarasu/onedark.nvim). Theme written in Lua

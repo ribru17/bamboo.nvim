@@ -133,6 +133,7 @@ hl.syntax = {
   Comment = { fg = c.bg_yellow, fmt = cfg.code_style.comments },
   SpecialComment = { fg = c.bg_yellow, fmt = cfg.code_style.comments },
   Todo = { fg = c.red, fmt = cfg.code_style.comments },
+  DiagnosticUnnecessary = { fg = c.grey, fmt = cfg.code_style.comments },
 }
 
 if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
@@ -247,7 +248,8 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
       ['@lsp.typemod.variable.defaultLibrary'] = { link = '@variable.builtin' },
       ['@lsp.typemod.variable.injected'] = { link = '@variable' },
       ['@lsp.typemod.variable.global'] = { link = '@variable.global' },
-      ['@lsp.typemod.variable.globalScope'] = { link = '@variable.global' },
+      -- these are specific to clangd: globalScope is buggy with `cout` so not used for now
+      -- ['@lsp.typemod.variable.globalScope'] = { link = '@variable.global' },
       ['@lsp.typemod.variable.fileScope'] = { link = '@variable.static' },
     }
   end
