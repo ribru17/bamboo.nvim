@@ -130,8 +130,8 @@ hl.syntax = {
   Title = colors.Cyan,
   Tag = colors.Green,
   Delimiter = colors.LightGrey,
-  Comment = { fg = c.grey, fmt = cfg.code_style.comments },
-  SpecialComment = { fg = c.grey, fmt = cfg.code_style.comments },
+  Comment = { fg = c.bg_yellow, fmt = cfg.code_style.comments },
+  SpecialComment = { fg = c.bg_yellow, fmt = cfg.code_style.comments },
   Todo = { fg = c.red, fmt = cfg.code_style.comments },
 }
 
@@ -217,38 +217,38 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
   }
   if vim.api.nvim_call_function('has', { 'nvim-0.9' }) == 1 then
     hl.lsp = {
-      ['@lsp.type.comment'] = hl.treesitter['@comment'],
-      ['@lsp.type.enum'] = hl.treesitter['@type'],
-      ['@lsp.type.enumMember'] = hl.treesitter['@constant.builtin'],
-      ['@lsp.type.interface'] = hl.treesitter['@type'],
-      ['@lsp.type.typeParameter'] = hl.treesitter['@type'],
-      ['@lsp.type.keyword'] = hl.treesitter['@keyword'],
-      ['@lsp.type.namespace'] = hl.treesitter['@namespace'],
-      ['@lsp.type.parameter'] = hl.treesitter['@parameter'],
-      ['@lsp.type.property'] = hl.treesitter['@property'],
-      ['@lsp.type.variable'] = hl.treesitter['@variable'],
-      ['@lsp.type.macro'] = hl.treesitter['@function.macro'],
-      ['@lsp.type.method'] = hl.treesitter['@method'],
-      ['@lsp.type.number'] = hl.treesitter['@number'],
-      ['@lsp.type.generic'] = hl.treesitter['@text'],
-      ['@lsp.type.builtinType'] = hl.treesitter['@type.builtin'],
-      ['@lsp.typemod.class.defaultLibrary'] = hl.treesitter['@type.builtin'],
-      ['@lsp.typemod.enum.defaultLibrary'] = hl.treesitter['@type.builtin'],
-      ['@lsp.typemod.enumMember.defaultLibrary'] = hl.treesitter['@constant.builtin'],
-      ['@lsp.mod.readonly'] = hl.treesitter['@constant'],
-      ['@lsp.mod.typeHint'] = hl.treesitter['@type'],
-      ['@lsp.type.builtinConstant'] = hl.treesitter['@constant.builtin'],
-      ['@lsp.typemod.method.defaultLibrary'] = hl.treesitter['@function.builtin'],
-      ['@lsp.typemod.function.defaultLibrary'] = hl.treesitter['@function.builtin'],
-      ['@lsp.typemod.macro.defaultLibrary'] = hl.treesitter['@function.builtin'],
-      ['@lsp.type.magicFunction'] = hl.treesitter['@function.builtin'],
-      ['@lsp.typemod.operator.injected'] = hl.treesitter['@operator'],
-      ['@lsp.typemod.string.injected'] = hl.treesitter['@string'],
-      ['@lsp.typemod.variable.defaultLibrary'] = hl.treesitter['@variable.builtin'],
-      ['@lsp.typemod.variable.injected'] = hl.treesitter['@variable'],
-      ['@lsp.typemod.variable.global'] = hl.treesitter['@variable.global'],
-      ['@lsp.typemod.variable.globalScope'] = hl.treesitter['@variable.global'],
-      ['@lsp.typemod.variable.fileScope'] = hl.treesitter['@variable.static'],
+      ['@lsp.type.comment'] = { link = '@comment' },
+      ['@lsp.type.enum'] = { link = '@type' },
+      ['@lsp.type.enumMember'] = { link = '@constant.builtin' },
+      ['@lsp.type.interface'] = { link = '@type' },
+      ['@lsp.type.typeParameter'] = { link = '@type' },
+      ['@lsp.type.keyword'] = { link = '@keyword' },
+      ['@lsp.type.namespace'] = { link = '@namespace' },
+      ['@lsp.type.parameter'] = { link = '@parameter' },
+      ['@lsp.type.property'] = { link = '@property' },
+      ['@lsp.type.variable'] = { link = '@variable' },
+      ['@lsp.type.macro'] = { link = '@function.macro' },
+      ['@lsp.type.method'] = { link = '@method' },
+      ['@lsp.type.number'] = { link = '@number' },
+      ['@lsp.type.generic'] = { link = '@text' },
+      ['@lsp.type.builtinType'] = { link = '@type.builtin' },
+      ['@lsp.typemod.class.defaultLibrary'] = { link = '@type.builtin' },
+      ['@lsp.typemod.enum.defaultLibrary'] = { link = '@type.builtin' },
+      ['@lsp.typemod.enumMember.defaultLibrary'] = { link = '@constant.builtin' },
+      ['@lsp.mod.readonly'] = { link = '@constant' },
+      ['@lsp.mod.typeHint'] = { link = '@type' },
+      ['@lsp.type.builtinConstant'] = { link = '@constant.builtin' },
+      ['@lsp.typemod.method.defaultLibrary'] = { link = '@function.builtin' },
+      ['@lsp.typemod.function.defaultLibrary'] = { link = '@function.builtin' },
+      ['@lsp.typemod.macro.defaultLibrary'] = { link = '@function.builtin' },
+      ['@lsp.type.magicFunction'] = { link = '@function.builtin' },
+      ['@lsp.typemod.operator.injected'] = { link = '@operator' },
+      ['@lsp.typemod.string.injected'] = { link = '@string' },
+      ['@lsp.typemod.variable.defaultLibrary'] = { link = '@variable.builtin' },
+      ['@lsp.typemod.variable.injected'] = { link = '@variable' },
+      ['@lsp.typemod.variable.global'] = { link = '@variable.global' },
+      ['@lsp.typemod.variable.globalScope'] = { link = '@variable.global' },
+      ['@lsp.typemod.variable.fileScope'] = { link = '@variable.static' },
     }
   end
 else
@@ -257,7 +257,7 @@ else
     TSAttribute = colors.Cyan,
     TSBoolean = colors.Orange,
     TSCharacter = colors.Orange,
-    TSComment = { fg = c.grey, fmt = cfg.code_style.comments },
+    TSComment = { fg = c.bg_yellow, fmt = cfg.code_style.comments },
     TSConditional = { fg = c.purple, fmt = cfg.code_style.keywords },
     TSConstant = colors.Orange,
     TSConstBuiltin = colors.Orange,
@@ -766,7 +766,7 @@ hl.langs.vim = {
   vimMapLhs = colors.Fg,
   vimMapRhs = colors.Blue,
   vimVar = { fg = c.fg, fmt = cfg.code_style.variables },
-  vimCommentTitle = { fg = c.light_grey, fmt = cfg.code_style.comments },
+  vimCommentTitle = { fg = c.yellow, fmt = cfg.code_style.comments },
 }
 
 local lsp_kind_icons_color = {
@@ -822,7 +822,13 @@ function M.setup()
   vim_highlights(hl.syntax)
   vim_highlights(hl.treesitter)
   if hl.lsp then
-    vim_highlights(hl.lsp)
+    -- faster than iterating with `pairs()`
+    while true do
+      local k = next(hl.lsp)
+      if not k then break end
+      vim.api.nvim_set_hl(0, k, hl.lsp[k])
+      hl.lsp[k] = nil
+    end
   end
   for _, group in pairs(hl.langs) do vim_highlights(group) end
   for _, group in pairs(hl.plugins) do vim_highlights(group) end
