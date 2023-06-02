@@ -11,9 +11,20 @@ syntax highlighting, upgrade to Neovim 0.8.0 or later, built with Tree-sitter
 
 ### Features
 
-- Supports multiple plugins with hand-picked, proper colors
-- Customize the `Colors`, `Highlights` and `Code style` of the theme as you like
-  (Refer to [Customization](#customization))
+- Blue and purple are used sparingly to help reduce eye strain
+- Red, yellow, and green are prioritized more for the same reason
+- Comments are colored specifically to be readable and have good contrast with
+  other text and background
+- _Many_ semantic highlighting tokens are handled and colored nicely
+- Multiple plugins are supported with hand-picked, proper colors
+- `Colors`, `Highlights` and `Code style` of the theme can be customized as you
+  like (Refer to [Customization](#customization))
+
+![MarkdownShowcase](https://github-production-user-asset-6210df.s3.amazonaws.com/55766287/242768819-25296ba8-b83e-4b68-990b-5f97f243b4c7.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230602%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230602T023332Z&X-Amz-Expires=300&X-Amz-Signature=26f0ce42142bd9fb2833293833aa1cc068004fcc57069b10823f2000f4414384&X-Amz-SignedHeaders=host&actor_id=55766287&key_id=0&repo_id=648040825)
+![CodeShowcase](https://github-production-user-asset-6210df.s3.amazonaws.com/55766287/242768827-0907a59d-cb2c-455e-9911-5a690bd25116.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230602%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230602T023404Z&X-Amz-Expires=300&X-Amz-Signature=fd51bea72f875fd23bb761d6faf94db3d0f1ac7348b4c6c6c335f51ae85c11d5&X-Amz-SignedHeaders=host&actor_id=55766287&key_id=0&repo_id=648040825)
+
+_NOTE:_ The above screenshots utilize Tree-sitter parsers for `lua`, `markdown`,
+`markdown_inline`, `mermaid`, and `latex`.
 
 ## Installation
 
@@ -33,6 +44,9 @@ Install via your favorite package manager:
   end,
 }
 ```
+
+**NOTE:** For best results, use (rounded) borders for float windows (or change
+their background to a slightly different color than the main editor background).
 
 ## Configuration
 
