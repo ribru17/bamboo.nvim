@@ -133,7 +133,6 @@ hl.syntax = {
   Comment = { fg = c.bg_yellow, fmt = cfg.code_style.comments },
   SpecialComment = { fg = c.bg_yellow, fmt = cfg.code_style.comments },
   Todo = { fg = c.red, fmt = cfg.code_style.comments },
-  DiagnosticUnnecessary = { fg = c.grey, fmt = cfg.code_style.comments },
 }
 
 if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
@@ -330,6 +329,7 @@ hl.plugins.lsp = {
   LspCxxHlSkippedRegion = colors.Grey,
   LspCxxHlSkippedRegionBeginEnd = colors.Red,
 
+  DiagnosticUnnecessary = { fg = c.grey, fmt = cfg.code_style.comments },
   DiagnosticError = { fg = c.red },
   DiagnosticHint = { fg = c.purple },
   DiagnosticInfo = { fg = c.cyan },
