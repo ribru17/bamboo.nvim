@@ -24,7 +24,7 @@ return {
     dark_purple = '#79428a',
     diff_add = '#40531b',
     diff_delete = '#893f45',
-    diff_change = '#114b5f',
-    diff_text = '#2c485f',
+    diff_change = '#382a1d',
+    diff_text = '#595653',
   },
 }

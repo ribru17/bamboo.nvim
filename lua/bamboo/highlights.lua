@@ -35,7 +35,7 @@ hl.common = {
     fg = cfg.ending_tildes and c.bg2 or c.bg0,
     bg = cfg.transparent and c.none or c.bg0,
   },
-  FoldColumn = { fg = c.fg, bg = cfg.transparent and c.none or c.bg1 },
+  FoldColumn = { fg = c.fg, bg = cfg.transparent and c.none or c.bg0 },
   Folded = { fg = c.fg, bg = cfg.transparent and c.none or c.bg1 },
   SignColumn = { fg = c.fg, bg = cfg.transparent and c.none or c.bg0 },
   ToolbarLine = { fg = c.fg },
