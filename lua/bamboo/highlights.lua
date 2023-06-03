@@ -130,8 +130,8 @@ hl.syntax = {
   Title = colors.Cyan,
   Tag = colors.Green,
   Delimiter = colors.LightGrey,
-  Comment = { fg = c.bg_yellow, fmt = cfg.code_style.comments },
-  SpecialComment = { fg = c.bg_yellow, fmt = cfg.code_style.comments },
+  Comment = { fg = c.grey, fmt = cfg.code_style.comments },
+  SpecialComment = { fg = c.grey, fmt = cfg.code_style.comments },
   Todo = { fg = c.red, fmt = cfg.code_style.comments },
 }
 
