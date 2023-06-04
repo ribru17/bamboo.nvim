@@ -194,7 +194,10 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
     ['@text.literal'] = colors.Green,
     ['@none.markdown'] = {},
     ['@text.uri'] = { fg = c.cyan, fmt = 'underline' },
-    ['@text.todo'] = { fg = c.red, fmt = cfg.code_style.comments },
+    ['@text.todo'] = { fg = c.black, bg = c.purple },
+    ['@text.note'] = { fg = c.black, bg = c.blue },
+    ['@text.danger'] = { fg = c.black, bg = c.red },
+    ['@text.warning'] = { fg = c.black, bg = c.orange },
     ['@text.math'] = colors.Blue,
     ['@text.reference'] = colors.Blue,
     ['@text.environment'] = colors.Fg,
@@ -217,7 +220,7 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
   }
   if vim.api.nvim_call_function('has', { 'nvim-0.9' }) == 1 then
     hl.lsp = {
-      ['@lsp.type.comment'] = { link = '@comment' },
+      ['@lsp.type.comment'] = {},
       ['@lsp.type.enum'] = { link = '@type' },
       ['@lsp.type.enumMember'] = { link = '@constant.builtin' },
       ['@lsp.type.interface'] = { link = '@type' },
