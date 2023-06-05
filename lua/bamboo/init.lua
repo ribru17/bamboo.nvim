@@ -1,5 +1,7 @@
 local M = {}
 
+M.styles_list = { 'vulgaris', 'multiplex' }
+
 ---Change bamboo option (vim.g.bamboo_config.option)
 ---It can't be changed directly by modifying that field due to a Neovim lua bug with global variables (bamboo_config is a global variable)
 ---@param opt string: option name
@@ -21,8 +23,20 @@ function M.colorscheme()
   require('bamboo.terminal').setup()
 end
 
+---Toggle between bamboo styles
+function M.toggle()
+  local index = vim.g.bamboo_config.toggle_style_index + 1
+  if index > #vim.g.bamboo_config.toggle_style_list then index = 1 end
+  M.set_options('style', vim.g.bamboo_config.toggle_style_list[index])
+  M.set_options('toggle_style_index', index)
+  vim.api.nvim_command('colorscheme bamboo')
+end
+
 local default_config = {
   -- Main options --
+  style = 'vulgaris', -- choose between 'vulgaris' (regular) and 'multiplex' (greener)
+  toggle_style_key = nil,
+  toggle_style_list = M.styles_list,
   transparent = false,          -- don't set background
   term_colors = true,           -- if true enable the terminal
   ending_tildes = false,        -- show the end-of-buffer tildes
@@ -61,7 +75,7 @@ function M.setup(opts)
     vim.g.bamboo_config = vim.tbl_deep_extend('keep', vim.g.bamboo_config or {},
       default_config)
     M.set_options('loaded', true)
-    M.set_options('toggle_style_index', 0)
+    M.set_options('toggle_style_index', 1)
   end
   if opts then
     vim.g.bamboo_config = vim.tbl_deep_extend('force', vim.g.bamboo_config,

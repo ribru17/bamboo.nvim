@@ -9,7 +9,7 @@ _For latest [Tree-sitter](https://github.com/nvim-treesitter/nvim-treesitter)
 syntax highlighting, upgrade to Neovim 0.8.0 or later, built with Tree-sitter
 0.20.3+._
 
-### Features
+## Features
 
 - Blue and purple are used sparingly to help reduce eye strain
 - Red, yellow, and green are prioritized more for the same reason
@@ -20,8 +20,12 @@ syntax highlighting, upgrade to Neovim 0.8.0 or later, built with Tree-sitter
 - `Colors`, `Highlights` and `Code style` of the theme can be customized as you
   like (Refer to [Customization](#customization))
 
+### Regular (vulgaris)
+
 ![bamboomdshowcase](https://github.com/ribru17/bamboo.nvim/assets/55766287/c2ce1883-d4ad-4ae0-a248-ef668d69aa87)
 ![bamboocodeshowcase](https://github.com/ribru17/bamboo.nvim/assets/55766287/5eb2c125-13cd-46d6-841a-8af3f4406fc1)
+
+### Greener (multiplex)
 
 _NOTE:_ The above screenshots utilize Tree-sitter parsers for `lua`, `markdown`,
 `markdown_inline`, `mermaid`, and `latex`.
@@ -68,6 +72,9 @@ colorscheme bamboo
 -- Lua
 require('bamboo').setup  {
     -- Main options --
+    style = 'vulgaris', -- Choose between 'vulgaris' (regular) and 'multiplex' (greener)
+    toggle_style_key = nil, -- Keybind to toggle theme style. Leave it nil to disable it, or set it to a string, e.g. "<leader>ts"
+    toggle_style_list = { 'vulgaris', 'multiplex' }, -- List of styles to toggle between (this option is essentially pointless now but will become useful if more style variations are added)
     transparent = false,  -- Show/hide background
     term_colors = true, -- Change terminal color as per the selected theme style
     ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
