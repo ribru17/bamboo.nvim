@@ -27,8 +27,8 @@ syntax highlighting, upgrade to Neovim 0.8.0 or later, built with Tree-sitter
 
 ### Greener (multiplex)
 
-![bamboomultiplexshowcase](https://github.com/ribru17/bamboo.nvim/assets/55766287/9aec495e-56cf-4f50-b783-4818f4ea9cc8)
-![bamboomultiplexshowcasecode](https://github.com/ribru17/bamboo.nvim/assets/55766287/13e101cd-fc16-46b8-8d19-76aba20f41bc)
+![bamboomultiplexshowcase](https://github.com/ribru17/bamboo.nvim/assets/55766287/e7bb8d9a-95ee-43e4-bcfe-3727ec90fcdd)
+![bamboomultiplexshowcasecode](https://github.com/ribru17/bamboo.nvim/assets/55766287/6fdb0335-e9bd-4f73-bfba-12e55ddd91f0)
 
 _NOTE:_ The above screenshots utilize Tree-sitter parsers for `lua`, `markdown`,
 `markdown_inline`, `mermaid`, and `latex`.
