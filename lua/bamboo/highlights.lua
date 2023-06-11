@@ -607,11 +607,10 @@ hl.plugins.indent_blankline = {
   IndentBlanklineIndent4 = colors.LightGrey,
   IndentBlanklineIndent5 = colors.Purple,
   IndentBlanklineIndent6 = colors.Red,
-  IndentBlanklineChar = { fg = c.bg1, gui = 'nocombine' },
-  IndentBlanklineContext = { fg = c.orange, bg = c.grey, bold = true },
-  IndentBlanklineContextChar = { fg = c.grey, gui = 'nocombine' },
-  IndentBlanklineContextStart = { sp = c.grey, gui = 'underline' },
-  IndentBlanklineContextSpaceChar = { gui = 'nocombine' },
+  IndentBlanklineChar = { fg = c.bg1, fmt = 'nocombine' },
+  IndentBlanklineContextChar = { fg = c.light_grey, fmt = 'nocombine' },
+  IndentBlanklineContextStart = { bg = c.bg1 },
+  IndentBlanklineContextSpaceChar = { fmt = 'nocombine' },
 }
 
 hl.plugins.mini = {
