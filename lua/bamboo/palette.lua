@@ -14,7 +14,7 @@ return {
     orange = '#ff9966',
     blue = '#57a5e5',
     yellow = '#dbb671',
-    cyan = '#83b5d1',
+    cyan = '#70c2be',
     red = '#e75a7c',
     grey = '#5b5e5a',
     light_grey = '#838781',
