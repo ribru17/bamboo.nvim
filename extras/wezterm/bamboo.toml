@@ -1,0 +1,82 @@
+[colors]
+ansi = [
+    "#1c1e1b",
+    "#e75a7c",
+    "#8fb573",
+    "#dbb671",
+    "#57a5e5",
+    "#aaaaff",
+    "#71ada2",
+    "#fff8f0",
+]
+background = "#252623"
+brights = [
+    "#1c1e1b",
+    "#e75a7c",
+    "#8fb573",
+    "#dbb671",
+    "#57a5e5",
+    "#aaaaff",
+    "#71ada2",
+    "#fff8f0",
+]
+cursor_bg = "#fff8f0"
+cursor_border = "#fff8f0"
+cursor_fg = "#0f0800"
+foreground = "#f1e9d2"
+scrollbar_thumb = "#1c1e1b"
+selection_bg = "#2f312c"
+selection_fg = "#f1e9d2"
+split = "#3a3d37"
+visual_bell = "#383b35"
+
+[colors.indexed]
+
+[colors.tab_bar]
+background = "#1c1e1b"
+inactive_tab_edge = "#3a3d37"
+
+[colors.tab_bar.active_tab]
+bg_color = "#111210"
+fg_color = "#f1e9d2"
+intensity = "Normal"
+italic = false
+strikethrough = false
+underline = "None"
+
+[colors.tab_bar.inactive_tab]
+bg_color = "#3a3d37"
+fg_color = "#5b5e5a"
+intensity = "Normal"
+italic = false
+strikethrough = false
+underline = "None"
+
+[colors.tab_bar.inactive_tab_hover]
+bg_color = "#2f312c"
+fg_color = "#838781"
+intensity = "Normal"
+italic = true
+strikethrough = false
+underline = "None"
+
+[colors.tab_bar.new_tab]
+bg_color = "#5b5e5a"
+fg_color = "#f1e9d2"
+intensity = "Normal"
+italic = false
+strikethrough = false
+underline = "None"
+
+[colors.tab_bar.new_tab_hover]
+bg_color = "#838781"
+fg_color = "#f1e9d2"
+intensity = "Normal"
+italic = false
+strikethrough = false
+underline = "None"
+
+[metadata]
+name = 'Bamboo'
+author = 'Riley Bruins'
+origin_url = "https://github.com/ribru17/bamboo.nvim"

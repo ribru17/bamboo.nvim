@@ -1,0 +1,82 @@
+[colors]
+ansi = [
+    "#171f17",
+    "#dc4f62",
+    "#81af58",
+    "#cebe69",
+    "#5692c4",
+    "#ae93e0",
+    "#71ada2",
+    "#ece1c0",
+]
+background = "#232923"
+brights = [
+    "#171f17",
+    "#dc4f62",
+    "#81af58",
+    "#cebe69",
+    "#5692c4",
+    "#ae93e0",
+    "#71ada2",
+    "#ece1c0",
+]
+cursor_bg = "#fff8f0"
+cursor_border = "#fff8f0"
+cursor_fg = "#0f0800"
+foreground = "#ece1c0"
+scrollbar_thumb = "#171f17"
+selection_bg = "#2d312c"
+selection_fg = "#ece1c0"
+split = "#383d37"
+visual_bell = "#363b35"
+
+[colors.indexed]
+
+[colors.tab_bar]
+background = "#171f17"
+inactive_tab_edge = "#383d37"
+
+[colors.tab_bar.active_tab]
+bg_color = "#101210"
+fg_color = "#ece1c0"
+intensity = "Normal"
+italic = false
+strikethrough = false
+underline = "None"
+
+[colors.tab_bar.inactive_tab]
+bg_color = "#383d37"
+fg_color = "#5a5e5a"
+intensity = "Normal"
+italic = false
+strikethrough = false
+underline = "None"
+
+[colors.tab_bar.inactive_tab_hover]
+bg_color = "#2d312c"
+fg_color = "#818781"
+intensity = "Normal"
+italic = true
+strikethrough = false
+underline = "None"
+
+[colors.tab_bar.new_tab]
+bg_color = "#5a5e5a"
+fg_color = "#ece1c0"
+intensity = "Normal"
+italic = false
+strikethrough = false
+underline = "None"
+
+[colors.tab_bar.new_tab_hover]
+bg_color = "#818781"
+fg_color = "#ece1c0"
+intensity = "Normal"
+italic = false
+strikethrough = false
+underline = "None"
+
+[metadata]
+name = 'Bamboo Multiplex'
+author = 'Riley Bruins'
+origin_url = "https://github.com/ribru17/bamboo.nvim"
