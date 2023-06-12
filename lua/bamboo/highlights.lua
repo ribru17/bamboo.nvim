@@ -607,7 +607,7 @@ hl.plugins.ts_rainbow = {
   rainbowcol3 = colors.Blue,
   rainbowcol4 = colors.Orange,
   rainbowcol5 = colors.Purple,
-  rainbowcol6 = colors.Green,
+  rainbowcol6 = { fg = util.lighten(c.light_grey, 0.75) },
   rainbowcol7 = colors.Red,
 }
 
@@ -616,7 +616,7 @@ hl.plugins.ts_rainbow2 = {
   TSRainbowYellow = colors.Yellow,
   TSRainbowBlue = colors.Blue,
   TSRainbowOrange = colors.Orange,
-  TSRainbowGreen = colors.Fg,
+  TSRainbowGreen = { fg = util.lighten(c.light_grey, 0.75) },
   TSRainbowViolet = colors.Purple,
   TSRainbowCyan = colors.Cyan,
 }
