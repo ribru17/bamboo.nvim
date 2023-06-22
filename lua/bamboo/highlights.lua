@@ -241,6 +241,8 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
   }
   if vim.api.nvim_call_function('has', { 'nvim-0.9' }) == 1 then
     hl.lsp = {
+      -- disable comment highlighting until the following issue gets fixed:
+      -- https://github.com/LuaLS/lua-language-server/issues/1809
       ['@lsp.type.comment'] = {},
       ['@lsp.type.enum'] = { link = '@type' },
       ['@lsp.type.enumMember'] = { link = '@constant.builtin' },
