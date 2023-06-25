@@ -19,6 +19,9 @@ syntax highlighting, upgrade to Neovim 0.8.0 or later, built with Tree-sitter
 - Multiple plugins are supported with hand-picked, proper colors
 - `Colors`, `Highlights` and `Code style` of the theme can be customized as you
   like (Refer to [Customization](#customization))
+- Integration with other applications (see the
+  [`extras`](https://github.com/ribru17/bamboo.nvim/tree/master/extras)
+  directory)
 
 ### Regular (vulgaris)
 
@@ -32,6 +35,20 @@ syntax highlighting, upgrade to Neovim 0.8.0 or later, built with Tree-sitter
 
 _NOTE:_ The above screenshots utilize Tree-sitter parsers for `lua`, `markdown`,
 `markdown_inline`, `mermaid`, and `latex`.
+
+The `lua` file screenshot also uses a custom query to highlight the `vim` global
+as a builtin variable rather than a constant, changing it from pink to red. If
+you want this behavior, add the following to a `queries/lua/highlights.scm` file
+in your config directory (the `extends` comment is necessary):
+
+```scheme
+;; extends
+(
+ (identifier) @variable.builtin
+ (#any-of? @variable.builtin "vim")
+ (#set! "priority" 128)
+)
+```
 
 ## Installation
 
