@@ -159,6 +159,9 @@ require('bamboo').setup {
     green = '#00ffaa',            -- redefine an existing color
   },
   highlights = {
+    -- make comments blend nicely with background, similar to other color schemes
+    ["@comment"] = {fg = '$grey'},
+
     ["@keyword"] = {fg = '$green'},
     ["@string"] = {fg = '$bright_orange', bg = '#00ff00', fmt = 'bold'},
     ["@function"] = {fg = '#0000ff', sp = '$cyan', fmt = 'underline,italic'},
