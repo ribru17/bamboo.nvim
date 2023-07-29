@@ -189,6 +189,7 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
     ['@parameter'] = { fg = c.red, fmt = 'italic' },
     ['@parameter.reference'] = colors.Fg,
     ['@property'] = colors.Cyan,
+    ['@property.constant'] = { fg = util.blend(c.cyan, c.green, 0.5) },
     ['@punctuation.delimiter'] = colors.LightGrey,
     ['@punctuation.bracket'] = colors.LightGrey,
     ['@punctuation.special'] = colors.Red,
@@ -235,9 +236,9 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
     ['@variable'] = { fg = c.fg, fmt = cfg.code_style.variables },
     ['@variable.builtin'] = { fg = c.red, fmt = cfg.code_style.variables },
     ['@variable.global'] = { fg = util.lighten(c.red, 0.5), fmt = cfg
-        .code_style.variables, },
+        .code_style.variables },
     ['@variable.static'] = { fg = util.lighten(c.orange, 0.5), fmt = cfg
-        .code_style.variables, },
+        .code_style.variables },
   }
   if vim.api.nvim_call_function('has', { 'nvim-0.9' }) == 1 then
     hl.lsp = {
@@ -262,6 +263,7 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
       ['@lsp.typemod.enum.defaultLibrary'] = { link = '@type.builtin' },
       ['@lsp.typemod.enumMember.defaultLibrary'] = { link = '@constant.builtin' },
       ['@lsp.mod.readonly'] = { link = '@constant' },
+      ['@lsp.typemod.property.readonly'] = { link = '@property.constant' },
       ['@lsp.mod.typeHint'] = { link = '@type' },
       ['@lsp.type.builtinConstant'] = { link = '@constant.builtin' },
       ['@lsp.typemod.method.defaultLibrary'] = { link = '@function.builtin' },
@@ -273,9 +275,7 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
       ['@lsp.typemod.variable.defaultLibrary'] = { link = '@variable.builtin' },
       ['@lsp.typemod.variable.injected'] = { link = '@variable' },
       ['@lsp.typemod.variable.global'] = { link = '@variable.global' },
-      -- these are specific to clangd: globalScope is buggy with `cout` so not used for now
-      -- ['@lsp.typemod.variable.globalScope'] = { link = '@variable.global' },
-      ['@lsp.typemod.variable.fileScope'] = { link = '@variable.static' },
+      ['@lsp.typemod.variable.static'] = { link = '@variable.static' },
     }
   end
 else
