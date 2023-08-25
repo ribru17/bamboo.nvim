@@ -276,6 +276,8 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
       ['@lsp.typemod.variable.injected'] = { link = '@variable' },
       ['@lsp.typemod.variable.global'] = { link = '@variable.global' },
       ['@lsp.typemod.variable.static'] = { link = '@variable.static' },
+      ['@lsp.typemod.method.readonly'] = { link = '@method' },
+      ['@lsp.typemod.function.readonly'] = { link = '@method' },
     }
   end
 else
