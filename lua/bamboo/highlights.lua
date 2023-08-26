@@ -300,8 +300,6 @@ else
     TSFuncMacro = { fg = c.cyan, fmt = cfg.code_style.functions },
     TSInclude = colors.Purple,
     TSKeyword = { fg = c.purple, fmt = cfg.code_style.keywords },
-    TSKeywordFunction = { fg = c.purple, fmt = cfg.code_style.functions },
-    TSKeywordOperator = { fg = c.purple, fmt = cfg.code_style.keywords },
     TSLabel = colors.Red,
     TSMethod = { fg = c.blue, fmt = cfg.code_style.functions },
     TSNamespace = colors.Yellow,
