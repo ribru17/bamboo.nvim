@@ -259,6 +259,7 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
       ['@lsp.type.number'] = { link = '@number' },
       ['@lsp.type.generic'] = { link = '@text' },
       ['@lsp.type.builtinType'] = { link = '@type.builtin' },
+      ['@lsp.type.formatSpecifier'] = { link = '@punctuation.special' },
       ['@lsp.typemod.class.defaultLibrary'] = { link = '@type.builtin' },
       ['@lsp.typemod.enum.defaultLibrary'] = { link = '@type.builtin' },
       ['@lsp.typemod.enumMember.defaultLibrary'] = { link = '@constant.builtin' },
