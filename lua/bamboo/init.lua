@@ -45,6 +45,7 @@ local default_config = {
   -- Changing Formats --
   code_style = {
     comments = 'italic',
+    conditionals = 'italic',
     keywords = 'none',
     functions = 'none',
     strings = 'none',
