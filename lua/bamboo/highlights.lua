@@ -280,10 +280,12 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
       ['@lsp.typemod.string.injected'] = { link = '@string' },
       ['@lsp.typemod.variable.defaultLibrary'] = { link = '@variable.builtin' },
       ['@lsp.typemod.variable.global'] = { link = '@variable.global' },
+      ['@lsp.typemod.variable.constant.rust'] = { link = '@constant' },
       ['@lsp.typemod.variable.injected'] = { link = '@variable' },
       ['@lsp.typemod.variable.mutable.rust'] = { fg = util.lighten(c.yellow,
         0.625) },
       ['@lsp.typemod.variable.static'] = { link = '@variable.static' },
+      ['@lsp.typemod.variable.static.rust'] = {},
     }
   end
 else
