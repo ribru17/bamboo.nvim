@@ -49,6 +49,7 @@ local colors = {
   Blue = { fg = c.blue },
   Purple = { fg = c.purple },
 }
+
 hl.common = {
   Normal = { fg = c.fg, bg = cfg.transparent and c.none or c.bg0 },
   Terminal = { fg = c.fg, bg = cfg.transparent and c.none or c.bg0 },
@@ -244,45 +245,45 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
     hl.lsp = {
       -- disable comment highlighting until the following issue gets fixed:
       -- https://github.com/LuaLS/lua-language-server/issues/1809
+      ['@lsp.mod.readonly'] = { link = '@constant' },
+      ['@lsp.mod.typeHint'] = { link = '@type' },
+      ['@lsp.type.builtinConstant'] = { link = '@constant.builtin' },
+      ['@lsp.type.builtinType'] = { link = '@type.builtin' },
       ['@lsp.type.comment'] = {},
       ['@lsp.type.enum'] = { link = '@type' },
       ['@lsp.type.enumMember'] = { link = '@constant.builtin' },
+      ['@lsp.type.formatSpecifier'] = { link = '@punctuation.special' },
+      ['@lsp.type.generic'] = { link = '@text' },
       ['@lsp.type.interface'] = { link = '@type' },
-      ['@lsp.type.typeParameter'] = { link = '@type' },
       ['@lsp.type.keyword'] = { link = '@keyword' },
+      ['@lsp.type.macro'] = { link = '@function.macro' },
+      ['@lsp.type.magicFunction'] = { link = '@function.builtin' },
+      ['@lsp.type.method'] = { link = '@method' },
       ['@lsp.type.namespace'] = { link = '@namespace' },
+      ['@lsp.type.number'] = { link = '@number' },
       ['@lsp.type.parameter'] = { link = '@parameter' },
       ['@lsp.type.property'] = { link = '@property' },
+      ['@lsp.type.typeParameter'] = { link = '@type' },
       ['@lsp.type.variable'] = { link = '@variable' },
-      ['@lsp.type.macro'] = { link = '@function.macro' },
-      ['@lsp.type.method'] = { link = '@method' },
-      ['@lsp.type.number'] = { link = '@number' },
-      ['@lsp.type.generic'] = { link = '@text' },
-      ['@lsp.type.builtinType'] = { link = '@type.builtin' },
-      ['@lsp.type.formatSpecifier'] = { link = '@punctuation.special' },
       ['@lsp.typemod.class.defaultLibrary'] = { link = '@type.builtin' },
       ['@lsp.typemod.enum.defaultLibrary'] = { link = '@type.builtin' },
       ['@lsp.typemod.enumMember.defaultLibrary'] = { link = '@constant.builtin' },
-      ['@lsp.mod.readonly'] = { link = '@constant' },
-      ['@lsp.typemod.property.readonly'] = { link = '@property.constant' },
-      ['@lsp.mod.typeHint'] = { link = '@type' },
-      ['@lsp.type.builtinConstant'] = { link = '@constant.builtin' },
-      ['@lsp.typemod.method.defaultLibrary'] = { link = '@function.builtin' },
       ['@lsp.typemod.function.defaultLibrary'] = { link = '@function.builtin' },
+      ['@lsp.typemod.function.readonly'] = { link = '@method' },
       ['@lsp.typemod.macro.defaultLibrary'] = { link = '@function.builtin' },
-      ['@lsp.type.magicFunction'] = { link = '@function.builtin' },
+      ['@lsp.typemod.method.defaultLibrary'] = { link = '@function.builtin' },
+      ['@lsp.typemod.method.readonly'] = { link = '@method' },
       ['@lsp.typemod.operator.injected'] = { link = '@operator' },
-      ['@lsp.typemod.string.injected'] = { link = '@string' },
-      ['@lsp.typemod.variable.defaultLibrary'] = { link = '@variable.builtin' },
-      ['@lsp.typemod.variable.injected'] = { link = '@variable' },
-      ['@lsp.typemod.variable.global'] = { link = '@variable.global' },
-      ['@lsp.typemod.variable.static'] = { link = '@variable.static' },
-      ['@lsp.typemod.variable.mutable.rust'] = { fg = util.lighten(c.yellow,
-        0.625) },
       ['@lsp.typemod.parameter.mutable.rust'] = { fg = util.blend(c.yellow, c
         .red, 0.25) },
-      ['@lsp.typemod.method.readonly'] = { link = '@method' },
-      ['@lsp.typemod.function.readonly'] = { link = '@method' },
+      ['@lsp.typemod.property.readonly'] = { link = '@property.constant' },
+      ['@lsp.typemod.string.injected'] = { link = '@string' },
+      ['@lsp.typemod.variable.defaultLibrary'] = { link = '@variable.builtin' },
+      ['@lsp.typemod.variable.global'] = { link = '@variable.global' },
+      ['@lsp.typemod.variable.injected'] = { link = '@variable' },
+      ['@lsp.typemod.variable.mutable.rust'] = { fg = util.lighten(c.yellow,
+        0.625) },
+      ['@lsp.typemod.variable.static'] = { link = '@variable.static' },
     }
   end
 else
@@ -485,7 +486,6 @@ hl.plugins.hop = {
   HopUnmatched = colors.Grey,
 }
 
--- comment
 hl.plugins.diffview = {
   DiffviewFilePanelTitle = { fg = c.blue, fmt = 'bold' },
   DiffviewFilePanelCounter = { fg = c.purple, fmt = 'bold' },
@@ -580,6 +580,7 @@ hl.plugins.nvim_tree = {
   NvimTreeSymlink = colors.Purple,
   NvimTreeFolderName = colors.Blue,
 }
+
 hl.plugins.telescope = {
   TelescopeBorder = colors.Red,
   TelescopePromptBorder = colors.Purple,

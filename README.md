@@ -210,6 +210,16 @@ require('bamboo').setup {
 - [Neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim)
 - [Neotest](https://github.com/nvim-neotest/neotest)
 - [Barbecue](https://github.com/utilyre/barbecue.nvim)
+- [ALE](https://github.com/dense-analysis/ale)
+- [barbar.nvim](https://github.com/romgrk/barbar.nvim)
+- [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+- [coc.nvim](https://github.com/neoclide/coc.nvim)
+- [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
+- [dashboard-nvim](https://github.com/nvimdev/dashboard-nvim)
+- [aerial.nvim](https://github.com/stevearc/aerial.nvim)
+- [symbols-outline.nvim](https://github.com/simrat39/symbols-outline.nvim)
+- Every major rainbow bracket plugin
+- Much more!
 
 ## Reference
 
