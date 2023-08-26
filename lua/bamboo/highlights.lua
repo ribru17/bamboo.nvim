@@ -238,7 +238,7 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
     ['@variable.builtin'] = { fg = c.red, fmt = cfg.code_style.variables },
     ['@variable.global'] = { fg = util.lighten(c.red, 0.5), fmt = cfg
         .code_style.variables },
-    ['@variable.static'] = { fg = util.lighten(c.orange, 0.5), fmt = cfg
+    ['@variable.static'] = { fg = util.lighten(c.blue, 0.5), fmt = cfg
         .code_style.variables },
   }
   if vim.api.nvim_call_function('has', { 'nvim-0.9' }) == 1 then
