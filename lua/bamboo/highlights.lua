@@ -277,6 +277,10 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
       ['@lsp.typemod.variable.injected'] = { link = '@variable' },
       ['@lsp.typemod.variable.global'] = { link = '@variable.global' },
       ['@lsp.typemod.variable.static'] = { link = '@variable.static' },
+      ['@lsp.typemod.variable.mutable.rust'] = { fg = util.lighten(c.yellow,
+        0.625) },
+      ['@lsp.typemod.parameter.mutable.rust'] = { fg = util.blend(c.yellow, c
+        .red, 0.25) },
       ['@lsp.typemod.method.readonly'] = { link = '@method' },
       ['@lsp.typemod.function.readonly'] = { link = '@method' },
     }
