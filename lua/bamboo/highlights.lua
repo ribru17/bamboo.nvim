@@ -187,6 +187,7 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
     ['@operator'] = { fg = util.lighten(c.purple, 0.5) },
     ['@parameter'] = { fg = c.red, fmt = 'italic' },
     ['@parameter.reference'] = colors.Fg,
+    ['@preproc'] = colors.Purple,
     ['@property'] = colors.Cyan,
     ['@property.constant'] = { fg = util.blend(c.cyan, c.green, 0.5) },
     ['@punctuation.delimiter'] = colors.LightGrey,
