@@ -218,6 +218,8 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
     ['@none.markdown'] = {},
     ['@text.uri'] = { fg = c.cyan, fmt = 'underline' },
     ['@text.todo'] = { fg = c.black, bg = c.purple, fmt = 'bold' },
+    ['@text.todo.checked'] = { fg = c.yellow, fmt = 'bold' },
+    ['@text.todo.unchecked'] = { fg = c.light_grey, fmt = 'bold' },
     ['@text.note'] = { fg = c.black, bg = c.blue, fmt = 'bold' },
     ['@text.danger'] = { fg = c.black, bg = c.red, fmt = 'bold' },
     ['@text.warning'] = { fg = c.black, bg = c.orange, fmt = 'bold' },
