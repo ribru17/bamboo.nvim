@@ -231,6 +231,7 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
     ['@text.diff.delete'] = colors.Red,
     ['@text.strong.markdown_inline'] = { fg = c.purple, fmt = 'bold' },
     ['@text.emphasis.markdown_inline'] = { fg = c.purple, fmt = 'italic' },
+    ['@text.quote'] = { fg = util.darken(c.fg, 0.75) },
     ['@note'] = colors.Fg,
     ['@warning'] = colors.Fg,
     ['@danger'] = colors.Fg,
