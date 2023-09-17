@@ -1,9 +1,11 @@
 local M = {}
 local cfg = vim.g.bamboo_config
-local c = require 'bamboo.colors'
+local c = require('bamboo.colors')
 
 function M.setup()
-  if not cfg.term_colors then return end
+  if not cfg.term_colors then
+    return
+  end
   vim.g.terminal_color_0 = c.black
   vim.g.terminal_color_1 = c.red
   vim.g.terminal_color_2 = c.green

@@ -7,6 +7,7 @@ local hl = { langs = {}, plugins = {} }
 
 local function vim_highlights_nvim070(highlights)
   for group_name, group_settings in pairs(highlights) do
+    ---@type (string | integer)[]
     local settings = {
       fg = group_settings.fg or 'none',
       bg = group_settings.bg or 'none',
@@ -23,12 +24,16 @@ end
 
 local function vim_highlights_prior_to_nvim070(highlights)
   for group_name, group_settings in pairs(highlights) do
-    vim.api.nvim_command(string.format(
-      'highlight %s guifg=%s guibg=%s guisp=%s gui=%s', group_name,
-      group_settings.fg or 'none',
-      group_settings.bg or 'none',
-      group_settings.sp or 'none',
-      group_settings.fmt or 'none'))
+    vim.api.nvim_command(
+      string.format(
+        'highlight %s guifg=%s guibg=%s guisp=%s gui=%s',
+        group_name,
+        group_settings.fg or 'none',
+        group_settings.bg or 'none',
+        group_settings.sp or 'none',
+        group_settings.fmt or 'none'
+      )
+    )
   end
 end
 
@@ -239,10 +244,14 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
     ['@type.builtin'] = colors.Orange,
     ['@variable'] = { fg = c.fg, fmt = cfg.code_style.variables },
     ['@variable.builtin'] = { fg = c.red, fmt = cfg.code_style.variables },
-    ['@variable.global'] = { fg = util.lighten(c.red, 0.5), fmt = cfg
-        .code_style.variables },
-    ['@variable.static'] = { fg = util.lighten(c.blue, 0.5), fmt = cfg
-        .code_style.variables },
+    ['@variable.global'] = {
+      fg = util.lighten(c.red, 0.5),
+      fmt = cfg.code_style.variables,
+    },
+    ['@variable.static'] = {
+      fg = util.lighten(c.blue, 0.5),
+      fmt = cfg.code_style.variables,
+    },
   }
   if vim.api.nvim_call_function('has', { 'nvim-0.9' }) == 1 then
     hl.lsp = {
@@ -270,23 +279,27 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
       ['@lsp.type.variable'] = { link = '@variable' },
       ['@lsp.typemod.class.defaultLibrary'] = { link = '@type.builtin' },
       ['@lsp.typemod.enum.defaultLibrary'] = { link = '@type.builtin' },
-      ['@lsp.typemod.enumMember.defaultLibrary'] = { link = '@constant.builtin' },
+      ['@lsp.typemod.enumMember.defaultLibrary'] = {
+        link = '@constant.builtin',
+      },
       ['@lsp.typemod.function.defaultLibrary'] = { link = '@function.builtin' },
       ['@lsp.typemod.function.readonly'] = { link = '@method' },
       ['@lsp.typemod.macro.defaultLibrary'] = { link = '@function.builtin' },
       ['@lsp.typemod.method.defaultLibrary'] = { link = '@function.builtin' },
       ['@lsp.typemod.method.readonly'] = { link = '@method' },
       ['@lsp.typemod.operator.injected'] = { link = '@operator' },
-      ['@lsp.typemod.parameter.mutable.rust'] = { fg = util.blend(c.yellow, c
-        .red, 0.25) },
+      ['@lsp.typemod.parameter.mutable.rust'] = {
+        fg = util.blend(c.yellow, c.red, 0.25),
+      },
       ['@lsp.typemod.property.readonly'] = { link = '@property.constant' },
       ['@lsp.typemod.string.injected'] = { link = '@string' },
       ['@lsp.typemod.variable.defaultLibrary'] = { link = '@variable.builtin' },
       ['@lsp.typemod.variable.global'] = { link = '@variable.global' },
       ['@lsp.typemod.variable.constant.rust'] = { link = '@constant' },
       ['@lsp.typemod.variable.injected'] = { link = '@variable' },
-      ['@lsp.typemod.variable.mutable.rust'] = { fg = util.lighten(c.yellow,
-        0.625) },
+      ['@lsp.typemod.variable.mutable.rust'] = {
+        fg = util.lighten(c.yellow, 0.625),
+      },
       ['@lsp.typemod.variable.static'] = { link = '@variable.static' },
       ['@lsp.typemod.variable.static.rust'] = {},
     }
@@ -354,10 +367,10 @@ else
 end
 
 local diagnostics_error_color = cfg.diagnostics.darker and c.dark_red or c.red
-local diagnostics_hint_color = cfg.diagnostics.darker and c.dark_purple or
-    c.purple
-local diagnostics_warn_color = cfg.diagnostics.darker and c.dark_yellow or
-    c.yellow
+local diagnostics_hint_color = cfg.diagnostics.darker and c.dark_purple
+  or c.purple
+local diagnostics_warn_color = cfg.diagnostics.darker and c.dark_yellow
+  or c.yellow
 local diagnostics_info_color = cfg.diagnostics.darker and c.dark_cyan or c.cyan
 hl.plugins.lsp = {
   LspCxxHlGroupEnumConstant = colors.Orange,
@@ -373,39 +386,45 @@ hl.plugins.lsp = {
   DiagnosticWarn = { fg = c.yellow },
 
   DiagnosticVirtualTextError = {
-    bg = cfg.diagnostics.background and
-        util.darken(diagnostics_error_color, 0.1, c.bg0) or c.none,
+    bg = cfg.diagnostics.background
+        and util.darken(diagnostics_error_color, 0.1, c.bg0)
+      or c.none,
     fg = diagnostics_error_color,
   },
   DiagnosticVirtualTextWarn = {
-    bg = cfg.diagnostics.background and
-        util.darken(diagnostics_warn_color, 0.1, c.bg0) or c.none,
+    bg = cfg.diagnostics.background
+        and util.darken(diagnostics_warn_color, 0.1, c.bg0)
+      or c.none,
     fg = diagnostics_warn_color,
   },
   DiagnosticVirtualTextInfo = {
-    bg = cfg.diagnostics.background and
-        util.darken(diagnostics_info_color, 0.1, c.bg0) or c.none,
+    bg = cfg.diagnostics.background
+        and util.darken(diagnostics_info_color, 0.1, c.bg0)
+      or c.none,
     fg = diagnostics_info_color,
   },
   DiagnosticVirtualTextHint = {
-    bg = cfg.diagnostics.background and
-        util.darken(diagnostics_hint_color, 0.1, c.bg0) or c.none,
+    bg = cfg.diagnostics.background
+        and util.darken(diagnostics_hint_color, 0.1, c.bg0)
+      or c.none,
     fg = diagnostics_hint_color,
   },
 
   DiagnosticUnderlineError = {
-    fmt = cfg.diagnostics.undercurl and 'undercurl' or 'underline', sp = c.red },
+    fmt = cfg.diagnostics.undercurl and 'undercurl' or 'underline',
+    sp = c.red,
+  },
   DiagnosticUnderlineHint = {
     fmt = cfg.diagnostics.undercurl and 'undercurl' or 'underline',
-    sp = c
-        .purple,
+    sp = c.purple,
   },
   DiagnosticUnderlineInfo = {
-    fmt = cfg.diagnostics.undercurl and 'undercurl' or 'underline', sp = c.blue },
+    fmt = cfg.diagnostics.undercurl and 'undercurl' or 'underline',
+    sp = c.blue,
+  },
   DiagnosticUnderlineWarn = {
     fmt = cfg.diagnostics.undercurl and 'undercurl' or 'underline',
-    sp = c
-        .yellow,
+    sp = c.yellow,
   },
 
   LspReferenceText = { bg = c.bg2 },
@@ -420,22 +439,22 @@ hl.plugins.lsp.LspDiagnosticsDefaultError = hl.plugins.lsp.DiagnosticError
 hl.plugins.lsp.LspDiagnosticsDefaultHint = hl.plugins.lsp.DiagnosticHint
 hl.plugins.lsp.LspDiagnosticsDefaultInformation = hl.plugins.lsp.DiagnosticInfo
 hl.plugins.lsp.LspDiagnosticsDefaultWarning = hl.plugins.lsp.DiagnosticWarn
-hl.plugins.lsp.LspDiagnosticsUnderlineError = hl.plugins.lsp
-    .DiagnosticUnderlineError
-hl.plugins.lsp.LspDiagnosticsUnderlineHint = hl.plugins.lsp
-    .DiagnosticUnderlineHint
-hl.plugins.lsp.LspDiagnosticsUnderlineInformation = hl.plugins.lsp
-    .DiagnosticUnderlineInfo
-hl.plugins.lsp.LspDiagnosticsUnderlineWarning = hl.plugins.lsp
-    .DiagnosticUnderlineWarn
-hl.plugins.lsp.LspDiagnosticsVirtualTextError = hl.plugins.lsp
-    .DiagnosticVirtualTextError
-hl.plugins.lsp.LspDiagnosticsVirtualTextWarning = hl.plugins.lsp
-    .DiagnosticVirtualTextWarn
-hl.plugins.lsp.LspDiagnosticsVirtualTextInformation = hl.plugins.lsp
-    .DiagnosticVirtualTextInfo
-hl.plugins.lsp.LspDiagnosticsVirtualTextHint = hl.plugins.lsp
-    .DiagnosticVirtualTextHint
+hl.plugins.lsp.LspDiagnosticsUnderlineError =
+  hl.plugins.lsp.DiagnosticUnderlineError
+hl.plugins.lsp.LspDiagnosticsUnderlineHint =
+  hl.plugins.lsp.DiagnosticUnderlineHint
+hl.plugins.lsp.LspDiagnosticsUnderlineInformation =
+  hl.plugins.lsp.DiagnosticUnderlineInfo
+hl.plugins.lsp.LspDiagnosticsUnderlineWarning =
+  hl.plugins.lsp.DiagnosticUnderlineWarn
+hl.plugins.lsp.LspDiagnosticsVirtualTextError =
+  hl.plugins.lsp.DiagnosticVirtualTextError
+hl.plugins.lsp.LspDiagnosticsVirtualTextWarning =
+  hl.plugins.lsp.DiagnosticVirtualTextWarn
+hl.plugins.lsp.LspDiagnosticsVirtualTextInformation =
+  hl.plugins.lsp.DiagnosticVirtualTextInfo
+hl.plugins.lsp.LspDiagnosticsVirtualTextHint =
+  hl.plugins.lsp.DiagnosticVirtualTextHint
 
 hl.plugins.ale = {
   ALEErrorSign = hl.plugins.lsp.DiagnosticError,
@@ -785,24 +804,24 @@ hl.langs.scala = {
 }
 
 hl.langs.tex = {
-  latexTSInclude         = colors.Blue,
-  latexTSFuncMacro       = { fg = c.fg, fmt = cfg.code_style.functions },
-  latexTSEnvironment     = { fg = c.cyan, fmt = 'bold' },
+  latexTSInclude = colors.Blue,
+  latexTSFuncMacro = { fg = c.fg, fmt = cfg.code_style.functions },
+  latexTSEnvironment = { fg = c.cyan, fmt = 'bold' },
   latexTSEnvironmentName = colors.Yellow,
-  texCmdEnv              = colors.Cyan,
-  texEnvArgName          = colors.Yellow,
-  latexTSTitle           = colors.Green,
-  latexTSType            = colors.Blue,
-  latexTSMath            = colors.Orange,
-  texMathZoneX           = colors.Orange,
-  texMathZoneXX          = colors.Orange,
-  texMathDelimZone       = colors.LightGrey,
-  texMathDelim           = colors.Purple,
-  texMathOper            = colors.Red,
-  texCmd                 = colors.Purple,
-  texCmdPart             = colors.Blue,
-  texCmdPackage          = colors.Blue,
-  texPgfType             = colors.Yellow,
+  texCmdEnv = colors.Cyan,
+  texEnvArgName = colors.Yellow,
+  latexTSTitle = colors.Green,
+  latexTSType = colors.Blue,
+  latexTSMath = colors.Orange,
+  texMathZoneX = colors.Orange,
+  texMathZoneXX = colors.Orange,
+  texMathDelimZone = colors.LightGrey,
+  texMathDelim = colors.Purple,
+  texMathOper = colors.Red,
+  texCmd = colors.Purple,
+  texCmdPart = colors.Blue,
+  texCmdPackage = colors.Blue,
+  texPgfType = colors.Yellow,
 }
 
 hl.langs.vim = {
@@ -874,19 +893,28 @@ function M.setup()
       vim.api.nvim_set_hl(0, k, hl.lsp[k])
     end
   end
-  for _, group in pairs(hl.langs) do vim_highlights(group) end
-  for _, group in pairs(hl.plugins) do vim_highlights(group) end
+  for _, group in pairs(hl.langs) do
+    vim_highlights(group)
+  end
+  for _, group in pairs(hl.plugins) do
+    vim_highlights(group)
+  end
 
   -- user defined highlights: vim_highlights function cannot be used because it sets an attribute to none if not specified
   local function replace_color(prefix, color_name)
-    if not color_name then return '' end
+    if not color_name then
+      return ''
+    end
     if color_name:sub(1, 1) == '$' then
       local name = color_name:sub(2, -1)
       color_name = c[name]
       if not color_name then
         vim.schedule(function()
-          vim.notify('bamboo.nvim: unknown color "' .. name .. '"',
-            vim.log.levels.ERROR, { title = 'bamboo.nvim' })
+          vim.notify(
+            'bamboo.nvim: unknown color "' .. name .. '"',
+            vim.log.levels.ERROR,
+            { title = 'bamboo.nvim' }
+          )
         end)
         return ''
       end
@@ -895,11 +923,16 @@ function M.setup()
   end
 
   for group_name, group_settings in pairs(vim.g.bamboo_config.highlights) do
-    vim.api.nvim_command(string.format('highlight %s %s %s %s %s', group_name,
-      replace_color('guifg', group_settings.fg),
-      replace_color('guibg', group_settings.bg),
-      replace_color('guisp', group_settings.sp),
-      replace_color('gui', group_settings.fmt)))
+    vim.api.nvim_command(
+      string.format(
+        'highlight %s %s %s %s %s',
+        group_name,
+        replace_color('guifg', group_settings.fg),
+        replace_color('guibg', group_settings.bg),
+        replace_color('guisp', group_settings.sp),
+        replace_color('gui', group_settings.fmt)
+      )
+    )
   end
 end
 

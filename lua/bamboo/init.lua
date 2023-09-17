@@ -15,7 +15,9 @@ end
 ---Apply the colorscheme (same as ':colorscheme bamboo')
 function M.colorscheme()
   vim.cmd('hi clear')
-  if vim.fn.exists('syntax_on') then vim.cmd('syntax reset') end
+  if vim.fn.exists('syntax_on') then
+    vim.cmd('syntax reset')
+  end
   vim.o.termguicolors = true
   vim.o.background = 'dark'
   vim.g.colors_name = 'bamboo'
@@ -26,7 +28,9 @@ end
 ---Toggle between bamboo styles
 function M.toggle()
   local index = vim.g.bamboo_config.toggle_style_index + 1
-  if index > #vim.g.bamboo_config.toggle_style_list then index = 1 end
+  if index > #vim.g.bamboo_config.toggle_style_list then
+    index = 1
+  end
   M.set_options('style', vim.g.bamboo_config.toggle_style_list[index])
   M.set_options('toggle_style_index', index)
   vim.api.nvim_command('colorscheme bamboo')
@@ -37,9 +41,9 @@ local default_config = {
   style = 'vulgaris', -- choose between 'vulgaris' (regular) and 'multiplex' (greener)
   toggle_style_key = nil,
   toggle_style_list = M.styles_list,
-  transparent = false,          -- don't set background
-  term_colors = true,           -- if true enable the terminal
-  ending_tildes = false,        -- show the end-of-buffer tildes
+  transparent = false, -- don't set background
+  term_colors = true, -- if true enable the terminal
+  ending_tildes = false, -- show the end-of-buffer tildes
   cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
 
   -- Changing Formats --
@@ -58,13 +62,13 @@ local default_config = {
   },
 
   -- Custom Highlights --
-  colors = {},     -- Override default colors
+  colors = {}, -- Override default colors
   highlights = {}, -- Override highlight groups
 
   -- Plugins Related --
   diagnostics = {
-    darker = false,    -- darker colors for diagnostic
-    undercurl = true,  -- use undercurl for diagnostics
+    darker = false, -- darker colors for diagnostic
+    undercurl = true, -- use undercurl for diagnostics
     background = true, -- use background color for virtual text
   },
 }
@@ -73,22 +77,25 @@ local default_config = {
 ---@param opts table: a table containing options
 function M.setup(opts)
   if not vim.g.bamboo_config or not vim.g.bamboo_config.loaded then -- if it's the first time setup() is called
-    vim.g.bamboo_config = vim.tbl_deep_extend('keep', vim.g.bamboo_config or {},
-      default_config)
+    vim.g.bamboo_config =
+      vim.tbl_deep_extend('keep', vim.g.bamboo_config or {}, default_config)
     M.set_options('loaded', true)
     M.set_options('toggle_style_index', 1)
   end
   if opts then
-    vim.g.bamboo_config = vim.tbl_deep_extend('force', vim.g.bamboo_config,
-      opts)
+    vim.g.bamboo_config =
+      vim.tbl_deep_extend('force', vim.g.bamboo_config, opts)
     if opts.toggle_style_list then -- this table cannot be extended, it has to be replaced
       M.set_options('toggle_style_list', opts.toggle_style_list)
     end
   end
   if vim.g.bamboo_config.toggle_style_key then
-    vim.api.nvim_set_keymap('n', vim.g.bamboo_config.toggle_style_key,
+    vim.api.nvim_set_keymap(
+      'n',
+      vim.g.bamboo_config.toggle_style_key,
       '<cmd>lua require("bamboo").toggle()<cr>',
-      { noremap = true, silent = true })
+      { noremap = true, silent = true }
+    )
   end
 end
 

@@ -29,4 +29,4 @@ local bamboo = {
   command = { a = { fg = colors.bg, bg = colors.yellow, gui = 'bold' } },
   terminal = { a = { fg = colors.bg, bg = colors.cyan, gui = 'bold' } },
 }
-return bamboo;
+return bamboo
