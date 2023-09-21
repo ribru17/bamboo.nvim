@@ -148,7 +148,7 @@ hl.syntax = {
   Repeat = { fg = c.purple, fmt = cfg.code_style.keywords },
   Statement = colors.Purple,
   Macro = colors.Red,
-  Error = colors.Purple,
+  Error = colors.Red,
   Label = colors.Purple,
   Special = colors.Red,
   SpecialChar = colors.Red,
@@ -176,7 +176,7 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
     ['@constant.macro'] = colors.Orange,
     ['@constructor'] = { fg = c.yellow, fmt = 'bold' },
     ['@constructor.lua'] = { fg = c.yellow, fmt = 'none' },
-    ['@error'] = colors.Fg,
+    ['@error'] = colors.Red,
     ['@exception'] = { fg = c.purple, fmt = cfg.code_style.keywords },
     ['@field'] = colors.Cyan,
     ['@float'] = colors.Orange,
@@ -255,12 +255,12 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
   }
   if vim.api.nvim_call_function('has', { 'nvim-0.9' }) == 1 then
     hl.lsp = {
-      -- disable comment highlighting until the following issue gets fixed:
-      -- https://github.com/LuaLS/lua-language-server/issues/1809
       ['@lsp.mod.readonly'] = { link = '@constant' },
       ['@lsp.mod.typeHint'] = { link = '@type' },
       ['@lsp.type.builtinConstant'] = { link = '@constant.builtin' },
       ['@lsp.type.builtinType'] = { link = '@type.builtin' },
+      -- disable comment highlighting, see the following issue:
+      -- https://github.com/LuaLS/lua-language-server/issues/1809
       ['@lsp.type.comment'] = {},
       ['@lsp.type.enum'] = { link = '@type' },
       ['@lsp.type.enumMember'] = { link = '@constant.builtin' },
@@ -316,7 +316,7 @@ else
     TSConstBuiltin = colors.Orange,
     TSConstMacro = colors.Orange,
     TSConstructor = { fg = c.yellow, fmt = 'bold' },
-    TSError = colors.Fg,
+    TSError = colors.Red,
     TSException = { fg = c.purple, fmt = cfg.code_style.keywords },
     TSField = colors.Cyan,
     TSFloat = colors.Orange,
