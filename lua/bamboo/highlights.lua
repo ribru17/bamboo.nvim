@@ -284,7 +284,7 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
       ['@lsp.type.property'] = { link = '@property' },
       ['@lsp.type.selfKeyword'] = { link = '@variable.builtin' },
       ['@lsp.type.typeParameter'] = { link = '@type' },
-      ['@lsp.type.variable'] = { link = '@variable' },
+      ['@lsp.type.variable'] = {}, -- use treesitter styles for regular variables
       ['@lsp.typemod.class.defaultLibrary'] = { link = '@type.builtin' },
       ['@lsp.typemod.enum.defaultLibrary'] = { link = '@type.builtin' },
       ['@lsp.typemod.enumMember.defaultLibrary'] = {
