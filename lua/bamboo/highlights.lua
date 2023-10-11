@@ -489,6 +489,14 @@ hl.plugins.cmp = {
   CmpItemAbbrMatchFuzzy = { fg = c.cyan, fmt = 'underline' },
   CmpItemMenu = colors.LightGrey,
   CmpItemKind = { fg = c.purple, fmt = cfg.cmp_itemkind_reverse and 'reverse' },
+  CmpItemKindCopilot = {
+    fg = c.fg,
+    fmt = cfg.cmp_itemkind_reverse and 'reverse',
+  },
+  CmpItemKindCodeium = {
+    fg = c.fg,
+    fmt = cfg.cmp_itemkind_reverse and 'reverse',
+  },
 }
 
 hl.plugins.coc = {
