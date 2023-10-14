@@ -143,7 +143,7 @@ hl.syntax = {
   Structure = colors.Yellow,
   StorageClass = colors.Yellow,
   Identifier = { fg = c.red, fmt = cfg.code_style.variables },
-  Constant = colors.Cyan,
+  Constant = colors.Orange,
   PreProc = colors.Purple,
   PreCondit = colors.Purple,
   Include = colors.Purple,
@@ -762,7 +762,7 @@ hl.langs.c = {
   cTypedef = colors.Purple,
   cDefine = colors.Cyan,
   cTSInclude = colors.Blue,
-  cTSConstant = colors.Cyan,
+  cTSConstant = colors.Orange,
   cTSConstMacro = colors.Purple,
   cTSOperator = colors.Purple,
 }
@@ -770,7 +770,7 @@ hl.langs.c = {
 hl.langs.cpp = {
   cppStatement = { fg = c.purple, fmt = 'bold' },
   cppTSInclude = colors.Blue,
-  cppTSConstant = colors.Cyan,
+  cppTSConstant = colors.Orange,
   cppTSConstMacro = colors.Purple,
   cppTSOperator = colors.Purple,
 }
