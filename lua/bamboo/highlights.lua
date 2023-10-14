@@ -637,6 +637,12 @@ hl.plugins.dashboard = {
   DashboardHeader = colors.Yellow,
   DashboardCenter = colors.Cyan,
   DashboardFooter = { fg = c.dark_red, fmt = 'italic' },
+  DashboardMruTitle = colors.Cyan,
+  DashboardProjectTitle = colors.Cyan,
+  DashboardFiles = colors.Fg,
+  DashboardKey = colors.Orange,
+  DashboardDesc = colors.Purple,
+  DashboardIcon = colors.Purple,
 }
 
 hl.plugins.outline = {
