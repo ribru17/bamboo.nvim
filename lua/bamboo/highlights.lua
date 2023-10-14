@@ -497,6 +497,10 @@ hl.plugins.cmp = {
     fg = c.fg,
     fmt = cfg.cmp_itemkind_reverse and 'reverse',
   },
+  CmpItemKindTabNine = {
+    fg = c.fg,
+    fmt = cfg.cmp_itemkind_reverse and 'reverse',
+  },
 }
 
 hl.plugins.coc = {
