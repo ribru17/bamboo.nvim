@@ -50,9 +50,9 @@ syntax highlighting, upgrade to Neovim 0.8.0 or later, built with Tree-sitter
 
 <details>
 <summary>Click to toggle previews</summary>
-
-![bamboomultiplexshowcase](https://github.com/ribru17/bamboo.nvim/assets/55766287/e7bb8d9a-95ee-43e4-bcfe-3727ec90fcdd)
-![bamboomultiplexshowcasecode](https://github.com/ribru17/bamboo.nvim/assets/55766287/6fdb0335-e9bd-4f73-bfba-12e55ddd91f0)
+  
+![bamboolightshowcasemd](https://github.com/ribru17/bamboo.nvim/assets/55766287/cee8b8f7-36b3-41af-8d15-ab646bce89d4)
+![bamboolightshowcasecode](https://github.com/ribru17/bamboo.nvim/assets/55766287/1842892f-4c40-4d83-a5ea-edd2c30895dc)
 
 </details>
 <br/>
