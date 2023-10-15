@@ -1,6 +1,6 @@
 local M = {}
 
-M.styles_list = { 'vulgaris', 'multiplex' }
+M.styles_list = { 'vulgaris', 'multiplex', 'light' }
 
 ---Change bamboo option (vim.g.bamboo_config.option)
 ---It can't be changed directly by modifying that field due to a Neovim lua bug with global variables (bamboo_config is a global variable)
@@ -19,8 +19,12 @@ function M.colorscheme()
     vim.cmd('syntax reset')
   end
   vim.o.termguicolors = true
-  vim.o.background = 'dark'
   vim.g.colors_name = 'bamboo'
+  if vim.o.background == 'light' then
+    M.set_options('style', 'light')
+  elseif vim.g.bamboo_config.style == 'light' then
+    M.set_options('style', 'vulgaris')
+  end
   require('bamboo.highlights').setup()
   require('bamboo.terminal').setup()
 end
@@ -33,12 +37,17 @@ function M.toggle()
   end
   M.set_options('style', vim.g.bamboo_config.toggle_style_list[index])
   M.set_options('toggle_style_index', index)
+  if vim.g.bamboo_config.style == 'light' then
+    vim.o.background = 'light'
+  else
+    vim.o.background = 'dark'
+  end
   vim.api.nvim_command('colorscheme bamboo')
 end
 
 local default_config = {
   -- Main options --
-  style = 'vulgaris', -- choose between 'vulgaris' (regular) and 'multiplex' (greener)
+  style = 'vulgaris', -- choose between 'vulgaris' (regular), 'multiplex' (greener), and 'light'
   toggle_style_key = nil,
   toggle_style_list = M.styles_list,
   transparent = false, -- don't set background

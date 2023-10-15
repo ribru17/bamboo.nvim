@@ -197,7 +197,7 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
     ['@namespace'] = colors.Yellow,
     ['@none'] = colors.Fg,
     ['@number'] = colors.Orange,
-    ['@operator'] = { fg = util.lighten(c.purple, 0.5) },
+    ['@operator'] = { fg = util.blend(c.fg, c.purple, 0.25) },
     ['@parameter'] = { fg = c.coral, fmt = 'italic' },
     ['@parameter.reference'] = colors.Fg,
     ['@preproc'] = colors.Purple,
@@ -306,7 +306,7 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
       ['@lsp.typemod.variable.constant.rust'] = { link = '@constant' },
       ['@lsp.typemod.variable.injected'] = { link = '@variable' },
       ['@lsp.typemod.variable.mutable.rust'] = {
-        fg = util.lighten(c.yellow, 0.625),
+        fg = util.blend(c.fg, c.yellow, 0.625),
       },
       ['@lsp.typemod.variable.static'] = { link = '@variable.static' },
       ['@lsp.typemod.variable.static.rust'] = {},
@@ -338,7 +338,7 @@ else
     TSNamespace = colors.Yellow,
     TSNone = colors.Fg,
     TSNumber = colors.Orange,
-    TSOperator = { fg = util.lighten(c.purple, 0.5) },
+    TSOperator = { fg = util.blend(c.fg, c.purple, 0.25) },
     TSParameter = { fg = c.coral, fmt = 'italic' },
     TSParameterReference = colors.Fg,
     TSProperty = colors.Cyan,
@@ -665,7 +665,7 @@ hl.plugins.ts_rainbow = {
   rainbowcol3 = colors.Blue,
   rainbowcol4 = colors.Orange,
   rainbowcol5 = colors.Purple,
-  rainbowcol6 = { fg = util.lighten(c.light_grey, 0.75) },
+  rainbowcol6 = { fg = util.blend(c.fg, c.light_grey, 0.25) },
   rainbowcol7 = colors.Red,
 }
 
@@ -674,7 +674,7 @@ hl.plugins.ts_rainbow2 = {
   TSRainbowYellow = colors.Yellow,
   TSRainbowBlue = colors.Blue,
   TSRainbowOrange = colors.Orange,
-  TSRainbowGreen = { fg = util.lighten(c.light_grey, 0.75) },
+  TSRainbowGreen = { fg = util.blend(c.fg, c.light_grey, 0.25) },
   TSRainbowViolet = colors.Purple,
   TSRainbowCyan = colors.Cyan,
 }
@@ -684,7 +684,7 @@ hl.plugins.rainbow_delimiters = {
   RainbowDelimiterYellow = colors.Yellow,
   RainbowDelimiterBlue = colors.Blue,
   RainbowDelimiterOrange = colors.Orange,
-  RainbowDelimiterGreen = { fg = util.lighten(c.light_grey, 0.75) },
+  RainbowDelimiterGreen = { fg = util.blend(c.fg, c.light_grey, 0.25) },
   RainbowDelimiterViolet = colors.Purple,
   RainbowDelimiterCyan = colors.Cyan,
 }

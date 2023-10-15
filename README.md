@@ -16,6 +16,9 @@ syntax highlighting, upgrade to Neovim 0.8.0 or later, built with Tree-sitter
 - Comments are colored specifically to be readable and have good contrast with
   other text and background
 - _Many_ semantic highlighting tokens are handled and colored nicely
+- Light and dark variants
+  - Light mode only applies when `vim.o.background = 'light'` (can also use
+    `set background=light`)
 - Multiple plugins are supported with hand-picked, proper colors
 - `Colors`, `Highlights` and `Code style` of the theme can be customized as you
   like (Refer to [Customization](#customization))
@@ -23,15 +26,38 @@ syntax highlighting, upgrade to Neovim 0.8.0 or later, built with Tree-sitter
   [`extras`](https://github.com/ribru17/bamboo.nvim/tree/master/extras)
   directory)
 
-### Regular (vulgaris)
+### Regular (`vulgaris`)
+
+<details open>
+<summary>Click to toggle previews</summary>
 
 ![bamboomdshowcase](https://github.com/ribru17/bamboo.nvim/assets/55766287/c2ce1883-d4ad-4ae0-a248-ef668d69aa87)
 ![bamboocodeshowcase](https://github.com/ribru17/bamboo.nvim/assets/55766287/5eb2c125-13cd-46d6-841a-8af3f4406fc1)
 
-### Greener (multiplex)
+</details>
+
+### Greener (`multiplex`)
+
+<details>
+<summary>Click to toggle previews</summary>
 
 ![bamboomultiplexshowcase](https://github.com/ribru17/bamboo.nvim/assets/55766287/e7bb8d9a-95ee-43e4-bcfe-3727ec90fcdd)
 ![bamboomultiplexshowcasecode](https://github.com/ribru17/bamboo.nvim/assets/55766287/6fdb0335-e9bd-4f73-bfba-12e55ddd91f0)
+
+</details>
+
+### Light Mode (`light`)
+
+<details>
+<summary>Click to toggle previews</summary>
+
+![bamboomultiplexshowcase](https://github.com/ribru17/bamboo.nvim/assets/55766287/e7bb8d9a-95ee-43e4-bcfe-3727ec90fcdd)
+![bamboomultiplexshowcasecode](https://github.com/ribru17/bamboo.nvim/assets/55766287/6fdb0335-e9bd-4f73-bfba-12e55ddd91f0)
+
+</details>
+<br/>
+
+<!-- End of previews. -->
 
 _NOTE:_ The above screenshots utilize Tree-sitter parsers for `lua`, `markdown`,
 `markdown_inline`, `mermaid`, and `latex`.
@@ -90,43 +116,44 @@ colorscheme bamboo
 
 ```lua
 -- Lua
-require('bamboo').setup  {
-    -- Main options --
-    style = 'vulgaris', -- Choose between 'vulgaris' (regular) and 'multiplex' (greener)
-    toggle_style_key = nil, -- Keybind to toggle theme style. Leave it nil to disable it, or set it to a string, e.g. "<leader>ts"
-    toggle_style_list = { 'vulgaris', 'multiplex' }, -- List of styles to toggle between (this option is essentially pointless now but will become useful if more style variations are added)
-    transparent = false,  -- Show/hide background
-    term_colors = true, -- Change terminal color as per the selected theme style
-    ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
-    cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
+require('bamboo').setup {
+  -- Main options --
+  -- NOTE: to use the light theme, set `vim.o.background = 'light'`
+  style = 'vulgaris', -- Choose between 'vulgaris' (regular), 'multiplex' (greener), and 'light'
+  toggle_style_key = nil, -- Keybind to toggle theme style. Leave it nil to disable it, or set it to a string, e.g. "<leader>ts"
+  toggle_style_list = { 'vulgaris', 'multiplex', 'light' }, -- List of styles to toggle between
+  transparent = false, -- Show/hide background
+  term_colors = true, -- Change terminal color as per the selected theme style
+  ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
+  cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
 
-    -- Change code style ---
-    -- Options are italic, bold, underline, none
-    -- You can configure multiple style with comma separated, For e.g., keywords = 'italic,bold'
-    code_style = {
-        comments = 'italic',
-        conditionals = 'italic',
-        keywords = 'none',
-        functions = 'none',
-        strings = 'none',
-        variables = 'none'
-    },
+  -- Change code style ---
+  -- Options are italic, bold, underline, none
+  -- You can configure multiple style with comma separated, For e.g., keywords = 'italic,bold'
+  code_style = {
+    comments = 'italic',
+    conditionals = 'italic',
+    keywords = 'none',
+    functions = 'none',
+    strings = 'none',
+    variables = 'none',
+  },
 
-    -- Lualine options --
-    lualine = {
-        transparent = false, -- lualine center bar transparency
-    },
+  -- Lualine options --
+  lualine = {
+    transparent = false, -- lualine center bar transparency
+  },
 
-    -- Custom Highlights --
-    colors = {}, -- Override default colors
-    highlights = {}, -- Override highlight groups
+  -- Custom Highlights --
+  colors = {}, -- Override default colors
+  highlights = {}, -- Override highlight groups
 
-    -- Plugins Config --
-    diagnostics = {
-        darker = false, -- darker colors for diagnostic
-        undercurl = true,   -- use undercurl instead of underline for diagnostics
-        background = true,    -- use background color for virtual text
-    },
+  -- Plugins Config --
+  diagnostics = {
+    darker = false, -- darker colors for diagnostic
+    undercurl = true, -- use undercurl instead of underline for diagnostics
+    background = true, -- use background color for virtual text
+  },
 }
 ```
 
@@ -156,18 +183,18 @@ Example using custom colors and highlights:
 ```lua
 require('bamboo').setup {
   colors = {
-    bright_orange = "#ff8800",    -- define a new color
-    green = '#00ffaa',            -- redefine an existing color
+    bright_orange = '#ff8800', -- define a new color
+    green = '#00ffaa', -- redefine an existing color
   },
   highlights = {
     -- make comments blend nicely with background, similar to other color schemes
-    ["@comment"] = {fg = '$grey'},
+    ['@comment'] = { fg = '$grey' },
 
-    ["@keyword"] = {fg = '$green'},
-    ["@string"] = {fg = '$bright_orange', bg = '#00ff00', fmt = 'bold'},
-    ["@function"] = {fg = '#0000ff', sp = '$cyan', fmt = 'underline,italic'},
-    ["@function.builtin"] = {fg = '#0059ff'}
-  }
+    ['@keyword'] = { fg = '$green' },
+    ['@string'] = { fg = '$bright_orange', bg = '#00ff00', fmt = 'bold' },
+    ['@function'] = { fg = '#0000ff', sp = '$cyan', fmt = 'underline,italic' },
+    ['@function.builtin'] = { fg = '#0059ff' },
+  },
 }
 ```
 
@@ -181,15 +208,15 @@ colorscheme can be found in
 ```lua
 require('bamboo').setup {
   colors = {
-    bright_orange = "#ff8800",    -- define a new color
-    green = '#00ffaa',            -- redefine an existing color
+    bright_orange = '#ff8800', -- define a new color
+    green = '#00ffaa', -- redefine an existing color
   },
   highlights = {
-    TSKeyword = {fg = '$green'},
-    TSString = {fg = '$bright_orange', bg = '#00ff00', fmt = 'bold'},
-    TSFunction = {fg = '#0000ff', sp = '$cyan', fmt = 'underline,italic'},
-    TSFuncBuiltin = {fg = '#0059ff'}
-  }
+    TSKeyword = { fg = '$green' },
+    TSString = { fg = '$bright_orange', bg = '#00ff00', fmt = 'bold' },
+    TSFunction = { fg = '#0000ff', sp = '$cyan', fmt = 'underline,italic' },
+    TSFuncBuiltin = { fg = '#0059ff' },
+  },
 }
 ```
 
@@ -227,7 +254,6 @@ require('bamboo').setup {
 - [onedark.nvim](https://github.com/navarasu/onedark.nvim)
 - [Catppuccin for Neovim](https://github.com/catppuccin/nvim)
 - [tokyodark.nvim](https://github.com/tiagovla/tokyodark.nvim)
-- [one-dark-theme](https://github.com/andresmichel/one-dark-theme)
 
 ## License
 
