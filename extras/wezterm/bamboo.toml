@@ -18,7 +18,7 @@ brights = [
     "#57a5e5",
     "#aaaaff",
     "#70c2be",
-    "#f1e9d2",
+    "#fff8f0",
 ]
 cursor_bg = "#fff8f0"
 cursor_border = "#fff8f0"
