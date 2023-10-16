@@ -26,11 +26,11 @@ end
 local function vim_highlights_prior_to_nvim070(highlights)
   for group_name, group_settings in pairs(highlights) do
     if group_settings.link then
-      vim.api.nvim_command(
+      vim.cmd(
         string.format('highlight! link %s %s', group_name, group_settings.link)
       )
     else
-      vim.api.nvim_command(
+      vim.cmd(
         string.format(
           'highlight %s guifg=%s guibg=%s guisp=%s gui=%s',
           group_name,
@@ -952,11 +952,11 @@ function M.setup()
 
   for group_name, group_settings in pairs(vim.g.bamboo_config.highlights) do
     if group_settings.link then
-      vim.api.nvim_command(
+      vim.cmd(
         string.format('highlight! link %s %s', group_name, group_settings.link)
       )
     else
-      vim.api.nvim_command(
+      vim.cmd(
         string.format(
           'highlight %s %s %s %s %s',
           group_name,
