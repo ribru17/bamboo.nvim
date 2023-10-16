@@ -25,8 +25,8 @@ return {
     dark_purple = '#79428a',
     diff_add = '#40531b',
     diff_delete = '#893f45',
-    diff_change = '#382a1d',
-    diff_text = '#595653',
+    diff_change = '#2a3a57',
+    diff_text = '#3a4a67',
   },
   multiplex = {
     black = '#101210',
@@ -54,8 +54,8 @@ return {
     dark_purple = '#79428a',
     diff_add = '#40531b',
     diff_delete = '#893f45',
-    diff_change = '#382a1d',
-    diff_text = '#595653',
+    diff_change = '#2a3a57',
+    diff_text = '#3a4a67',
   },
   light = {
     black = '#111210',
