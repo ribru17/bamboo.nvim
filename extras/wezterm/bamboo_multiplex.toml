@@ -38,8 +38,8 @@ background = "#171f17"
 inactive_tab_edge = "#383d37"
 
 [colors.tab_bar.active_tab]
-bg_color = "#101210"
-fg_color = "#ece1c0"
+bg_color = "#ece1c0"
+fg_color = "#101210"
 intensity = "Normal"
 italic = false
 strikethrough = false
