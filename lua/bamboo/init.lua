@@ -51,6 +51,7 @@ local default_config = {
   toggle_style_key = nil,
   toggle_style_list = M.styles_list,
   transparent = false, -- don't set background
+  dim_inactive = false, -- don't dim inactive windows
   term_colors = true, -- if true enable the terminal
   ending_tildes = false, -- show the end-of-buffer tildes
   cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
