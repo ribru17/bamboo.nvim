@@ -69,6 +69,8 @@ hl.common = {
     or { link = 'Normal' },
   NormalFloat = { fg = c.fg, bg = cfg.transparent and c.none or c.bg0 },
   FloatBorder = { fg = c.purple, bg = cfg.transparent and c.none or c.bg0 },
+  FloatTitle = colors.Red,
+  FloatFooter = colors.LightGrey,
   Terminal = { fg = c.fg, bg = cfg.transparent and c.none or c.bg0 },
   EndOfBuffer = {
     fg = cfg.ending_tildes and c.bg2 or c.bg0,
