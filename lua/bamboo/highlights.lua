@@ -707,7 +707,7 @@ hl.plugins.indent_blankline = {
   IndentBlanklineContextChar = { fg = c.light_grey, fmt = 'nocombine' },
   IndentBlanklineContextStart = { bg = c.bg1 },
   IndentBlanklineContextSpaceChar = { fmt = 'nocombine' },
-  IblIndent = { fg = c.bg1, fmt = 'nocombine' },
+  IblIndent = { fg = c.grey, fmt = 'nocombine' },
   IblScope = { fg = c.light_grey, fmt = 'nocombine' },
 }
 
