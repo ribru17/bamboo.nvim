@@ -64,9 +64,10 @@ local colors = {
 
 hl.common = {
   Normal = { fg = c.fg, bg = cfg.transparent and c.none or c.bg0 },
-  NormalNC = cfg.transparent and { fg = c.fg, bg = c.none }
-    or cfg.dim_inactive and { fg = c.light_grey, bg = util.darken(c.bg0, 0.875) }
-    or { link = 'Normal' },
+  NormalNC = not cfg.transparent and cfg.dim_inactive and {
+    fg = c.light_grey,
+    bg = util.darken(c.bg0, 0.875),
+  } or { link = 'Normal' },
   Terminal = { fg = c.fg, bg = cfg.transparent and c.none or c.bg0 },
   EndOfBuffer = {
     fg = cfg.ending_tildes and c.bg2 or c.bg0,
