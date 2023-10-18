@@ -591,6 +591,8 @@ hl.plugins.neo_tree = {
   NeoTreeGitUntracked = { fg = c.red, fmt = 'italic' },
   NeoTreeIndentMarker = colors.Grey,
   NeoTreeSymbolicLinkTarget = colors.Purple,
+  NeoTreeFloatTitle = { link = 'FloatTitle' },
+  NeoTreeFloatBorder = { link = 'FloatBorder' },
 }
 
 hl.plugins.neotest = {
