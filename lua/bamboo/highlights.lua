@@ -63,11 +63,13 @@ local colors = {
 }
 
 hl.common = {
-  Normal = { fg = c.fg, bg = cfg.transparent and c.none or c.bg0 },
-  NormalNC = not cfg.transparent and cfg.dim_inactive and {
-    fg = c.light_grey,
-    bg = util.darken(c.bg0, 0.875),
-  } or { link = 'Normal' },
+  Normal = cfg.transparent and { fg = c.fg, bg = c.none }
+    or { fg = c.fg, bg = c.bg0 },
+  NormalNC = cfg.dim_inactive
+      and { fg = c.light_grey, bg = util.darken(c.bg0, 0.875) }
+    or { link = 'Normal' },
+  NormalFloat = cfg.transparent and { fg = c.fg, bg = c.none }
+    or { fg = c.fg, bg = c.bg0 },
   Terminal = { fg = c.fg, bg = cfg.transparent and c.none or c.bg0 },
   EndOfBuffer = {
     fg = cfg.ending_tildes and c.bg2 or c.bg0,
@@ -134,7 +136,6 @@ hl.common = {
   debugBreakpoint = { fg = c.bg0, bg = c.red },
   ToolbarButton = { fg = c.bg0, bg = c.bg_blue },
   FloatBorder = { fg = c.purple, bg = c.bg0 },
-  NormalFloat = { fg = c.fg, bg = c.bg0 },
 }
 
 hl.syntax = {
