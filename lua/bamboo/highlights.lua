@@ -132,7 +132,7 @@ hl.common = {
   Visual = { bg = c.bg3 },
   VisualNOS = { fg = c.none, bg = c.bg2, fmt = 'underline' },
   QuickFixLine = { fg = c.blue, fmt = 'underline' },
-  Debug = { fg = c.yellow },
+  Debug = { fg = c.orange },
   debugPC = { fg = c.bg0, bg = c.green },
   debugBreakpoint = { fg = c.bg0, bg = c.red },
   ToolbarButton = { fg = c.bg0, bg = c.bg_blue },
@@ -761,6 +761,28 @@ hl.plugins.mini = {
   MiniTestPass = { fg = c.green, fmt = 'bold' },
 
   MiniTrailspace = { bg = c.red },
+}
+
+hl.plugins.notify = {
+  NotifyBackground = { bg = c.bg0 },
+  NotifyERRORBorder = { link = 'DiagnosticError' },
+  NotifyWARNBorder = { link = 'DiagnosticWarn' },
+  NotifyINFOBorder = { link = 'DiagnosticInfo' },
+  NotifyHINTBorder = { link = 'DiagnosticHint' },
+  NotifyDEBUGBorder = { link = 'Debug' },
+  NotifyTRACEBorder = { link = 'Comment' },
+  NotifyERRORIcon = { link = 'DiagnosticError' },
+  NotifyWARNIcon = { link = 'DiagnosticWarn' },
+  NotifyINFOIcon = { link = 'DiagnosticInfo' },
+  NotifyHINTIcon = { link = 'DiagnosticHint' },
+  NotifyDEBUGIcon = { link = 'Debug' },
+  NotifyTRACEIcon = { link = 'Comment' },
+  NotifyERRORTitle = { link = 'DiagnosticError' },
+  NotifyWARNTitle = { link = 'DiagnosticWarn' },
+  NotifyINFOTitle = { link = 'DiagnosticInfo' },
+  NotifyHINTTitle = { link = 'DiagnosticHint' },
+  NotifyDEBUGTitle = { link = 'Debug' },
+  NotifyTRACETitle = { link = 'Comment' },
 }
 
 hl.langs.c = {
