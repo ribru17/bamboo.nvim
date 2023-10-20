@@ -297,7 +297,7 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
       ['@lsp.type.parameter'] = { link = '@parameter' },
       ['@lsp.type.property'] = { link = '@property' },
       ['@lsp.type.selfKeyword'] = { link = '@variable.builtin' },
-      ['@lsp.type.selfTypeKeyword'] = { link = '@variable.builtin' },
+      ['@lsp.type.selfTypeKeyword'] = { link = '@type' },
       ['@lsp.type.string'] = { link = '@string' },
       ['@lsp.type.typeAlias'] = { link = '@type.definition' },
       ['@lsp.type.typeParameter'] = { link = '@type' },
