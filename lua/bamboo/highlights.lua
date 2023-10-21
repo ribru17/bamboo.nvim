@@ -67,8 +67,12 @@ hl.common = {
   NormalNC = cfg.dim_inactive
       and { fg = c.light_grey, bg = util.darken(c.bg0, 0.875) }
     or { link = 'Normal' },
-  NormalFloat = { fg = c.fg, bg = cfg.transparent and c.none or c.bg0 },
-  FloatBorder = { fg = c.purple, bg = cfg.transparent and c.none or c.bg0 },
+  NormalFloat = cfg.dim_inactive
+      and { fg = c.fg, bg = util.darken(c.bg0, 0.875) }
+    or { link = 'Normal' },
+  FloatBorder = cfg.dim_inactive
+      and { fg = c.purple, bg = util.darken(c.bg0, 0.875) }
+    or { link = 'Normal' },
   FloatTitle = colors.Red,
   FloatFooter = colors.LightGrey,
   Terminal = { fg = c.fg, bg = cfg.transparent and c.none or c.bg0 },
