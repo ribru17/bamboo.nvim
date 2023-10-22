@@ -50,7 +50,7 @@ syntax highlighting, upgrade to Neovim 0.8.0 or later, built with Tree-sitter
 
 <details>
 <summary>Click to toggle previews</summary>
-  
+
 ![bamboolightshowcasemd](https://github.com/ribru17/bamboo.nvim/assets/55766287/cee8b8f7-36b3-41af-8d15-ab646bce89d4)
 ![bamboolightshowcasecode](https://github.com/ribru17/bamboo.nvim/assets/55766287/1842892f-4c40-4d83-a5ea-edd2c30895dc)
 
