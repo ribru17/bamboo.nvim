@@ -205,6 +205,9 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
     ['@number'] = colors.Orange,
     ['@operator'] = { fg = util.blend(c.fg, c.purple, 0.25) },
     ['@parameter'] = { fg = c.coral, fmt = 'italic' },
+    ['@parameter.constant'] = {
+      fg = util.blend(c.yellow, c.coral, 0.375),
+    },
     ['@parameter.reference'] = colors.Fg,
     ['@preproc'] = colors.Purple,
     ['@property'] = colors.Cyan,
@@ -320,6 +323,7 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
       ['@lsp.typemod.parameter.mutable'] = {
         fg = util.blend(c.yellow, c.coral, 0.375),
       },
+      ['@lsp.typemod.parameter.readonly'] = { link = '@parameter.constant' },
       ['@lsp.typemod.property.readonly'] = { link = '@property.constant' },
       ['@lsp.typemod.string.injected'] = { link = '@string' },
       ['@lsp.typemod.struct.defaultLibrary'] = { link = '@type.builtin' },
