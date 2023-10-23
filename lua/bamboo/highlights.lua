@@ -258,7 +258,7 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
     ['@text.quote'] = { fg = util.blend(c.fg, c.light_grey, 0.5) },
     ['@type'] = colors.Yellow,
     ['@type.builtin'] = colors.Yellow,
-    ['@type.qualifier'] = colors.Purple,
+    ['@type.qualifier'] = { fg = c.purple, fmt = 'italic' },
     ['@variable'] = { fg = c.fg, fmt = cfg.code_style.variables },
     ['@variable.builtin'] = { fg = c.red, fmt = cfg.code_style.variables },
     ['@variable.global'] = {
