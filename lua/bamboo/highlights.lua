@@ -198,6 +198,7 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
     ['@include'] = colors.Purple,
     ['@keyword'] = { fg = c.purple, fmt = cfg.code_style.keywords },
     ['@keyword.coroutine'] = { fg = c.purple, fmt = cfg.code_style.keywords },
+    ['@keyword.operator'] = { fg = c.purple, fmt = cfg.code_style.keywords },
     ['@label'] = colors.Red,
     ['@method'] = { fg = c.blue, fmt = cfg.code_style.functions },
     ['@namespace'] = colors.Yellow,
