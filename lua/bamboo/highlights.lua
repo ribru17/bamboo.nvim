@@ -205,6 +205,7 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
     ['@number'] = colors.Orange,
     ['@operator'] = { fg = util.blend(c.fg, c.purple, 0.25) },
     ['@parameter'] = { fg = c.coral, fmt = 'italic' },
+    ['@parameter.builtin'] = { fg = c.red, fmt = 'italic' },
     ['@parameter.constant'] = {
       fg = util.blend(c.yellow, c.coral, 0.375),
     },
