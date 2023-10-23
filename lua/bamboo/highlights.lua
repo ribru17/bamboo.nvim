@@ -282,6 +282,7 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
       -- https://github.com/LuaLS/lua-language-server/issues/1809
       ['@lsp.type.comment'] = {},
       ['@lsp.type.decorator'] = { link = '@attribute' },
+      ['@lsp.type.derive'] = { link = '@constructor' },
       ['@lsp.type.deriveHelper'] = { link = '@attribute' },
       ['@lsp.type.enum'] = { link = '@type' },
       ['@lsp.type.enumMember'] = { link = '@constant' },
