@@ -66,7 +66,10 @@ local normal_bg = cfg.transparent and c.none or c.bg0
 local dimmable_bg = cfg.dim_inactive and util.darken(c.bg0, 0.875) or normal_bg
 hl.common = {
   Normal = { fg = c.fg, bg = normal_bg },
-  NormalNC = { fg = c.light_grey, bg = dimmable_bg },
+  NormalNC = {
+    fg = cfg.dim_inactive and c.light_grey or c.fg,
+    bg = dimmable_bg,
+  },
   NormalFloat = { fg = c.fg, bg = dimmable_bg },
   FloatBorder = { fg = c.purple, bg = dimmable_bg },
   FloatTitle = colors.Red,
