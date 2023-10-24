@@ -62,13 +62,13 @@ local colors = {
   Purple = { fg = c.purple },
 }
 
+local normal_bg = cfg.transparent and c.none or c.bg0
+local dimmable_bg = cfg.dim_inactive and util.darken(c.bg0, 0.875) or normal_bg
 hl.common = {
-  Normal = { fg = c.fg, bg = cfg.transparent and c.none or c.bg0 },
-  NormalNC = cfg.dim_inactive
-      and { fg = c.light_grey, bg = util.darken(c.bg0, 0.875) }
-    or { link = 'Normal' },
-  NormalFloat = { fg = c.fg, bg = cfg.transparent and c.none or c.bg0 },
-  FloatBorder = { fg = c.purple, bg = cfg.transparent and c.none or c.bg0 },
+  Normal = { fg = c.fg, bg = normal_bg },
+  NormalNC = { fg = c.light_grey, bg = dimmable_bg },
+  NormalFloat = { fg = c.fg, bg = dimmable_bg },
+  FloatBorder = { fg = c.purple, bg = dimmable_bg },
   FloatTitle = colors.Red,
   FloatFooter = colors.LightGrey,
   Terminal = { fg = c.fg, bg = cfg.transparent and c.none or c.bg0 },
