@@ -71,10 +71,10 @@ hl.common = {
   FloatBorder = { fg = c.purple, bg = dimmable_bg },
   FloatTitle = colors.Red,
   FloatFooter = colors.LightGrey,
-  Terminal = { fg = c.fg, bg = cfg.transparent and c.none or c.bg0 },
+  Terminal = { fg = c.fg, bg = normal_bg },
   EndOfBuffer = {
     fg = cfg.ending_tildes and c.bg2 or c.bg0,
-    bg = cfg.transparent and c.none or c.bg0,
+    bg = normal_bg,
   },
   FoldColumn = { fg = c.fg },
   Folded = { fg = c.fg, bg = c.bg1 },
@@ -642,11 +642,11 @@ hl.plugins.neotest = {
 }
 
 hl.plugins.nvim_tree = {
-  NvimTreeNormal = { fg = c.fg, bg = cfg.transparent and c.none or c.bg0 },
+  NvimTreeNormal = { fg = c.fg, bg = normal_bg },
   NvimTreeVertSplit = { fg = c.bg_d, bg = cfg.transparent and c.none or c.bg_d },
   NvimTreeEndOfBuffer = {
     fg = cfg.ending_tildes and c.bg2 or c.bg0,
-    bg = cfg.transparent and c.none or c.bg0,
+    bg = normal_bg,
   },
   NvimTreeRootFolder = { fg = c.orange, fmt = 'bold' },
   NvimTreeGitDirty = colors.Yellow,
@@ -755,7 +755,7 @@ hl.plugins.mini = {
   MiniStarterFooter = { fg = c.dark_red, fmt = 'italic' },
   MiniStarterHeader = colors.Yellow,
   MiniStarterInactive = { fg = c.grey, fmt = cfg.code_style.comments },
-  MiniStarterItem = { fg = c.fg, bg = cfg.transparent and c.none or c.bg0 },
+  MiniStarterItem = { fg = c.fg, bg = normal_bg },
   MiniStarterItemBullet = { fg = c.grey },
   MiniStarterItemPrefix = { fg = c.yellow },
   MiniStarterSection = colors.LightGrey,
