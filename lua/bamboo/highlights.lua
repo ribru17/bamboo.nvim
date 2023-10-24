@@ -78,7 +78,7 @@ hl.common = {
   },
   FoldColumn = { fg = c.fg, bg = cfg.transparent and c.none or c.bg0 },
   Folded = { fg = c.fg, bg = cfg.transparent and c.none or c.bg1 },
-  SignColumn = { fg = c.fg, bg = cfg.transparent and c.none or c.bg0 },
+  SignColumn = { fg = c.fg },
   ToolbarLine = { fg = c.fg },
   Cursor = { fmt = 'reverse' },
   vCursor = { fmt = 'reverse' },
