@@ -211,13 +211,9 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
     ['@operator'] = { fg = util.blend(c.fg, c.purple, 0.25) },
     ['@parameter'] = { fg = c.coral, fmt = 'italic' },
     ['@parameter.builtin'] = { fg = c.red, fmt = 'italic' },
-    ['@parameter.constant'] = {
-      fg = util.blend(c.yellow, c.coral, 0.375),
-    },
     ['@parameter.reference'] = colors.Fg,
     ['@preproc'] = colors.Purple,
     ['@property'] = colors.Cyan,
-    ['@property.constant'] = { fg = util.blend(c.cyan, c.green, 0.5) },
     ['@punctuation.delimiter'] = colors.LightGrey,
     ['@punctuation.bracket'] = colors.LightGrey,
     ['@punctuation.special'] = colors.Red,
@@ -268,10 +264,6 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
     ['@variable.builtin'] = { fg = c.red, fmt = cfg.code_style.variables },
     ['@variable.global'] = {
       fg = util.lighten(c.red, 0.5),
-      fmt = cfg.code_style.variables,
-    },
-    ['@variable.static'] = {
-      fg = util.lighten(c.blue, 0.5),
       fmt = cfg.code_style.variables,
     },
   }
@@ -330,8 +322,12 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
       ['@lsp.typemod.parameter.mutable'] = {
         fg = util.blend(c.yellow, c.coral, 0.375),
       },
-      ['@lsp.typemod.parameter.readonly'] = { link = '@parameter.constant' },
-      ['@lsp.typemod.property.readonly'] = { link = '@property.constant' },
+      ['@lsp.typemod.parameter.readonly'] = {
+        fg = util.blend(c.yellow, c.coral, 0.375),
+      },
+      ['@lsp.typemod.property.readonly'] = {
+        fg = util.blend(c.cyan, c.green, 0.5),
+      },
       ['@lsp.typemod.string.injected'] = { link = '@string' },
       ['@lsp.typemod.struct.defaultLibrary'] = { link = '@type.builtin' },
       ['@lsp.typemod.type.defaultLibrary'] = { link = '@type.builtin' },
@@ -344,7 +340,9 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
       ['@lsp.typemod.variable.mutable'] = {
         fg = util.blend(c.fg, c.yellow, 0.625),
       },
-      ['@lsp.typemod.variable.static'] = { link = '@variable.static' },
+      ['@lsp.typemod.variable.static'] = {
+        fg = util.lighten(c.blue, 0.5),
+      },
       ['@lsp.typemod.variable.static.rust'] = {},
     }
   end
