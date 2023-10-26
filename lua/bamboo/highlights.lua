@@ -419,7 +419,7 @@ hl.plugins.lsp = {
   LspCxxHlSkippedRegion = colors.Grey,
   LspCxxHlSkippedRegionBeginEnd = colors.Red,
 
-  DiagnosticUnnecessary = { fg = c.grey, fmt = cfg.code_style.comments },
+  DiagnosticUnnecessary = { link = 'Comment' },
   DiagnosticError = { fg = c.red },
   DiagnosticHint = { fg = c.purple },
   DiagnosticInfo = { fg = c.cyan },
@@ -471,7 +471,7 @@ hl.plugins.lsp = {
   LspReferenceWrite = { bg = c.bg2 },
   LspReferenceRead = { bg = c.bg2 },
 
-  LspCodeLens = { fg = c.grey, fmt = cfg.code_style.comments },
+  LspCodeLens = { link = 'Comment' },
   LspCodeLensSeparator = { fg = c.grey },
   LspInfoBorder = { link = 'FloatBorder' },
 }
