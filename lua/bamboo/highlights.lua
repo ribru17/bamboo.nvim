@@ -242,6 +242,7 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
     ['@text.literal'] = colors.Green,
     ['@none.markdown'] = {},
     ['@text.uri'] = { fg = c.cyan, fmt = 'underline' },
+    ['@text.uri.markdown_inline'] = { fg = c.cyan, fmt = 'underline,italic' },
     ['@text.todo'] = { link = 'Todo' },
     ['@text.todo.checked'] = { fg = c.yellow, fmt = 'bold' },
     ['@text.todo.unchecked'] = { fg = c.light_grey, fmt = 'bold' },
