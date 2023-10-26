@@ -672,8 +672,8 @@ hl.plugins.telescope = {
   TelescopePreviewBorder = colors.Purple,
   TelescopeMatching = { fg = c.orange, fmt = 'bold' },
   TelescopePromptPrefix = colors.Green,
-  TelescopeSelection = { bg = c.bg2, fmt = 'bold' },
-  TelescopeSelectionCaret = { fg = c.orange, fmt = 'bold' },
+  TelescopeSelection = { bg = c.bg2 },
+  TelescopeSelectionCaret = { fg = c.orange, bg = c.bg2, fmt = 'bold' },
 }
 
 hl.plugins.dashboard = {
