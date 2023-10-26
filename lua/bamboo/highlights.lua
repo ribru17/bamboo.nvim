@@ -268,7 +268,7 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
     ['@variable'] = { fg = c.fg, fmt = cfg.code_style.variables },
     ['@variable.builtin'] = { fg = c.red, fmt = cfg.code_style.variables },
     ['@variable.global'] = {
-      fg = util.lighten(c.red, 0.5),
+      fg = util.lighten(c.red, 0.625),
       fmt = cfg.code_style.variables,
     },
   }
@@ -346,7 +346,7 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
         fg = util.blend(c.fg, c.yellow, 0.625),
       },
       ['@lsp.typemod.variable.static'] = {
-        fg = util.lighten(c.blue, 0.5),
+        fg = util.lighten(c.blue, 0.625),
       },
       ['@lsp.typemod.variable.static.rust'] = {},
     }
