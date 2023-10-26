@@ -254,6 +254,10 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
     ['@text.environment.name'] = colors.Yellow,
     ['@text.diff.add'] = { link = 'DiffAdd' },
     ['@text.diff.delete'] = { link = 'DiffDelete' },
+    ['@text.strike.markdown_inline'] = {
+      fg = c.purple,
+      fmt = 'strikethrough',
+    },
     ['@text.strong.markdown_inline'] = { fg = c.purple, fmt = 'bold' },
     ['@text.emphasis.markdown_inline'] = { fg = c.purple, fmt = 'italic' },
     ['@text.quote'] = { fg = util.blend(c.fg, c.light_grey, 0.5) },
