@@ -472,6 +472,7 @@ hl.plugins.lsp = {
 
   LspCodeLens = { fg = c.grey, fmt = cfg.code_style.comments },
   LspCodeLensSeparator = { fg = c.grey },
+  LspInfoBorder = { link = 'FloatBorder' },
 }
 
 hl.plugins.lsp.LspDiagnosticsDefaultError = hl.plugins.lsp.DiagnosticError
