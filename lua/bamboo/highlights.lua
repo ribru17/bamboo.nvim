@@ -287,7 +287,7 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
       ['@lsp.type.interface'] = { link = '@type' },
       ['@lsp.type.keyword'] = { link = '@keyword' },
       ['@lsp.type.lifetime'] = { link = '@storageclass' },
-      ['@lsp.type.macro'] = { link = '@function.macro' },
+      ['@lsp.type.macro'] = { link = 'Macro' },
       ['@lsp.type.magicFunction'] = { link = '@function.builtin' },
       ['@lsp.type.method'] = { link = '@method' },
       ['@lsp.type.namespace'] = { link = '@namespace' },
