@@ -92,7 +92,7 @@ Install via your favorite package manager:
     }
     require('bamboo').load()
   end,
-}
+},
 ```
 
 **NOTE:** For best results, use (rounded) borders for float windows (or change
