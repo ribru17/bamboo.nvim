@@ -205,6 +205,7 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
     ['@label.json'] = colors.Red,
     ['@method'] = { link = 'Function' },
     ['@namespace'] = colors.Yellow,
+    ['@namespace.builtin'] = { link = '@variable.builtin' },
     ['@none'] = colors.Fg,
     ['@number'] = { link = 'Number' },
     ['@operator'] = { link = 'Operator' },
