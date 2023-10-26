@@ -700,33 +700,33 @@ hl.plugins.navic = {
 }
 
 hl.plugins.ts_rainbow = {
-  rainbowcol1 = colors.LightGrey,
+  rainbowcol1 = colors.Red,
   rainbowcol2 = colors.Yellow,
   rainbowcol3 = colors.Blue,
   rainbowcol4 = colors.Orange,
-  rainbowcol5 = colors.Purple,
-  rainbowcol6 = { fg = util.blend(c.fg, c.light_grey, 0.25) },
-  rainbowcol7 = colors.Red,
+  rainbowcol5 = { fg = util.blend(c.fg, c.green, 0.375) },
+  rainbowcol6 = colors.Purple,
+  rainbowcol7 = colors.Cyan,
 }
 
 hl.plugins.ts_rainbow2 = {
-  TSRainbowRed = colors.Red,
-  TSRainbowYellow = colors.Yellow,
-  TSRainbowBlue = colors.Blue,
-  TSRainbowOrange = colors.Orange,
-  TSRainbowGreen = { fg = util.blend(c.fg, c.light_grey, 0.25) },
-  TSRainbowViolet = colors.Purple,
-  TSRainbowCyan = colors.Cyan,
+  TSRainbowRed = { link = 'rainbowcol1' },
+  TSRainbowYellow = { link = 'rainbowcol2' },
+  TSRainbowBlue = { link = 'rainbowcol3' },
+  TSRainbowOrange = { link = 'rainbowcol4' },
+  TSRainbowGreen = { link = 'rainbowcol5' },
+  TSRainbowViolet = { link = 'rainbowcol6' },
+  TSRainbowCyan = { link = 'rainbowcol7' },
 }
 
 hl.plugins.rainbow_delimiters = {
-  RainbowDelimiterRed = colors.Red,
-  RainbowDelimiterYellow = colors.Yellow,
-  RainbowDelimiterBlue = colors.Blue,
-  RainbowDelimiterOrange = colors.Orange,
-  RainbowDelimiterGreen = { fg = util.blend(c.fg, c.light_grey, 0.25) },
-  RainbowDelimiterViolet = colors.Purple,
-  RainbowDelimiterCyan = colors.Cyan,
+  RainbowDelimiterRed = { link = 'rainbowcol1' },
+  RainbowDelimiterYellow = { link = 'rainbowcol2' },
+  RainbowDelimiterBlue = { link = 'rainbowcol3' },
+  RainbowDelimiterOrange = { link = 'rainbowcol4' },
+  RainbowDelimiterGreen = { link = 'rainbowcol5' },
+  RainbowDelimiterViolet = { link = 'rainbowcol6' },
+  RainbowDelimiterCyan = { link = 'rainbowcol7' },
 }
 
 hl.plugins.indent_blankline = {
