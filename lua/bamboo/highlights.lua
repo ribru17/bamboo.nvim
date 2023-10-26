@@ -226,7 +226,7 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
     ['@symbol'] = { link = '@field' },
     ['@tag'] = colors.Purple,
     ['@tag.attribute'] = colors.Yellow,
-    ['@tag.delimiter'] = colors.Purple,
+    ['@tag.delimiter'] = { link = 'Delimiter' },
     ['@text'] = colors.Fg,
     ['@text.strong'] = { fg = c.fg, fmt = 'bold' },
     ['@text.emphasis'] = { fg = c.fg, fmt = 'italic' },
