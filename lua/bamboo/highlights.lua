@@ -221,6 +221,7 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
     ['@string.regex'] = { fg = c.orange, fmt = cfg.code_style.strings },
     ['@string.escape'] = { fg = c.coral, fmt = cfg.code_style.strings },
     ['@string.escape.markdown_inline'] = { fg = c.coral },
+    ['@string.special'] = { link = 'Special' },
     ['@symbol'] = { link = '@field' },
     ['@tag'] = colors.Purple,
     ['@tag.attribute'] = colors.Yellow,
