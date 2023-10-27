@@ -204,7 +204,7 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
     ['@label'] = { link = 'Label' },
     ['@label.json'] = colors.Red,
     ['@method'] = { link = 'Function' },
-    ['@namespace'] = { fg = util.lighten(c.blue, 0.625) },
+    ['@namespace'] = { fg = util.lighten(c.blue, 0.625), fmt = 'italic' },
     ['@namespace.builtin'] = { link = '@variable.builtin' },
     ['@none'] = colors.Fg,
     ['@number'] = { link = 'Number' },
@@ -345,7 +345,7 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
       ['@lsp.typemod.variable.mutable'] = {
         fg = util.blend(c.fg, c.yellow, 0.625),
       },
-      ['@lsp.typemod.variable.static'] = { link = '@namespace' },
+      ['@lsp.typemod.variable.static'] = { fg = util.lighten(c.blue, 0.625) },
       ['@lsp.typemod.variable.static.rust'] = {},
     }
   end
@@ -371,7 +371,7 @@ else
     TSKeyword = { link = 'Keyword' },
     TSLabel = { link = 'Label' },
     TSMethod = { link = 'Function' },
-    TSNamespace = { fg = util.lighten(c.blue, 0.625) },
+    TSNamespace = { fg = util.lighten(c.blue, 0.625), fmt = 'italic' },
     TSNone = colors.Fg,
     TSNumber = { link = 'Number' },
     TSOperator = { link = 'Operator' },
