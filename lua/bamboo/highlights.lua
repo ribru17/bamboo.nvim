@@ -750,7 +750,7 @@ hl.plugins.mini = {
   MiniCursorword = { fmt = 'underline' },
   MiniCursorwordCurrent = { fmt = 'underline' },
 
-  MiniIndentscopeSymbol = { fg = c.grey },
+  MiniIndentscopeSymbol = { fg = c.light_grey },
   MiniIndentscopePrefix = { fmt = 'nocombine' }, -- Make it invisible
 
   MiniJump = { fg = c.purple, fmt = 'underline', sp = c.purple },
