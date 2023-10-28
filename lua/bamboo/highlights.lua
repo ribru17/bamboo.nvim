@@ -177,6 +177,8 @@ hl.syntax = {
   Todo = { fg = c.black, bg = c.purple, fmt = 'bold' },
 }
 
+-- TODO: move this to the `palette.lua` level
+local light_blue = util.lighten(c.blue, 0.625)
 if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
   hl.treesitter = {
     ['@attribute'] = colors.Cyan,
@@ -204,10 +206,7 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
     ['@label'] = { link = 'Label' },
     ['@label.json'] = colors.Red,
     ['@method'] = { link = 'Function' },
-    ['@namespace'] = {
-      fg = util.lighten(c.blue, 0.625),
-      fmt = cfg.code_style.namespaces,
-    },
+    ['@namespace'] = { fg = light_blue },
     ['@namespace.builtin'] = { link = '@variable.builtin' },
     ['@none'] = colors.Fg,
     ['@number'] = { link = 'Number' },
@@ -301,7 +300,18 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
       ['@lsp.type.macro'] = { link = 'Macro' },
       ['@lsp.type.magicFunction'] = { link = '@function.builtin' },
       ['@lsp.type.method'] = { link = '@method' },
-      ['@lsp.type.namespace'] = { link = '@namespace' },
+      ['@lsp.type.namespace'] = (function()
+        ---@type (string | boolean)[]
+        local tab = { fg = light_blue }
+        if
+          cfg.code_style.namespaces and cfg.code_style.namespaces ~= 'none'
+        then
+          for _, setting in pairs(vim.split(cfg.code_style.namespaces, ',')) do
+            tab[setting] = true
+          end
+        end
+        return tab
+      end)(),
       ['@lsp.type.number'] = { link = '@number' },
       ['@lsp.type.operator'] = { link = '@operator' },
       ['@lsp.type.parameter'] = { link = '@parameter' },
@@ -350,7 +360,7 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
       ['@lsp.typemod.variable.mutable'] = {
         fg = util.blend(c.fg, c.yellow, 0.625),
       },
-      ['@lsp.typemod.variable.static'] = { fg = util.lighten(c.blue, 0.625) },
+      ['@lsp.typemod.variable.static'] = { fg = light_blue },
       ['@lsp.typemod.variable.static.rust'] = {},
     }
   end
@@ -377,7 +387,7 @@ else
     TSLabel = { link = 'Label' },
     TSMethod = { link = 'Function' },
     TSNamespace = {
-      fg = util.lighten(c.blue, 0.625),
+      fg = light_blue,
       fmt = cfg.code_style.namespaces,
     },
     TSNone = colors.Fg,
