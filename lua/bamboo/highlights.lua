@@ -279,6 +279,7 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
       ['@lsp.type.boolean'] = { link = '@boolean' },
       ['@lsp.type.builtinConstant'] = { link = '@constant.builtin' },
       ['@lsp.type.builtinType'] = { link = '@type.builtin' },
+      ['@lsp.type.class.markdown'] = {},
       -- disable comment highlighting, see the following issue:
       -- https://github.com/LuaLS/lua-language-server/issues/1809
       ['@lsp.type.comment'] = {},
