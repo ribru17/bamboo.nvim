@@ -62,6 +62,8 @@ local default_config = {
     conditionals = 'italic',
     keywords = 'none',
     functions = 'none',
+    namespaces = 'italic',
+    parameters = 'italic',
     strings = 'none',
     variables = 'none',
   },

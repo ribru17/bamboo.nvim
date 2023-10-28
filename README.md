@@ -136,6 +136,8 @@ require('bamboo').setup {
     conditionals = 'italic',
     keywords = 'none',
     functions = 'none',
+    namespaces = 'italic',
+    parameters = 'italic',
     strings = 'none',
     variables = 'none',
   },
