@@ -132,7 +132,7 @@ hl.common = {
   TabLineFill = { fg = c.grey, bg = c.bg1 },
   TabLineSel = { fg = c.bg0, bg = c.fg },
   VertSplit = { fg = c.bg3 },
-  Title = colors.Cyan,
+  Title = { fg = c.cyan, fmt = 'bold' },
   Visual = { bg = c.bg3 },
   VisualNOS = { fg = c.none, bg = c.bg2, fmt = 'underline' },
   QuickFixLine = { fg = c.blue, fmt = 'underline' },
