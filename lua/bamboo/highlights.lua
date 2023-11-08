@@ -632,6 +632,8 @@ hl.plugins.lazy = {
   LazyReasonCmd = colors.Green,
   LazyReasonFt = colors.Yellow,
   LazyReasonStart = { fg = c.cyan, fmt = 'bold' },
+  LazyH2 = { fg = c.blue, fmt = 'bold' },
+  LazyUrl = { fg = c.cyan, fmt = 'underline' },
 }
 
 hl.plugins.neo_tree = {
