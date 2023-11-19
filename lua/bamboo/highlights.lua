@@ -848,6 +848,10 @@ hl.plugins.notify = {
   NotifyTRACETitle = { link = 'Comment' },
 }
 
+hl.plugins.matchup = {
+  MatchWord = { fmt = 'underline' }
+}
+
 hl.langs.c = {
   cInclude = colors.Blue,
   cStorageClass = colors.Purple,
