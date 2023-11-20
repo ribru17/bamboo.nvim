@@ -623,6 +623,9 @@ hl.plugins.gitsigns = {
   GitSignsDelete = colors.Red,
   GitSignsDeleteLn = colors.Red,
   GitSignsDeleteNr = colors.Red,
+  GitSignsUntracked = colors.Yellow,
+  GitSignsUntrackedLn = colors.Yellow,
+  GitSignsUntrackedNr = colors.Yellow,
 }
 
 hl.plugins.lazy = {
