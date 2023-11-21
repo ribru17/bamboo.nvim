@@ -633,6 +633,7 @@ hl.plugins.lazy = {
   LazyReasonFt = colors.Yellow,
   LazyReasonSource = colors.Blue,
   LazyReasonStart = { fg = c.cyan, fmt = 'bold' },
+  LazyReasonTask = { fg = c.light_grey, fmt = 'bold' },
   LazyH2 = { fg = c.blue, fmt = 'bold' },
   LazyUrl = { fg = c.cyan, fmt = 'underline' },
 }
