@@ -258,6 +258,7 @@ require('bamboo').setup {
 
 - [onedark.nvim](https://github.com/navarasu/onedark.nvim)
 - [Catppuccin for Neovim](https://github.com/catppuccin/nvim)
+- [tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
 - [tokyodark.nvim](https://github.com/tiagovla/tokyodark.nvim)
 
 ## License
