@@ -42,7 +42,6 @@ function M.toggle()
   else
     vim.o.background = 'dark'
   end
-  vim.cmd('colorscheme bamboo')
 end
 
 local default_config = {
