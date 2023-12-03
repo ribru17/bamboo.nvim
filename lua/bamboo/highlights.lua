@@ -211,7 +211,7 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
     ['@label'] = { link = 'Label' },
     ['@label.json'] = colors.Red,
     ['@method'] = { link = 'Function' },
-    ['@namespace'] = { fg = light_blue },
+    ['@namespace'] = { fg = light_blue, fmt = cfg.code_style.namespaces },
     ['@namespace.builtin'] = { link = '@variable.builtin' },
     ['@number'] = { link = 'Number' },
     ['@operator'] = { link = 'Operator' },
@@ -302,18 +302,7 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
       ['@lsp.type.macro'] = { link = 'Macro' },
       ['@lsp.type.magicFunction'] = { link = '@function.builtin' },
       ['@lsp.type.method'] = { link = '@method' },
-      ['@lsp.type.namespace'] = (function()
-        ---@type (string | boolean)[]
-        local tab = { fg = light_blue }
-        if
-          cfg.code_style.namespaces and cfg.code_style.namespaces ~= 'none'
-        then
-          for _, setting in pairs(vim.split(cfg.code_style.namespaces, ',')) do
-            tab[setting] = true
-          end
-        end
-        return tab
-      end)(),
+      ['@lsp.type.namespace'] = { link = '@namespace' },
       ['@lsp.type.number'] = { link = '@number' },
       ['@lsp.type.operator'] = { link = '@operator' },
       ['@lsp.type.parameter'] = { link = '@parameter' },
