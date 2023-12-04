@@ -75,10 +75,7 @@ hl.common = {
   FloatTitle = colors.Red,
   FloatFooter = colors.LightGrey,
   Terminal = { fg = c.fg, bg = normal_bg },
-  EndOfBuffer = {
-    fg = cfg.ending_tildes and c.bg2 or c.bg0,
-    bg = normal_bg,
-  },
+  EndOfBuffer = { fg = cfg.ending_tildes and c.bg2 or c.bg0 },
   FoldColumn = { fg = c.fg },
   Folded = { fg = c.fg, bg = c.bg1 },
   SignColumn = { fg = c.fg },
@@ -666,10 +663,6 @@ hl.plugins.neotest = {
 hl.plugins.nvim_tree = {
   NvimTreeNormal = { fg = c.fg, bg = normal_bg },
   NvimTreeVertSplit = { fg = c.bg_d, bg = cfg.transparent and c.none or c.bg_d },
-  NvimTreeEndOfBuffer = {
-    fg = cfg.ending_tildes and c.bg2 or c.bg0,
-    bg = normal_bg,
-  },
   NvimTreeRootFolder = { fg = c.orange, fmt = 'bold' },
   NvimTreeGitDirty = colors.Yellow,
   NvimTreeGitNew = colors.Green,
