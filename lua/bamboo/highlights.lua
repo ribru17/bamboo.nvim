@@ -637,6 +637,7 @@ hl.plugins.neo_tree = {
   NeoTreeGitUntracked = { fg = c.red, fmt = 'italic' },
   NeoTreeIndentMarker = colors.Grey,
   NeoTreeSymbolicLinkTarget = colors.Purple,
+  NeoTreeTitleBar = { fg = c.bg0, bg = c.purple },
   NeoTreeFloatTitle = { link = 'FloatTitle' },
   NeoTreeFloatBorder = { link = 'FloatBorder' },
 }
@@ -668,6 +669,7 @@ hl.plugins.nvim_tree = {
   NvimTreeGitNew = colors.Green,
   NvimTreeGitDeleted = colors.Red,
   NvimTreeSpecialFile = { fg = c.yellow, fmt = 'underline' },
+  NvimTreeSignColumn = { fmt = 'nocombine' },
   NvimTreeIndentMarker = colors.Fg,
   NvimTreeImageFile = { fg = c.dark_purple },
   NvimTreeSymlink = colors.Purple,
