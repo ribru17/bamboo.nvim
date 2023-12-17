@@ -64,6 +64,9 @@ local colors = {
 
 local normal_bg = cfg.transparent and c.none or c.bg0
 local dimmable_bg = cfg.dim_inactive and util.darken(c.bg0, 0.875) or normal_bg
+local light_blue = util.lighten(c.blue, 0.625)
+local const_purple = util.blend(c.orange, c.purple, 0.25)
+
 hl.common = {
   Normal = { fg = c.fg, bg = normal_bg },
   NormalNC = {
@@ -157,7 +160,7 @@ hl.syntax = {
   Conditional = { fg = c.purple, fmt = cfg.code_style.conditionals },
   Repeat = { link = 'Keyword' },
   Statement = colors.Purple,
-  Macro = colors.Cyan,
+  Macro = { fg = const_purple },
   Error = colors.Red,
   Label = { fg = c.red, fmt = 'bold' },
   Special = colors.Red,
@@ -176,8 +179,6 @@ hl.syntax = {
   Strike = { fmt = 'strikethrough' },
 }
 
--- TODO: move this to the `palette.lua` level
-local light_blue = util.lighten(c.blue, 0.625)
 if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
   hl.treesitter = {
     ['@attribute'] = colors.Cyan,
@@ -197,7 +198,10 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
     ['@float'] = { link = 'Float' },
     ['@function'] = { link = 'Function' },
     ['@function.builtin'] = { fg = c.orange, fmt = cfg.code_style.functions },
-    ['@function.macro'] = { fg = c.cyan, fmt = cfg.code_style.functions },
+    ['@function.macro'] = {
+      fg = const_purple,
+      fmt = cfg.code_style.functions,
+    },
     ['@include'] = { link = 'Include' },
     ['@keyword'] = { link = 'Keyword' },
     ['@keyword.coroutine'] = { link = 'Keyword' },
@@ -366,7 +370,7 @@ else
     TSFloat = { link = 'Float' },
     TSFunction = { link = 'Function' },
     TSFuncBuiltin = { fg = c.orange, fmt = cfg.code_style.functions },
-    TSFuncMacro = { fg = c.cyan, fmt = cfg.code_style.functions },
+    TSFuncMacro = { fg = const_purple, fmt = cfg.code_style.functions },
     TSInclude = { link = 'Include' },
     TSKeyword = { link = 'Keyword' },
     TSLabel = { link = 'Label' },
