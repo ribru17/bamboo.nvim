@@ -88,7 +88,7 @@ hl.common = {
   ColorColumn = { bg = c.bg1 },
   CursorLineNr = { fg = c.fg },
   LineNr = { fg = c.grey },
-  Conceal = { fg = c.grey, bg = c.bg1 },
+  Conceal = { fg = c.grey },
   DiffAdd = { fg = c.none, bg = c.diff_add },
   DiffChange = { fg = c.none, bg = c.diff_change },
   DiffDelete = { fg = c.none, bg = c.diff_delete },
