@@ -315,6 +315,9 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
         sp = c.red,
       },
       ['@lsp.type.variable'] = {}, -- use treesitter styles for regular variables
+      -- ...except for rust, which benefits from this (the above is mostly only
+      -- an issue with interpreted languages)
+      ['@lsp.type.variable.rust'] = colors.Fg,
       ['@lsp.typemod.class.defaultLibrary'] = { link = '@type.builtin' },
       ['@lsp.typemod.enum.defaultLibrary'] = { link = '@type.builtin' },
       ['@lsp.typemod.enumMember.defaultLibrary'] = {
