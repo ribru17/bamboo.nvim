@@ -329,7 +329,7 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
       ['@lsp.typemod.method.readonly'] = { link = '@method' },
       ['@lsp.typemod.operator.injected'] = { link = '@operator' },
       ['@lsp.typemod.parameter.mutable'] = {
-        fg = util.blend(c.yellow, c.coral, 0.375),
+        fg = util.blend(c.purple, c.coral, 0.2),
       },
       ['@lsp.typemod.parameter.readonly'] = {
         fg = util.blend(c.yellow, c.coral, 0.375),
@@ -347,7 +347,7 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
       ['@lsp.typemod.variable.global'] = { link = '@variable.global' },
       ['@lsp.typemod.variable.injected'] = { link = '@variable' },
       ['@lsp.typemod.variable.mutable'] = {
-        fg = util.blend(c.fg, c.yellow, 0.625),
+        fg = util.blend(c.fg, c.green, 0.625),
       },
       ['@lsp.typemod.variable.static'] = { fg = light_blue },
       ['@lsp.typemod.variable.static.rust'] = {},
