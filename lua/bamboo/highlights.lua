@@ -88,7 +88,7 @@ hl.common = {
   CursorIM = { link = 'Cursor' },
   CursorColumn = { link = 'CursorLine' },
   CursorLine = { bg = c.bg1 },
-  ColorColumn = { bg = c.bg1 },
+  ColorColumn = { bg = util.blend(c.bg1, c.green, 0.875) },
   CursorLineNr = { fg = c.fg },
   LineNr = { fg = c.grey },
   Conceal = { fg = c.grey },
