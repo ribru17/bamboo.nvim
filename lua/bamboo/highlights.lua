@@ -304,6 +304,8 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
       ['@lsp.type.namespace'] = { link = '@namespace' },
       ['@lsp.type.number'] = { link = '@number' },
       ['@lsp.type.operator'] = { link = '@operator' },
+      -- don't highlight cpp operators, the LSP is too generous with these
+      ['@lsp.type.operator.cpp'] = {},
       ['@lsp.type.parameter'] = { link = '@parameter' },
       ['@lsp.type.property'] = { link = '@property' },
       ['@lsp.type.selfKeyword'] = { link = '@variable.builtin' },
