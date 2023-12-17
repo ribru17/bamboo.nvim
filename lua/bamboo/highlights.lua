@@ -280,6 +280,7 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
       ['@lsp.mod.readonly'] = { link = '@constant' },
       ['@lsp.mod.typeHint'] = { link = '@type' },
       ['@lsp.type.boolean'] = { link = '@boolean' },
+      ['@lsp.type.builtinAttribute'] = { link = '@attribute' },
       ['@lsp.type.builtinConstant'] = { link = '@constant.builtin' },
       ['@lsp.type.builtinType'] = { link = '@type.builtin' },
       ['@lsp.type.class.markdown'] = {},
@@ -325,6 +326,8 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
       },
       ['@lsp.typemod.function.defaultLibrary'] = { link = '@function.builtin' },
       ['@lsp.typemod.function.readonly'] = { link = '@method' },
+      -- For things like `#![allow(unused_variables, unused_mut)]` in Rust
+      ['@lsp.typemod.generic.attribute'] = { link = '@keyword' },
       ['@lsp.typemod.keyword.async'] = { link = '@keyword.coroutine' },
       ['@lsp.typemod.keyword.injected'] = { link = '@keyword' },
       ['@lsp.typemod.macro.defaultLibrary'] = { link = '@function.builtin' },
