@@ -360,6 +360,9 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
       },
       ['@lsp.typemod.variable.static'] = { fg = light_blue },
       ['@lsp.typemod.variable.static.rust'] = {},
+      -- workaround to get good static variable highlights in rust
+      ['@lsp.mod.static.rust'] = { link = '@lsp.typemod.variable.static' },
+      ['@lsp.typemod.method.static.rust'] = { link = '@function' },
     }
   end
 else
