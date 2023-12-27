@@ -628,6 +628,7 @@ hl.plugins.gitsigns = {
 }
 
 hl.plugins.lazy = {
+  LazyReasonColorscheme = { fg = light_blue },
   LazyReasonCmd = colors.Green,
   LazyReasonFt = colors.Yellow,
   LazyReasonSource = colors.Blue,
