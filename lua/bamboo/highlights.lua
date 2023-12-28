@@ -166,7 +166,7 @@ hl.syntax = {
   Special = colors.Red,
   SpecialChar = { link = 'Special' },
   Function = { fg = c.blue, fmt = cfg.code_style.functions },
-  Operator = { fg = util.blend(c.fg, c.purple, 0.25) },
+  Operator = { fg = util.blend(c.fg, c.purple, 0.375) },
   Tag = colors.Blue,
   Delimiter = colors.LightGrey,
   Comment = { fg = c.grey, fmt = cfg.code_style.comments },
