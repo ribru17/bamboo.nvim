@@ -187,6 +187,7 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
     ['@character'] = { link = 'Character' },
     ['@comment'] = { fg = c.bg_yellow, fmt = cfg.code_style.comments },
     ['@conditional'] = { link = 'Conditional' },
+    ['@conditional.ternary'] = { link = 'Operator' },
     ['@constant'] = { link = 'Constant' },
     ['@constant.builtin'] = { link = 'Constant' },
     ['@constant.macro'] = { link = 'Constant' },
