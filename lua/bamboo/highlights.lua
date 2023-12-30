@@ -634,7 +634,8 @@ hl.plugins.lazy = {
   LazyReasonStart = { fg = c.cyan, fmt = 'bold' },
   LazyReasonTask = { fg = c.light_grey, fmt = 'bold' },
   LazyH2 = { fg = c.blue, fmt = 'bold' },
-  LazyUrl = { fg = c.cyan, fmt = 'underline' },
+  -- Lazy requires a late Neovim version, so this is OK.
+  LazyUrl = { link = '@text.uri' },
 }
 
 hl.plugins.neo_tree = {
