@@ -403,7 +403,7 @@ else
     TSStringEscape = { fg = c.coral },
     TSSymbol = { link = 'TSField' },
     TSTag = colors.Purple,
-    TSTagDelimiter = colors.Purple,
+    TSTagDelimiter = { link = 'Delimiter' },
     TSText = colors.Fg,
     TSStrong = { fg = c.fg, fmt = 'bold' },
     TSEmphasis = { fg = c.fg, fmt = 'italic' },
