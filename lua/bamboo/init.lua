@@ -85,7 +85,7 @@ local default_config = {
 }
 
 ---Setup bamboo.nvim options, without applying colorscheme
----@param opts table: a table containing options
+---@param opts table?: a table containing options
 function M.setup(opts)
   if not vim.g.bamboo_config or not vim.g.bamboo_config.loaded then -- if it's the first time setup() is called
     vim.g.bamboo_config =
