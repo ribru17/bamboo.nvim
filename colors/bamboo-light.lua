@@ -4,6 +4,6 @@ for k in pairs(package.loaded) do
   end
 end
 
-vim.opt.background = 'light'
-require('bamboo').setup { style = 'light' }
+require('bamboo').set_options('style', 'light')
+vim.o.background = 'light'
 require('bamboo').colorscheme()
