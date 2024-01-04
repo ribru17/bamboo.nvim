@@ -20,8 +20,8 @@ syntax highlighting, upgrade to Neovim 0.8.0 or later, built with Tree-sitter
   - Light mode only applies when `vim.o.background = 'light'` (can also use
     `set background=light`)
 - Multiple plugins are supported with hand-picked, proper colors
-- Colors, highlights, and code style of the theme can be customized as you
-  like (refer to [Customization](#customization))
+- Colors, highlights, and code style of the theme can be customized as you like
+  (refer to [Customization](#customization))
 - Integration with other applications (see the
   [`extras`](https://github.com/ribru17/bamboo.nvim/tree/master/extras)
   directory)
@@ -60,6 +60,7 @@ syntax highlighting, upgrade to Neovim 0.8.0 or later, built with Tree-sitter
 <!-- End of previews. -->
 
 > [!NOTE]
+>
 > The above screenshots utilize Tree-sitter parsers for `lua`, `markdown`,
 > `markdown_inline`, `mermaid`, and `latex`.
 
@@ -97,8 +98,9 @@ Install via your favorite package manager:
 ```
 
 > [!TIP]
-> For best results, use (rounded) borders for float windows (or change
-> their background to a slightly different color than the main editor background).
+>
+> For best results, use (rounded) borders for float windows (or change their
+> background to a slightly different color than the main editor background).
 
 ## Configuration
 
