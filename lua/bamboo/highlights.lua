@@ -312,17 +312,17 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
       link = '@markup.strike.markdown_inline',
     },
     ['@markup.strike.markdown_inline'] = {
-      fg = c.purple,
+      fg = c.orange,
       fmt = 'strikethrough',
     },
     ['@text.strong.markdown_inline'] = {
       link = '@markup.strong.markdown_inline',
     },
-    ['@markup.strong.markdown_inline'] = { fg = c.purple, fmt = 'bold' },
+    ['@markup.strong.markdown_inline'] = { fg = c.orange, fmt = 'bold' },
     ['@text.emphasis.markdown_inline'] = {
       link = '@markup.emphasis.markdown_inline',
     },
-    ['@markup.emphasis.markdown_inline'] = { fg = c.purple, fmt = 'italic' },
+    ['@markup.emphasis.markdown_inline'] = { fg = c.orange, fmt = 'italic' },
     ['@text.quote'] = { link = '@markup.quote' },
     ['@markup.quote'] = { fg = util.blend(c.fg, c.light_grey, 0.5) },
     ['@type'] = { link = 'Type' },
