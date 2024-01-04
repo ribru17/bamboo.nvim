@@ -296,7 +296,7 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
     ['@text.warning'] = { link = '@comment.warning' },
     ['@comment.warning'] = { fg = c.black, bg = c.orange, fmt = 'bold' },
     ['@text.math'] = { link = '@markup.math' },
-    ['@markup.math'] = colors.Blue,
+    ['@markup.math'] = { fg = light_blue },
     ['@text.reference'] = { link = '@markup.link' },
     ['@markup.link'] = { link = 'Tag' },
     ['@text.environment'] = { link = '@markup.environment' },
