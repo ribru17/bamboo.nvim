@@ -3,11 +3,12 @@
 <plist version="1.0">
 <dict>
 	<key>author</key>
-	<string>terminal.sexy</string>
+	<string>Riley Bruins (https://github.com/ribru17)</string>
 	<key>name</key>
-	<string>terminal.sexy</string>
+	<string>bamboo</string>
 	<key>semanticClass</key>
-	<string>terminal.sexy</string>
+	<!-- Is this fine? -->
+	<string>ribru17.bamboo</string>
 	<key>colorSpaceName</key>
 	<string>sRGB</string>
 	<key>gutterSettings</key>
@@ -527,6 +528,6 @@
 		</dict>
 	</array>
 	<key>uuid</key>
-	<string>terminal-dot-sexy</string>
+	<string>9ed6a24b-6be2-4753-8b3c-faf8fa5c3bb3</string>
 </dict>
 </plist>
