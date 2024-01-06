@@ -63,9 +63,9 @@ local colors = {
 }
 
 local normal_bg = cfg.transparent and c.none or c.bg0
-local dimmable_bg = cfg.dim_inactive and util.darken(c.bg0, 0.875) or normal_bg
-local light_blue = util.lighten(c.blue, 0.625)
-local const_purple = util.blend(c.orange, c.purple, 0.25)
+local dimmable_bg = cfg.dim_inactive and util.darken(c.bg0, 0.125) or normal_bg
+local light_blue = util.lighten(c.blue, 0.375)
+local const_purple = util.blend(c.purple, c.orange, 0.25)
 
 hl.common = {
   Normal = { fg = c.fg, bg = normal_bg },
@@ -88,7 +88,7 @@ hl.common = {
   CursorIM = { link = 'Cursor' },
   CursorColumn = { link = 'CursorLine' },
   CursorLine = { bg = c.bg1 },
-  ColorColumn = { bg = util.blend(c.bg1, c.green, 0.875) },
+  ColorColumn = { bg = util.blend(c.bg1, c.green, 0.125) },
   CursorLineNr = { fg = c.fg },
   LineNr = { fg = c.grey },
   Conceal = { fg = c.grey },
@@ -166,7 +166,7 @@ hl.syntax = {
   Special = colors.Red,
   SpecialChar = { link = 'Special' },
   Function = { fg = c.blue, fmt = cfg.code_style.functions },
-  Operator = { fg = util.blend(c.fg, c.purple, 0.375) },
+  Operator = { fg = util.blend(c.purple, c.fg, 0.375) },
   Tag = colors.Blue,
   Delimiter = colors.LightGrey,
   Comment = { fg = c.grey, fmt = cfg.code_style.comments },
@@ -331,7 +331,7 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
     ['@variable'] = { fg = c.fg, fmt = cfg.code_style.variables },
     ['@variable.builtin'] = { fg = c.red, fmt = cfg.code_style.variables },
     ['@variable.global'] = {
-      fg = util.lighten(c.red, 0.625),
+      fg = util.lighten(c.red, 0.375),
       fmt = cfg.code_style.variables,
     },
   }
@@ -397,10 +397,10 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
       ['@lsp.typemod.method.readonly'] = { link = '@function.method' },
       ['@lsp.typemod.operator.injected'] = { link = '@operator' },
       ['@lsp.typemod.parameter.mutable'] = {
-        fg = util.blend(c.purple, c.coral, 0.2),
+        fg = util.blend(c.coral, c.purple, 0.2),
       },
       ['@lsp.typemod.parameter.readonly'] = {
-        fg = util.blend(c.yellow, c.coral, 0.375),
+        fg = util.blend(c.coral, c.yellow, 0.375),
       },
       ['@lsp.typemod.property.readonly'] = {
         fg = util.blend(c.cyan, c.green, 0.5),
@@ -415,7 +415,7 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
       ['@lsp.typemod.variable.global'] = { link = '@variable.global' },
       ['@lsp.typemod.variable.injected'] = { link = '@variable' },
       ['@lsp.typemod.variable.mutable'] = {
-        fg = util.blend(c.fg, c.green, 0.625),
+        fg = util.blend(c.fg, c.green, 0.375),
       },
       ['@lsp.typemod.variable.static'] = { fg = light_blue },
       ['@lsp.typemod.variable.static.rust'] = {},
@@ -507,25 +507,25 @@ hl.plugins.lsp = {
 
   DiagnosticVirtualTextError = {
     bg = cfg.diagnostics.background
-        and util.darken(diagnostics_error_color, 0.1, c.bg0)
+        and util.darken(diagnostics_error_color, 0.9, c.bg0)
       or c.none,
     fg = diagnostics_error_color,
   },
   DiagnosticVirtualTextWarn = {
     bg = cfg.diagnostics.background
-        and util.darken(diagnostics_warn_color, 0.1, c.bg0)
+        and util.darken(diagnostics_warn_color, 0.9, c.bg0)
       or c.none,
     fg = diagnostics_warn_color,
   },
   DiagnosticVirtualTextInfo = {
     bg = cfg.diagnostics.background
-        and util.darken(diagnostics_info_color, 0.1, c.bg0)
+        and util.darken(diagnostics_info_color, 0.9, c.bg0)
       or c.none,
     fg = diagnostics_info_color,
   },
   DiagnosticVirtualTextHint = {
     bg = cfg.diagnostics.background
-        and util.darken(diagnostics_hint_color, 0.1, c.bg0)
+        and util.darken(diagnostics_hint_color, 0.9, c.bg0)
       or c.none,
     fg = diagnostics_hint_color,
   },
@@ -639,7 +639,7 @@ hl.plugins.gitgutter = {
 hl.plugins.hop = {
   HopNextKey = { fg = c.red, fmt = 'bold' },
   HopNextKey1 = { fg = c.cyan, fmt = 'bold' },
-  HopNextKey2 = { fg = util.darken(c.blue, 0.7) },
+  HopNextKey2 = { fg = util.darken(c.blue, 0.3) },
   HopUnmatched = colors.Grey,
 }
 
@@ -793,7 +793,7 @@ hl.plugins.ts_rainbow = {
   rainbowcol2 = colors.Yellow,
   rainbowcol3 = colors.Blue,
   rainbowcol4 = colors.Orange,
-  rainbowcol5 = { fg = util.blend(c.fg, c.green, 0.375) },
+  rainbowcol5 = { fg = util.blend(c.green, c.fg, 0.375) },
   rainbowcol6 = colors.Purple,
   rainbowcol7 = colors.Cyan,
 }
