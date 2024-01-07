@@ -66,6 +66,7 @@ local normal_bg = cfg.transparent and c.none or c.bg0
 local dimmable_bg = cfg.dim_inactive and util.darken(c.bg0, 0.125) or normal_bg
 local light_blue = util.lighten(c.blue, 0.375)
 local const_purple = util.blend(c.purple, c.orange, 0.25)
+local light_purple = util.blend(c.purple, c.fg, 0.375)
 
 hl.common = {
   Normal = { fg = c.fg, bg = normal_bg },
@@ -166,7 +167,7 @@ hl.syntax = {
   Special = colors.Red,
   SpecialChar = { link = 'Special' },
   Function = { fg = c.blue, fmt = cfg.code_style.functions },
-  Operator = { fg = util.blend(c.purple, c.fg, 0.375) },
+  Operator = { fg = light_purple },
   Tag = colors.Blue,
   Delimiter = colors.LightGrey,
   Comment = { fg = c.grey, fmt = cfg.code_style.comments },
@@ -1020,34 +1021,34 @@ local lsp_kind_icons_color = {
   Color = c.green,
   Constant = c.orange,
   Constructor = c.blue,
-  Enum = c.purple,
-  EnumMember = c.yellow,
+  Enum = c.yellow,
+  EnumMember = c.orange,
   Event = c.yellow,
-  Field = c.purple,
-  File = c.blue,
-  Folder = c.orange,
+  Field = c.cyan,
+  File = c.green,
+  Folder = light_blue,
   Function = c.blue,
   Interface = c.green,
   Key = c.cyan,
-  Keyword = c.cyan,
+  Keyword = c.purple,
   Method = c.blue,
-  Module = c.orange,
-  Namespace = c.red,
+  Module = light_blue,
+  Namespace = light_blue,
   Null = c.grey,
   Number = c.orange,
   Object = c.red,
-  Operator = c.red,
+  Operator = light_purple,
   Package = c.yellow,
   Property = c.cyan,
   Reference = c.orange,
-  Snippet = c.red,
+  Snippet = const_purple,
   String = c.green,
-  Struct = c.purple,
+  Struct = c.yellow,
   Text = c.light_grey,
-  TypeParameter = c.red,
-  Unit = c.green,
+  TypeParameter = c.coral,
+  Unit = c.yellow,
   Value = c.orange,
-  Variable = c.purple,
+  Variable = c.red,
 }
 
 function M.setup()
@@ -1060,6 +1061,10 @@ function M.setup()
     hl.plugins.outline['Aerial' .. kind .. 'Icon'] = { fg = color }
     hl.plugins.navic['NavicIcons' .. kind] = { fg = color }
   end
+  -- custom, specific overrides
+  hl.plugins.cmp['CmpItemKindSnippet'].fmt = cfg.cmp_itemkind_reverse
+      and 'italic,reverse'
+    or 'italic'
 
   vim_highlights(hl.common)
   vim_highlights(hl.syntax)
