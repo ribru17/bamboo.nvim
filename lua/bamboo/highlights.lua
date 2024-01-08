@@ -133,6 +133,7 @@ hl.common = {
   Visual = { bg = c.bg3 },
   VisualNOS = { fg = c.none, bg = c.bg2, fmt = 'underline' },
   WinSeparator = { fg = c.bg3 },
+  WinBarNC = { link = 'WinBar' },
   QuickFixLine = { fg = c.blue, fmt = 'underline' },
   Debug = { fg = c.orange },
   debugPC = { fg = c.bg0, bg = c.green },
