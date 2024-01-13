@@ -355,6 +355,7 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
       ['@lsp.type.enum'] = { link = '@type' },
       ['@lsp.type.enumMember'] = { link = '@constant' },
       ['@lsp.type.escapeSequence'] = { link = '@string.escape' },
+      ['@lsp.type.event'] = { link = 'Label' },
       ['@lsp.type.formatSpecifier'] = { link = '@punctuation.special' },
       ['@lsp.type.generic'] = { link = '@markup' },
       ['@lsp.type.interface'] = { link = '@type' },
