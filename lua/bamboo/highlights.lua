@@ -305,11 +305,11 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
     ['@markup.environment'] = { fg = c.cyan, fmt = 'bold' },
     ['@text.environment.name'] = { link = '@markup.environment.name' },
     ['@markup.environment.name'] = colors.Yellow,
-    -- TODO: add diff.delta
     ['@text.diff.add'] = { link = '@diff.plus' },
     ['@diff.plus'] = { link = 'DiffAdd' },
     ['@text.diff.delete'] = { link = '@diff.minus' },
     ['@diff.minus'] = { link = 'DiffDelete' },
+    ['@diff.delta'] = { link = 'DiffChange' },
     ['@text.strike.markdown_inline'] = {
       link = '@markup.strike.markdown_inline',
     },
