@@ -489,6 +489,8 @@ else
   }
 end
 
+hl.treesitter.TreesitterContext = { bg = c.bg1 }
+
 local diagnostics_error_color = cfg.diagnostics.darker and c.dark_red or c.red
 local diagnostics_hint_color = cfg.diagnostics.darker and c.dark_purple
   or c.purple
