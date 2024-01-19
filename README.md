@@ -31,8 +31,8 @@ syntax highlighting, upgrade to Neovim 0.8.0 or later, built with Tree-sitter
 <details open>
 <summary>Click to toggle previews</summary>
 
-![bamboomdshowcase](https://github.com/ribru17/bamboo.nvim/assets/55766287/c2ce1883-d4ad-4ae0-a248-ef668d69aa87)
-![bamboocodeshowcase](https://github.com/ribru17/bamboo.nvim/assets/55766287/5eb2c125-13cd-46d6-841a-8af3f4406fc1)
+![bamboomdshowcase](https://github.com/ribru17/bamboo.nvim/assets/55766287/815631da-853c-40ad-8e00-ce36bd442856)
+![bamboocodeshowcase](https://github.com/ribru17/bamboo.nvim/assets/55766287/e605d574-3304-40f9-a483-4cb58b3857ed)
 
 </details>
 
@@ -41,8 +41,8 @@ syntax highlighting, upgrade to Neovim 0.8.0 or later, built with Tree-sitter
 <details>
 <summary>Click to toggle previews</summary>
 
-![bamboomultiplexshowcase](https://github.com/ribru17/bamboo.nvim/assets/55766287/e7bb8d9a-95ee-43e4-bcfe-3727ec90fcdd)
-![bamboomultiplexshowcasecode](https://github.com/ribru17/bamboo.nvim/assets/55766287/6fdb0335-e9bd-4f73-bfba-12e55ddd91f0)
+![bamboomultiplexmdshowcase](https://github.com/ribru17/bamboo.nvim/assets/55766287/a9b1ebd1-9347-44fb-bea2-76245cd29727)
+![bamboomultiplexcodeshowcase](https://github.com/ribru17/bamboo.nvim/assets/55766287/71315cf6-cd0a-4480-85f1-f56c6944ebb2)
 
 </details>
 
@@ -51,8 +51,8 @@ syntax highlighting, upgrade to Neovim 0.8.0 or later, built with Tree-sitter
 <details>
 <summary>Click to toggle previews</summary>
 
-![bamboolightshowcasemd](https://github.com/ribru17/bamboo.nvim/assets/55766287/cee8b8f7-36b3-41af-8d15-ab646bce89d4)
-![bamboolightshowcasecode](https://github.com/ribru17/bamboo.nvim/assets/55766287/1842892f-4c40-4d83-a5ea-edd2c30895dc)
+![bamboolightmdshowcase](https://github.com/ribru17/bamboo.nvim/assets/55766287/63f2b9e7-085f-4b32-bded-6573ef91eea1)
+![bamboolightcodeshowcase](https://github.com/ribru17/bamboo.nvim/assets/55766287/f65dda17-caea-4906-a638-00c8e5073eed)
 
 </details>
 <br/>
@@ -61,7 +61,7 @@ syntax highlighting, upgrade to Neovim 0.8.0 or later, built with Tree-sitter
 
 > [!NOTE]
 >
-> The above screenshots utilize Tree-sitter parsers for `lua`, `markdown`,
+> The above screenshots utilize Tree-sitter parsers for `lua`, `luap`, `markdown`,
 > `markdown_inline`, `mermaid`, and `latex`.
 
 The `lua` file screenshot also uses a custom query to highlight the `vim` global
