@@ -291,9 +291,10 @@ if vim.api.nvim_call_function('has', { 'nvim-0.8' }) == 1 then
     ['@markup.list.checked'] = { fg = c.yellow, fmt = 'bold' },
     ['@text.todo.unchecked'] = { link = '@markup.list.unchecked' },
     ['@markup.list.unchecked'] = { fg = c.light_grey, fmt = 'bold' },
-    -- TODO: Add hint, info, ok
     ['@text.note'] = { link = '@comment.note' },
     ['@comment.note'] = { fg = c.black, bg = c.blue, fmt = 'bold' },
+    ['@comment.hint'] = { fg = c.black, bg = c.blue, fmt = 'bold' },
+    ['@comment.info'] = { fg = c.black, bg = c.blue, fmt = 'bold' },
     ['@text.danger'] = { link = '@comment.error' },
     ['@comment.error'] = { fg = c.black, bg = c.red, fmt = 'bold' },
     ['@text.warning'] = { link = '@comment.warning' },
