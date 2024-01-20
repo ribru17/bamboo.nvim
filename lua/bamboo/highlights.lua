@@ -257,6 +257,7 @@ hl.treesitter = {
   ['@markup.heading.6'] = { fg = c.purple, fmt = 'bold' },
   ['@markup.heading.6.marker'] = { link = '@markup.heading' },
   ['@markup.raw'] = colors.Green,
+  ['@markup.raw.delimiter'] = colors.LightGrey,
   ['@string.special.url'] = { fg = c.cyan, fmt = 'underline,italic' },
   ['@markup.link.url'] = { fg = c.cyan, fmt = 'underline,italic' },
   ['@comment.todo'] = { link = 'Todo' },
