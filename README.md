@@ -61,8 +61,8 @@ syntax highlighting, upgrade to Neovim 0.8.0 or later, built with Tree-sitter
 
 > [!NOTE]
 >
-> The above screenshots utilize Tree-sitter parsers for `lua`, `luap`, `markdown`,
-> `markdown_inline`, `mermaid`, and `latex`.
+> The above screenshots utilize Tree-sitter parsers for `lua`, `luap`,
+> `comment`, `markdown`, `markdown_inline`, `mermaid`, and `latex`.
 
 The `lua` file screenshot also uses a custom query to highlight the `vim` global
 as a builtin variable rather than a constant, changing it from pink to red. If
