@@ -1,13 +1,12 @@
 # bamboo.nvim
 
-Dark green theme for Neovim $\ge$ 0.5 forked from
+Dark green theme for Neovim $\ge$ 0.9 forked from
 [OneDark.nvim](https://github.com/navarasu/onedark.nvim). Theme written in Lua
 with [Tree-sitter](https://github.com/nvim-treesitter/nvim-treesitter) syntax
 highlighting and LSP semantic highlighting.
 
-_For latest [Tree-sitter](https://github.com/nvim-treesitter/nvim-treesitter)
-syntax highlighting, upgrade to Neovim 0.8.0 or later, built with Tree-sitter
-0.20.3+._
+_For earlier versions of Neovim and/or Tree-sitter, pin the color scheme to
+[this commit](https://github.com/ribru17/bamboo.nvim/commit/4bec1243b0681c9f43cb2a4b7a750af07d41f543)._
 
 ## Features
 
