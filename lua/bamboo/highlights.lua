@@ -209,7 +209,6 @@ hl.treesitter = {
   ['@keyword.coroutine'] = { link = 'Keyword' },
   ['@keyword.operator'] = { link = 'Keyword' },
   ['@label'] = { link = 'Label' },
-  ['@label.json'] = colors.Red,
   ['@function.method'] = { link = 'Function' },
   ['@module'] = { fg = light_blue, fmt = cfg.code_style.namespaces },
   ['@module.builtin'] = { link = '@variable.builtin' },
