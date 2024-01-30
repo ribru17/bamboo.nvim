@@ -50,6 +50,8 @@
 			<string>variable.parameter.function</string>
 			<key>settings</key>
 			<dict>
+				<key>fontStyle</key>
+				<string>italic</string>
 				<key>foreground</key>
 				<string>#f08080</string>
 			</dict>
@@ -67,20 +69,20 @@
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>Punctuation</string>
+			<string>Delimiters</string>
 			<key>scope</key>
-			<string>punctuation.definition.string, punctuation.definition.variable, punctuation.definition.string, punctuation.definition.parameters, punctuation.definition.string, punctuation.definition.array</string>
+			<string>punctuation.separator.key-value</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#8fb573</string>
+				<string>#838781</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>Delimiters</string>
+			<string>Delimiters Lua</string>
 			<key>scope</key>
-			<string>none</string>
+			<string>punctuation.separator.key-value.lua</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -102,7 +104,7 @@
 			<key>name</key>
 			<string>Field</string>
 			<key>scope</key>
-			<string>string.unquoted.key</string>
+			<string>string.unquoted.key, meta.property, meta.object.member.js, meta.object-literal.key</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -146,7 +148,7 @@
 			<key>name</key>
 			<string>Functions</string>
 			<key>scope</key>
-			<string>entity.name.function, meta.require, support.function.any-method</string>
+			<string>meta.decorator variable.other.readwrite, entity.name.function, variable.function, entity.name.method, meta.class-method, meta.require, support.function.any-method</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -210,9 +212,9 @@
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>Strings, Inherited Class</string>
+			<string>Strings</string>
 			<key>scope</key>
-			<string>string, constant.other.symbol, entity.other.inherited-class</string>
+			<string>string</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -322,11 +324,24 @@
 			<key>name</key>
 			<string>Headings</string>
 			<key>scope</key>
-			<string>markup.heading punctuation.definition.heading, entity.name.section</string>
+			<string>markup.heading, entity.name.section</string>
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
-				<string></string>
+				<string>bold</string>
+				<key>foreground</key>
+				<string>#e75a7c</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Headings</string>
+			<key>scope</key>
+			<string>punctuation.definition.heading</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>bold</string>
 				<key>foreground</key>
 				<string>#ff9966</string>
 			</dict>
@@ -352,7 +367,7 @@
 				<key>fontStyle</key>
 				<string>bold</string>
 				<key>foreground</key>
-				<string>#8fb573</string>
+				<string>#ff9966</string>
 			</dict>
 		</dict>
 		<dict>
@@ -365,7 +380,7 @@
 				<key>fontStyle</key>
 				<string>italic</string>
 				<key>foreground</key>
-				<string>#70c2be</string>
+				<string>#ff9966</string>
 			</dict>
 		</dict>
 		<dict>
@@ -383,33 +398,22 @@
 			<key>name</key>
 			<string>Link Text</string>
 			<key>scope</key>
-			<string>string.other.link</string>
+			<string>string.other.link, meta.link</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#5b5e5a</string>
+				<string>#57a5e5</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>name</key>
 			<string>Link Url</string>
 			<key>scope</key>
-			<string>meta.link</string>
+			<string>markup.underline.link</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
 				<string>#70c2be</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Lists</string>
-			<key>scope</key>
-			<string>markup.list</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#5b5e5a</string>
 			</dict>
 		</dict>
 		<dict>
@@ -420,7 +424,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#e75a7c</string>
+				<string>#b1a992</string>
 			</dict>
 		</dict>
 		<dict>
