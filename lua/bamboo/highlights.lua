@@ -237,6 +237,7 @@ hl.treesitter = {
   ['@markup.heading.5.marker'] = { link = '@markup.heading' },
   ['@markup.heading.6'] = { fg = c.purple, fmt = 'bold' },
   ['@markup.heading.6.marker'] = { link = '@markup.heading' },
+  ['@markup.heading.gitcommit'] = { fg = c.orange },
   ['@markup.italic'] = { fg = c.fg, fmt = 'italic' },
   ['@markup.italic.markdown_inline'] = { fg = c.orange, fmt = 'italic' },
   ['@markup.link'] = { link = 'Tag' },
