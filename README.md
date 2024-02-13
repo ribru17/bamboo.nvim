@@ -68,13 +68,11 @@ as a builtin variable rather than a constant, changing it from pink to red. If
 you want this behavior, add the following to a `queries/lua/highlights.scm` file
 in your config directory (the `extends` comment is necessary):
 
-```scheme
-;; extends
-(
- (identifier) @variable.builtin
- (#any-of? @variable.builtin "vim")
- (#set! "priority" 128)
-)
+```query
+; extends
+((identifier) @variable.builtin
+  (#eq? @variable.builtin "vim")
+  (#set! "priority" 128))
 ```
 
 ## Installation
@@ -132,17 +130,17 @@ require('bamboo').setup {
   cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
 
   -- Change code style ---
-  -- Options are italic, bold, underline, none
-  -- You can configure multiple style with comma separated, For e.g., keywords = 'italic,bold'
+  -- Options are anything that can be passed to the `vim.api.nvim_set_hl` table
+  -- You can also configure styles with a string, e.g. keywords = 'italic,bold'
   code_style = {
-    comments = 'italic',
-    conditionals = 'italic',
-    keywords = 'none',
-    functions = 'none',
-    namespaces = 'italic',
-    parameters = 'italic',
-    strings = 'none',
-    variables = 'none',
+    comments = { italic = true },
+    conditionals = { italic = true },
+    keywords = {},
+    functions = {},
+    namespaces = { italic = true },
+    parameters = { italic = true },
+    strings = {},
+    variables = {},
   },
 
   -- Lualine options --

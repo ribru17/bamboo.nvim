@@ -1,52 +1,35 @@
 local c = require('bamboo.colors')
 local cfg = vim.g.bamboo_config
 local util = require('bamboo.util')
+local set_hl = vim.api.nvim_set_hl
 
 local M = {}
 local hl = { langs = {}, plugins = {} }
 
-local function vim_highlights_nvim070(highlights)
+local function vim_highlights(highlights)
   for group_name, group_settings in pairs(highlights) do
-    ---@type (string | integer)[]
-    local settings = {
-      fg = group_settings.fg or 'none',
-      bg = group_settings.bg or 'none',
-      sp = group_settings.sp or 'none',
-      link = group_settings.link or nil,
-    }
-    if group_settings.fmt and group_settings.fmt ~= 'none' then
-      for _, setting in pairs(vim.split(group_settings.fmt, ',')) do
-        settings[setting] = 1
+    set_hl(0, group_name, group_settings)
+  end
+end
+
+-- apply user styles
+for group_name, group_settings in pairs(cfg.code_style) do
+  ---@type (string | boolean)[]
+  local settings = {}
+  if group_settings then
+    if
+      type(group_settings) == 'string'
+      and group_settings ~= 'none'
+      and group_settings ~= ''
+    then
+      for _, setting in pairs(vim.split(group_settings, ',')) do
+        settings[setting] = true
       end
-    end
-    vim.api.nvim_set_hl(0, group_name, settings)
-  end
-end
-
-local function vim_highlights_prior_to_nvim070(highlights)
-  for group_name, group_settings in pairs(highlights) do
-    if group_settings.link then
-      vim.cmd(
-        string.format('highlight! link %s %s', group_name, group_settings.link)
-      )
-    else
-      vim.cmd(
-        string.format(
-          'highlight %s guifg=%s guibg=%s guisp=%s gui=%s',
-          group_name,
-          group_settings.fg or 'none',
-          group_settings.bg or 'none',
-          group_settings.sp or 'none',
-          group_settings.fmt or 'none'
-        )
-      )
+    elseif type(group_settings) == 'table' then
+      settings = group_settings
     end
   end
-end
-
-local vim_highlights = vim_highlights_prior_to_nvim070
-if vim.fn.has('nvim-0.7.0') then
-  vim_highlights = vim_highlights_nvim070
+  cfg.code_style[group_name] = settings
 end
 
 local colors = {
@@ -84,7 +67,7 @@ hl.common = {
   Folded = { fg = c.fg, bg = c.bg1 },
   SignColumn = { fg = c.fg },
   ToolbarLine = { fg = c.fg },
-  Cursor = { fmt = 'reverse' },
+  Cursor = { reverse = true },
   lCursor = { link = 'Cursor' },
   CursorIM = { link = 'Cursor' },
   CursorColumn = { link = 'CursorLine' },
@@ -102,14 +85,14 @@ hl.common = {
   DiffFile = colors.Cyan,
   DiffIndexLine = colors.Grey,
   Directory = { fg = c.blue },
-  ErrorMsg = { fg = c.red, fmt = 'bold' },
-  WarningMsg = { fg = c.yellow, fmt = 'bold' },
-  MoreMsg = { fg = c.blue, fmt = 'bold' },
+  ErrorMsg = { fg = c.red, bold = true },
+  WarningMsg = { fg = c.yellow, bold = true },
+  MoreMsg = { fg = c.blue, bold = true },
   CurSearch = { fg = c.bg0, bg = c.orange },
   IncSearch = { link = 'CurSearch' },
   Search = { fg = c.bg0, bg = c.bg_yellow },
   Substitute = { fg = c.bg0, bg = c.green },
-  MatchParen = { fg = c.orange, bg = c.grey, fmt = 'bold' },
+  MatchParen = { fg = c.orange, bg = c.grey, bold = true },
   NonText = { fg = c.grey },
   Whitespace = { link = 'NonText' },
   SpecialKey = { link = 'NonText' },
@@ -119,23 +102,23 @@ hl.common = {
   WildMenu = { fg = c.bg0, bg = c.blue },
   PmenuThumb = { fg = c.none, bg = c.grey },
   Question = { fg = c.yellow },
-  SpellBad = { fg = c.none, fmt = 'undercurl', sp = c.red },
-  SpellCap = { fg = c.none, fmt = 'undercurl', sp = c.yellow },
-  SpellLocal = { fg = c.none, fmt = 'undercurl', sp = c.blue },
-  SpellRare = { fg = c.none, fmt = 'undercurl', sp = c.purple },
+  SpellBad = { fg = c.none, undercurl = true, sp = c.red },
+  SpellCap = { fg = c.none, undercurl = true, sp = c.yellow },
+  SpellLocal = { fg = c.none, undercurl = true, sp = c.blue },
+  SpellRare = { fg = c.none, undercurl = true, sp = c.purple },
   StatusLine = { fg = c.fg, bg = c.bg2 },
   StatusLineNC = { fg = c.grey, bg = c.bg1 },
   TabLine = { fg = c.fg, bg = c.bg1 },
   TabLineFill = { fg = c.grey, bg = c.bg1 },
   TabLineSel = { fg = c.bg0, bg = c.fg },
   VertSplit = { fg = c.bg3 },
-  Title = { fg = c.cyan, fmt = 'bold' },
+  Title = { fg = c.cyan, bold = true },
   Visual = { bg = c.bg3 },
-  VisualNOS = { fg = c.none, bg = c.bg2, fmt = 'underline' },
+  VisualNOS = { fg = c.none, bg = c.bg2, underline = true },
   WinSeparator = { fg = c.bg3 },
   WinBar = { fg = c.coral },
   WinBarNC = { link = 'WinBar' },
-  QuickFixLine = { fg = c.blue, fmt = 'underline' },
+  QuickFixLine = { fg = c.blue, underline = true },
   Debug = { fg = c.orange },
   debugPC = { fg = c.bg0, bg = c.green },
   debugBreakpoint = { fg = c.bg0, bg = c.red },
@@ -143,7 +126,7 @@ hl.common = {
 }
 
 hl.syntax = {
-  String = { fg = c.green, fmt = cfg.code_style.strings },
+  String = vim.tbl_extend('force', { fg = c.green }, cfg.code_style.strings),
   Constant = colors.Orange,
   Character = { link = 'Constant' },
   Number = { link = 'Constant' },
@@ -152,34 +135,42 @@ hl.syntax = {
   Type = colors.Yellow,
   Typedef = { link = 'Type' },
   Structure = { link = 'Type' },
-  StorageClass = { fg = c.yellow, fmt = 'italic' },
-  Identifier = { fg = c.red, fmt = cfg.code_style.variables },
+  StorageClass = { fg = c.yellow, italic = true },
+  Identifier = vim.tbl_extend(
+    'force',
+    { fg = c.red },
+    cfg.code_style.variables
+  ),
   PreProc = colors.Purple,
   PreCondit = { link = 'PreProc' },
   Include = { link = 'PreProc' },
   Define = { link = 'PreProc' },
-  Keyword = { fg = c.purple, fmt = cfg.code_style.keywords },
+  Keyword = vim.tbl_extend('force', { fg = c.purple }, cfg.code_style.keywords),
   Exception = { link = 'Keyword' },
-  Conditional = { fg = c.purple, fmt = cfg.code_style.conditionals },
+  Conditional = vim.tbl_extend(
+    'force',
+    { fg = c.purple },
+    cfg.code_style.conditionals
+  ),
   Repeat = { link = 'Keyword' },
   Statement = colors.Purple,
   Macro = { fg = const_purple },
   Error = colors.Red,
-  Label = { fg = c.red, fmt = 'bold' },
+  Label = { fg = c.red, bold = true },
   Special = colors.Red,
   SpecialChar = { link = 'Special' },
-  Function = { fg = c.blue, fmt = cfg.code_style.functions },
+  Function = vim.tbl_extend('force', { fg = c.blue }, cfg.code_style.functions),
   Operator = { fg = light_purple },
   Tag = colors.Blue,
   Delimiter = colors.LightGrey,
-  Comment = { fg = c.grey, fmt = cfg.code_style.comments },
+  Comment = vim.tbl_extend('force', { fg = c.grey }, cfg.code_style.comments),
   SpecialComment = { link = 'Comment' },
-  Todo = { fg = c.black, bg = c.purple, fmt = 'bold' },
+  Todo = { fg = c.black, bg = c.purple, bold = true },
 
-  Underlined = { fmt = 'underline' },
-  Bold = { fmt = 'bold' },
-  Italic = { fmt = 'italic' },
-  Strike = { fmt = 'strikethrough' },
+  Underlined = { underline = true },
+  Bold = { bold = true },
+  Italic = { italic = true },
+  Strike = { strikethrough = true },
 }
 
 hl.treesitter = {
@@ -188,24 +179,36 @@ hl.treesitter = {
   ['@boolean'] = { link = 'Boolean' },
   ['@character'] = { link = 'Character' },
   ['@character.special'] = { link = 'Special' },
-  ['@comment'] = { fg = c.bg_yellow, fmt = cfg.code_style.comments },
-  ['@comment.error'] = { fg = c.black, bg = c.red, fmt = 'bold' },
-  ['@comment.note'] = { fg = c.black, bg = c.blue, fmt = 'bold' },
+  ['@comment'] = vim.tbl_extend(
+    'force',
+    { fg = c.bg_yellow },
+    cfg.code_style.comments
+  ),
+  ['@comment.error'] = { fg = c.black, bg = c.red, bold = true },
+  ['@comment.note'] = { fg = c.black, bg = c.blue, bold = true },
   ['@comment.todo'] = { link = 'Todo' },
-  ['@comment.warning'] = { fg = c.black, bg = c.orange, fmt = 'bold' },
+  ['@comment.warning'] = { fg = c.black, bg = c.orange, bold = true },
   ['@constant'] = { link = 'Constant' },
   ['@constant.builtin'] = { link = 'Constant' },
   ['@constant.macro'] = { link = 'Constant' },
-  ['@constructor'] = { fg = c.yellow, fmt = 'bold' },
-  ['@constructor.lua'] = { fg = c.yellow, fmt = 'none' },
+  ['@constructor'] = { fg = c.yellow, bold = true },
+  ['@constructor.lua'] = { fg = c.yellow },
   ['@diff.delta'] = { link = 'DiffChange' },
   ['@diff.minus'] = { link = 'DiffDelete' },
   ['@diff.plus'] = { link = 'DiffAdd' },
   ['@error'] = { link = 'Error' },
   ['@function'] = { link = 'Function' },
-  ['@function.builtin'] = { fg = c.orange, fmt = cfg.code_style.functions },
+  ['@function.builtin'] = vim.tbl_extend(
+    'force',
+    { fg = c.orange },
+    cfg.code_style.functions
+  ),
   ['@function.call'] = { link = 'Function' },
-  ['@function.macro'] = { fg = const_purple, fmt = cfg.code_style.functions },
+  ['@function.macro'] = vim.tbl_extend(
+    'force',
+    { fg = const_purple },
+    cfg.code_style.functions
+  ),
   ['@function.method'] = { link = 'Function' },
   ['@function.method.call'] = { link = 'Function' },
   ['@keyword'] = { link = 'Keyword' },
@@ -214,7 +217,7 @@ hl.treesitter = {
   ['@keyword.coroutine'] = { link = 'Keyword' },
   ['@keyword.debug'] = { link = 'Keyword' },
   ['@keyword.directive'] = { link = 'PreProc' },
-  ['@keyword.directive.define'] = { fg = c.purple, fmt = 'bold' },
+  ['@keyword.directive.define'] = { fg = c.purple, bold = true },
   ['@keyword.exception'] = { link = 'Exception' },
   ['@keyword.import'] = { link = 'Include' },
   ['@keyword.operator'] = { link = 'Keyword' },
@@ -222,43 +225,47 @@ hl.treesitter = {
   ['@keyword.return'] = { link = 'Keyword' },
   ['@keyword.storage'] = { link = 'StorageClass' },
   ['@label'] = { link = 'Label' },
-  ['@markup.environment'] = { fg = c.cyan, fmt = 'bold' },
+  ['@markup.environment'] = { fg = c.cyan, bold = true },
   ['@markup.environment.name'] = { link = 'Type' },
-  ['@markup.heading'] = { fg = c.orange, fmt = 'bold' },
-  ['@markup.heading.1'] = { fg = c.red, fmt = 'bold' },
+  ['@markup.heading'] = { fg = c.orange, bold = true },
+  ['@markup.heading.1'] = { fg = c.red, bold = true },
   ['@markup.heading.1.marker'] = { link = '@markup.heading' },
-  ['@markup.heading.2'] = { fg = c.yellow, fmt = 'bold' },
+  ['@markup.heading.2'] = { fg = c.yellow, bold = true },
   ['@markup.heading.2.marker'] = { link = '@markup.heading' },
-  ['@markup.heading.3'] = { fg = c.green, fmt = 'bold' },
+  ['@markup.heading.3'] = { fg = c.green, bold = true },
   ['@markup.heading.3.marker'] = { link = '@markup.heading' },
-  ['@markup.heading.4'] = { fg = c.cyan, fmt = 'bold' },
+  ['@markup.heading.4'] = { fg = c.cyan, bold = true },
   ['@markup.heading.4.marker'] = { link = '@markup.heading' },
-  ['@markup.heading.5'] = { fg = c.blue, fmt = 'bold' },
+  ['@markup.heading.5'] = { fg = c.blue, bold = true },
   ['@markup.heading.5.marker'] = { link = '@markup.heading' },
-  ['@markup.heading.6'] = { fg = c.purple, fmt = 'bold' },
+  ['@markup.heading.6'] = { fg = c.purple, bold = true },
   ['@markup.heading.6.marker'] = { link = '@markup.heading' },
-  ['@markup.italic'] = { fg = c.fg, fmt = 'italic' },
-  ['@markup.italic.markdown_inline'] = { fg = c.orange, fmt = 'italic' },
+  ['@markup.italic'] = { fg = c.fg, italic = true },
+  ['@markup.italic.markdown_inline'] = { fg = c.orange, italic = true },
   ['@markup.link'] = { link = 'Tag' },
   ['@markup.link.label'] = { link = 'Tag' },
-  ['@markup.link.url'] = { fg = c.cyan, fmt = 'underline,italic' },
+  ['@markup.link.url'] = { fg = c.cyan, underline = true, italic = true },
   ['@markup.list'] = { link = 'Special' },
-  ['@markup.list.checked'] = { fg = c.yellow, fmt = 'bold' },
-  ['@markup.list.unchecked'] = { fg = c.light_grey, fmt = 'bold' },
+  ['@markup.list.checked'] = { fg = c.yellow, bold = true },
+  ['@markup.list.unchecked'] = { fg = c.light_grey, bold = true },
   ['@markup.math'] = { fg = light_blue },
   ['@markup.quote'] = { fg = util.blend(c.fg, c.light_grey, 0.5) },
   ['@markup.raw'] = colors.Green,
   ['@markup.raw.block'] = { link = '@markup.raw' },
   ['@markup.raw.delimiter'] = colors.LightGrey,
-  ['@markup.strikethrough'] = { fg = c.fg, fmt = 'strikethrough' },
+  ['@markup.strikethrough'] = { fg = c.fg, strikethrough = true },
   ['@markup.strikethrough.markdown_inline'] = {
     fg = c.orange,
-    fmt = 'strikethrough',
+    strikethrough = true,
   },
-  ['@markup.strong'] = { fg = c.fg, fmt = 'bold' },
-  ['@markup.strong.markdown_inline'] = { fg = c.orange, fmt = 'bold' },
-  ['@markup.underline'] = { fg = c.fg, fmt = 'underline' },
-  ['@module'] = { fg = light_blue, fmt = cfg.code_style.namespaces },
+  ['@markup.strong'] = { fg = c.fg, bold = true },
+  ['@markup.strong.markdown_inline'] = { fg = c.orange, bold = true },
+  ['@markup.underline'] = { fg = c.fg, underline = true },
+  ['@module'] = vim.tbl_extend(
+    'force',
+    { fg = light_blue },
+    cfg.code_style.namespaces
+  ),
   ['@module.builtin'] = { link = '@variable.builtin' },
   ['@none'] = colors.Fg,
   ['@number'] = { link = 'Number' },
@@ -273,9 +280,9 @@ hl.treesitter = {
   ['@string.escape'] = { fg = c.coral },
   ['@string.regexp'] = { link = 'Constant' },
   ['@string.special'] = { link = 'Special' },
-  ['@string.special.path'] = { fg = light_blue, fmt = 'underline' },
+  ['@string.special.path'] = { fg = light_blue, underline = true },
   ['@string.special.symbol'] = { link = '@variable.member' },
-  ['@string.special.url'] = { fg = c.cyan, fmt = 'underline,italic' },
+  ['@string.special.url'] = { fg = c.cyan, underline = true, italic = true },
   ['@tag'] = colors.Purple,
   ['@tag.attribute'] = { link = '@variable.member' },
   ['@tag.builtin'] = { link = '@tag' },
@@ -283,19 +290,33 @@ hl.treesitter = {
   ['@type'] = { link = 'Type' },
   ['@type.builtin'] = { link = 'Type' },
   ['@type.definition'] = { link = 'Type' },
-  ['@type.qualifier'] = { fg = c.purple, fmt = 'italic' },
-  ['@variable'] = { fg = c.fg, fmt = cfg.code_style.variables },
-  ['@variable.builtin'] = { fg = c.red, fmt = cfg.code_style.variables },
-  ['@variable.global'] = {
-    fg = util.lighten(c.red, 0.375),
-    fmt = cfg.code_style.variables,
-  },
+  ['@type.qualifier'] = { fg = c.purple, italic = true },
+  ['@variable'] = vim.tbl_extend(
+    'force',
+    { fg = c.fg },
+    cfg.code_style.variables
+  ),
+  ['@variable.builtin'] = vim.tbl_extend(
+    'force',
+    { fg = c.red },
+    cfg.code_style.variables
+  ),
+  ['@variable.global'] = vim.tbl_extend(
+    'force',
+    { fg = util.lighten(c.red, 0.375) },
+    cfg.code_style.variables
+  ),
   ['@variable.member'] = colors.Cyan,
-  ['@variable.parameter'] = { fg = c.coral, fmt = cfg.code_style.parameters },
-  ['@variable.parameter.builtin'] = {
-    fg = c.red,
-    fmt = cfg.code_style.parameters,
-  },
+  ['@variable.parameter'] = vim.tbl_extend(
+    'force',
+    { fg = c.coral },
+    cfg.code_style.parameters
+  ),
+  ['@variable.parameter.builtin'] = vim.tbl_extend(
+    'force',
+    { fg = c.red },
+    cfg.code_style.parameters
+  ),
 }
 
 hl.lsp = {
@@ -432,19 +453,23 @@ hl.plugins.lsp = {
   },
 
   DiagnosticUnderlineError = {
-    fmt = cfg.diagnostics.undercurl and 'undercurl' or 'underline',
+    undercurl = cfg.diagnostics.undercurl,
+    underline = not cfg.diagnostics.undercurl,
     sp = c.red,
   },
   DiagnosticUnderlineHint = {
-    fmt = cfg.diagnostics.undercurl and 'undercurl' or 'underline',
+    undercurl = cfg.diagnostics.undercurl,
+    underline = not cfg.diagnostics.undercurl,
     sp = c.purple,
   },
   DiagnosticUnderlineInfo = {
-    fmt = cfg.diagnostics.undercurl and 'undercurl' or 'underline',
+    undercurl = cfg.diagnostics.undercurl,
+    underline = not cfg.diagnostics.undercurl,
     sp = c.blue,
   },
   DiagnosticUnderlineWarn = {
-    fmt = cfg.diagnostics.undercurl and 'undercurl' or 'underline',
+    undercurl = cfg.diagnostics.undercurl,
+    underline = not cfg.diagnostics.undercurl,
     sp = c.yellow,
   },
 
@@ -485,12 +510,12 @@ hl.plugins.ale = {
 }
 
 hl.plugins.barbar = {
-  BufferCurrent = { fmt = 'bold' },
-  BufferCurrentMod = { fg = c.orange, fmt = 'bold,italic' },
+  BufferCurrent = { bold = true },
+  BufferCurrentMod = { fg = c.orange, bold = true, italic = true },
   BufferCurrentSign = { fg = c.purple },
-  BufferInactiveMod = { fg = c.light_grey, bg = c.bg1, fmt = 'italic' },
+  BufferInactiveMod = { fg = c.light_grey, bg = c.bg1, italic = true },
   BufferVisible = { fg = c.light_grey, bg = c.bg0 },
-  BufferVisibleMod = { fg = c.yellow, bg = c.bg0, fmt = 'italic' },
+  BufferVisibleMod = { fg = c.yellow, bg = c.bg0, italic = true },
   BufferVisibleIndex = { fg = c.light_grey, bg = c.bg0 },
   BufferVisibleSign = { fg = c.light_grey, bg = c.bg0 },
   BufferVisibleTarget = { fg = c.light_grey, bg = c.bg0 },
@@ -498,22 +523,22 @@ hl.plugins.barbar = {
 
 hl.plugins.cmp = {
   CmpItemAbbr = colors.Fg,
-  CmpItemAbbrDeprecated = { fg = c.light_grey, fmt = 'strikethrough' },
+  CmpItemAbbrDeprecated = { fg = c.light_grey, strikethrough = true },
   CmpItemAbbrMatch = colors.Cyan,
-  CmpItemAbbrMatchFuzzy = { fg = c.cyan, fmt = 'underline' },
+  CmpItemAbbrMatchFuzzy = { fg = c.cyan, underline = true },
   CmpItemMenu = colors.LightGrey,
-  CmpItemKind = { fg = c.purple, fmt = cfg.cmp_itemkind_reverse and 'reverse' },
+  CmpItemKind = { fg = c.purple, reverse = cfg.cmp_itemkind_reverse },
   CmpItemKindCopilot = {
     fg = c.fg,
-    fmt = cfg.cmp_itemkind_reverse and 'reverse',
+    reverse = cfg.cmp_itemkind_reverse,
   },
   CmpItemKindCodeium = {
     fg = c.fg,
-    fmt = cfg.cmp_itemkind_reverse and 'reverse',
+    reverse = cfg.cmp_itemkind_reverse,
   },
   CmpItemKindTabNine = {
     fg = c.fg,
-    fmt = cfg.cmp_itemkind_reverse and 'reverse',
+    reverse = cfg.cmp_itemkind_reverse,
   },
 }
 
@@ -538,8 +563,8 @@ hl.plugins.gitgutter = {
 }
 
 hl.plugins.hop = {
-  HopNextKey = { fg = c.red, fmt = 'bold' },
-  HopNextKey1 = { fg = c.cyan, fmt = 'bold' },
+  HopNextKey = { fg = c.red, bold = true },
+  HopNextKey1 = { fg = c.cyan, bold = true },
   HopNextKey2 = { fg = util.darken(c.blue, 0.3) },
   HopUnmatched = colors.Grey,
 }
@@ -547,13 +572,13 @@ hl.plugins.hop = {
 hl.plugins.diffview = {
   DiffviewCursorLine = { link = 'CursorLine' },
   DiffviewEndOfBuffer = { link = 'EndOfBuffer' },
-  DiffviewFilePanelCounter = { fg = c.purple, fmt = 'bold' },
+  DiffviewFilePanelCounter = { fg = c.purple, bold = true },
   DiffviewFilePanelDeletions = colors.Red,
   DiffviewFilePanelFileName = colors.Fg,
   DiffviewFilePanelInsertions = colors.Green,
   DiffviewFilePanelPath = colors.Grey,
   DiffviewFilePanelRootPath = colors.Grey,
-  DiffviewFilePanelTitle = { fg = c.blue, fmt = 'bold' },
+  DiffviewFilePanelTitle = { fg = c.blue, bold = true },
   DiffviewHash = { link = 'Constant' },
   DiffviewNormal = { link = 'Normal' },
   DiffviewSignColumn = { link = 'SignColumn' },
@@ -592,9 +617,9 @@ hl.plugins.lazy = {
   LazyReasonCmd = colors.Green,
   LazyReasonFt = colors.Yellow,
   LazyReasonSource = colors.Blue,
-  LazyReasonStart = { fg = c.cyan, fmt = 'bold' },
-  LazyReasonTask = { fg = c.light_grey, fmt = 'bold' },
-  LazyH2 = { fg = c.blue, fmt = 'bold' },
+  LazyReasonStart = { fg = c.cyan, bold = true },
+  LazyReasonTask = { fg = c.light_grey, bold = true },
+  LazyH2 = { fg = c.blue, bold = true },
   -- Lazy requires a late Neovim version, so this is OK.
   LazyUrl = { link = '@string.special.url' },
 }
@@ -608,12 +633,12 @@ hl.plugins.neo_tree = {
     fg = cfg.ending_tildes and c.bg2 or c.bg_d,
     bg = cfg.transparent and c.none or c.bg_d,
   },
-  NeoTreeRootName = { fg = c.orange, fmt = 'bold' },
+  NeoTreeRootName = { fg = c.orange, bold = true },
   NeoTreeGitAdded = colors.Green,
   NeoTreeGitDeleted = colors.Red,
   NeoTreeGitModified = colors.Yellow,
-  NeoTreeGitConflict = { fg = c.red, fmt = 'bold,italic' },
-  NeoTreeGitUntracked = { fg = c.red, fmt = 'italic' },
+  NeoTreeGitConflict = { fg = c.red, bold = true, italic = true },
+  NeoTreeGitUntracked = { fg = c.red, italic = true },
   NeoTreeIndentMarker = colors.Grey,
   NeoTreeSymbolicLinkTarget = colors.Purple,
   NeoTreeTitleBar = { fg = c.bg0, bg = c.purple },
@@ -622,18 +647,18 @@ hl.plugins.neo_tree = {
 }
 
 hl.plugins.neotest = {
-  NeotestAdapterName = { fg = c.purple, fmt = 'bold' },
+  NeotestAdapterName = { fg = c.purple, bold = true },
   NeotestDir = colors.Cyan,
   NeotestExpandMarker = colors.Grey,
   NeotestFailed = colors.Red,
   NeotestFile = colors.Cyan,
-  NeotestFocused = { fmt = 'bold,italic' },
+  NeotestFocused = { bold = true, italic = true },
   NeotestIndent = colors.Grey,
-  NeotestMarked = { fg = c.orange, fmt = 'bold' },
+  NeotestMarked = { fg = c.orange, bold = true },
   NeotestNamespace = colors.Blue,
   NeotestPassed = colors.Green,
   NeotestRunning = colors.Yellow,
-  NeotestWinSelect = { fg = c.cyan, fmt = 'bold' },
+  NeotestWinSelect = { fg = c.cyan, bold = true },
   NeotestSkipped = colors.LightGrey,
   NeotestTarget = colors.Purple,
   NeotestTest = colors.Fg,
@@ -643,16 +668,16 @@ hl.plugins.neotest = {
 hl.plugins.nvim_tree = {
   NvimTreeNormal = { fg = c.fg, bg = normal_bg },
   NvimTreeVertSplit = { fg = c.bg_d, bg = cfg.transparent and c.none or c.bg_d },
-  NvimTreeRootFolder = { fg = c.orange, fmt = 'bold' },
+  NvimTreeRootFolder = { fg = c.orange, bold = true },
   NvimTreeGitDirty = colors.Yellow,
   NvimTreeGitNew = colors.Green,
   NvimTreeGitDeleted = colors.Red,
-  NvimTreeSpecialFile = { fg = c.yellow, fmt = 'underline' },
-  NvimTreeSignColumn = { fmt = 'nocombine' },
+  NvimTreeSpecialFile = { fg = c.yellow, underline = true },
+  NvimTreeSignColumn = { nocombine = true },
   NvimTreeIndentMarker = colors.Fg,
   NvimTreeImageFile = { fg = c.dark_purple },
   NvimTreeFolderName = colors.Blue,
-  NvimTreeOpenedFile = { fg = c.coral, fmt = 'bold,italic' },
+  NvimTreeOpenedFile = { fg = c.coral, bold = true, italic = true },
 }
 
 hl.plugins.telescope = {
@@ -660,17 +685,17 @@ hl.plugins.telescope = {
   TelescopePromptBorder = colors.Purple,
   TelescopeResultsBorder = colors.Purple,
   TelescopePreviewBorder = colors.Purple,
-  TelescopeMatching = { fg = c.orange, fmt = 'bold' },
+  TelescopeMatching = { fg = c.orange, bold = true },
   TelescopePromptPrefix = colors.Green,
   TelescopeSelection = { bg = c.bg2 },
-  TelescopeSelectionCaret = { fg = c.orange, bg = c.bg2, fmt = 'bold' },
+  TelescopeSelectionCaret = { fg = c.orange, bg = c.bg2, bold = true },
 }
 
 hl.plugins.dashboard = {
   DashboardShortCut = colors.Blue,
   DashboardHeader = colors.Yellow,
   DashboardCenter = colors.Cyan,
-  DashboardFooter = { fg = c.dark_red, fmt = 'italic' },
+  DashboardFooter = { fg = c.dark_red, italic = true },
   DashboardMruTitle = colors.Cyan,
   DashboardProjectTitle = colors.Cyan,
   DashboardFiles = colors.Fg,
@@ -680,8 +705,8 @@ hl.plugins.dashboard = {
 }
 
 hl.plugins.outline = {
-  FocusedSymbol = { fg = c.purple, bg = c.bg2, fmt = 'bold' },
-  AerialLine = { fg = c.purple, bg = c.bg2, fmt = 'bold' },
+  FocusedSymbol = { fg = c.purple, bg = c.bg2, bold = true },
+  AerialLine = { fg = c.purple, bg = c.bg2, bold = true },
 }
 
 hl.plugins.navic = {
@@ -726,32 +751,32 @@ hl.plugins.indent_blankline = {
   IndentBlanklineIndent4 = colors.LightGrey,
   IndentBlanklineIndent5 = colors.Purple,
   IndentBlanklineIndent6 = colors.Red,
-  IndentBlanklineChar = { fg = c.bg1, fmt = 'nocombine' },
-  IndentBlanklineContextChar = { fg = c.light_grey, fmt = 'nocombine' },
+  IndentBlanklineChar = { fg = c.bg1, nocombine = true },
+  IndentBlanklineContextChar = { fg = c.light_grey, nocombine = true },
   IndentBlanklineContextStart = { bg = c.bg1 },
-  IndentBlanklineContextSpaceChar = { fmt = 'nocombine' },
-  IblIndent = { fg = c.grey, fmt = 'nocombine' },
-  IblScope = { fg = c.light_grey, fmt = 'nocombine' },
-  IblWhitespace = { fg = c.grey, fmt = 'nocombine' },
+  IndentBlanklineContextSpaceChar = { nocombine = true },
+  IblIndent = { fg = c.grey, nocombine = true },
+  IblScope = { fg = c.light_grey, nocombine = true },
+  IblWhitespace = { fg = c.grey, nocombine = true },
 }
 
 hl.plugins.mini = {
-  MiniCompletionActiveParameter = { fmt = 'underline' },
+  MiniCompletionActiveParameter = { underline = true },
 
-  MiniCursorword = { fmt = 'underline' },
-  MiniCursorwordCurrent = { fmt = 'underline' },
+  MiniCursorword = { underline = true },
+  MiniCursorwordCurrent = { underline = true },
 
   MiniIndentscopeSymbol = { fg = c.light_grey },
-  MiniIndentscopePrefix = { fmt = 'nocombine' }, -- Make it invisible
+  MiniIndentscopePrefix = { nocombine = true }, -- Make it invisible
 
-  MiniJump = { fg = c.purple, fmt = 'underline', sp = c.purple },
+  MiniJump = { fg = c.purple, underline = true, sp = c.purple },
 
-  MiniJump2dSpot = { fg = c.red, fmt = 'bold,nocombine' },
+  MiniJump2dSpot = { fg = c.red, bold = true, nocombine = true },
 
-  MiniStarterCurrent = { fmt = 'nocombine' },
-  MiniStarterFooter = { fg = c.dark_red, fmt = 'italic' },
+  MiniStarterCurrent = { nocombine = true },
+  MiniStarterFooter = { fg = c.dark_red, italic = true },
   MiniStarterHeader = colors.Yellow,
-  MiniStarterInactive = { fg = c.grey, fmt = cfg.code_style.comments },
+  MiniStarterInactive = { link = 'Comment' },
   MiniStarterItem = { fg = c.fg, bg = normal_bg },
   MiniStarterItemBullet = { fg = c.grey },
   MiniStarterItemPrefix = { fg = c.yellow },
@@ -762,27 +787,27 @@ hl.plugins.mini = {
   MiniStatuslineFileinfo = { fg = c.fg, bg = c.bg2 },
   MiniStatuslineFilename = { fg = c.grey, bg = c.bg1 },
   MiniStatuslineInactive = { fg = c.grey, bg = c.bg0 },
-  MiniStatuslineModeCommand = { fg = c.bg0, bg = c.yellow, fmt = 'bold' },
-  MiniStatuslineModeInsert = { fg = c.bg0, bg = c.blue, fmt = 'bold' },
-  MiniStatuslineModeNormal = { fg = c.bg0, bg = c.green, fmt = 'bold' },
-  MiniStatuslineModeOther = { fg = c.bg0, bg = c.cyan, fmt = 'bold' },
-  MiniStatuslineModeReplace = { fg = c.bg0, bg = c.red, fmt = 'bold' },
-  MiniStatuslineModeVisual = { fg = c.bg0, bg = c.purple, fmt = 'bold' },
+  MiniStatuslineModeCommand = { fg = c.bg0, bg = c.yellow, bold = true },
+  MiniStatuslineModeInsert = { fg = c.bg0, bg = c.blue, bold = true },
+  MiniStatuslineModeNormal = { fg = c.bg0, bg = c.green, bold = true },
+  MiniStatuslineModeOther = { fg = c.bg0, bg = c.cyan, bold = true },
+  MiniStatuslineModeReplace = { fg = c.bg0, bg = c.red, bold = true },
+  MiniStatuslineModeVisual = { fg = c.bg0, bg = c.purple, bold = true },
 
   MiniSurround = { fg = c.bg0, bg = c.orange },
 
-  MiniTablineCurrent = { fmt = 'bold' },
+  MiniTablineCurrent = { bold = true },
   MiniTablineFill = { fg = c.grey, bg = c.bg1 },
   MiniTablineHidden = { fg = c.fg, bg = c.bg1 },
-  MiniTablineModifiedCurrent = { fg = c.orange, fmt = 'bold,italic' },
-  MiniTablineModifiedHidden = { fg = c.light_grey, bg = c.bg1, fmt = 'italic' },
-  MiniTablineModifiedVisible = { fg = c.yellow, bg = c.bg0, fmt = 'italic' },
+  MiniTablineModifiedCurrent = { fg = c.orange, bold = true, italic = true },
+  MiniTablineModifiedHidden = { fg = c.light_grey, bg = c.bg1, italic = true },
+  MiniTablineModifiedVisible = { fg = c.yellow, bg = c.bg0, italic = true },
   MiniTablineTabpagesection = { fg = c.bg0, bg = c.bg_yellow },
   MiniTablineVisible = { fg = c.light_grey, bg = c.bg0 },
 
-  MiniTestEmphasis = { fmt = 'bold' },
-  MiniTestFail = { fg = c.red, fmt = 'bold' },
-  MiniTestPass = { fg = c.green, fmt = 'bold' },
+  MiniTestEmphasis = { bold = true },
+  MiniTestFail = { fg = c.red, bold = true },
+  MiniTestPass = { fg = c.green, bold = true },
 
   MiniTrailspace = { bg = c.red },
 }
@@ -810,7 +835,7 @@ hl.plugins.notify = {
 }
 
 hl.plugins.matchup = {
-  MatchWord = { fmt = 'underline' },
+  MatchWord = { underline = true },
 }
 
 hl.langs.c = {
@@ -821,51 +846,71 @@ hl.langs.c = {
 }
 
 hl.langs.cpp = {
-  cppStatement = { fg = c.purple, fmt = 'bold' },
+  cppStatement = { fg = c.purple, bold = true },
 }
 
 hl.langs.markdown = {
   markdownBlockquote = { link = 'Special' },
-  markdownBold = { fg = c.none, fmt = 'bold' },
+  markdownBold = { fg = c.none, bold = true },
   markdownBoldDelimiter = { link = 'Delimiter' },
   markdownCode = colors.Green,
   markdownCodeBlock = colors.Green,
   markdownCodeDelimiter = colors.Yellow,
-  markdownH1 = { fg = c.red, fmt = 'bold' },
-  markdownH2 = { fg = c.yellow, fmt = 'bold' },
-  markdownH3 = { fg = c.green, fmt = 'bold' },
-  markdownH4 = { fg = c.cyan, fmt = 'bold' },
-  markdownH5 = { fg = c.blue, fmt = 'bold' },
-  markdownH6 = { fg = c.purple, fmt = 'bold' },
+  markdownH1 = { fg = c.red, bold = true },
+  markdownH2 = { fg = c.yellow, bold = true },
+  markdownH3 = { fg = c.green, bold = true },
+  markdownH4 = { fg = c.cyan, bold = true },
+  markdownH5 = { fg = c.blue, bold = true },
+  markdownH6 = { fg = c.purple, bold = true },
   markdownHeadingDelimiter = colors.Orange,
   markdownHeadingRule = colors.Orange,
   markdownId = colors.Yellow,
   markdownIdDeclaration = colors.Red,
-  markdownItalic = { fg = c.none, fmt = 'italic' },
-  markdownItalicDelimiter = { fg = c.light_grey, fmt = 'italic' },
+  markdownItalic = { fg = c.none, italic = true },
+  markdownItalicDelimiter = { fg = c.light_grey, italic = true },
   markdownLinkDelimiter = { link = 'Delimiter' },
   markdownLinkText = colors.Blue,
   markdownLinkTextDelimiter = { link = 'Delimiter' },
   markdownListMarker = colors.Red,
   markdownOrderedListMarker = colors.Red,
   markdownRule = colors.Purple,
-  markdownUrl = { fg = c.cyan, fmt = 'underline' },
+  markdownUrl = { fg = c.cyan, underline = true },
   markdownUrlDelimiter = { link = 'Delimiter' },
   markdownUrlTitleDelimiter = colors.Green,
 }
 
 hl.langs.php = {
-  phpFunctions = { fg = c.fg, fmt = cfg.code_style.functions },
+  phpFunctions = vim.tbl_extend(
+    'force',
+    { fg = c.fg },
+    cfg.code_style.functions
+  ),
   phpMethods = colors.Cyan,
   phpStructure = colors.Purple,
   phpMemberSelector = colors.Fg,
-  phpVarSelector = { fg = c.orange, fmt = cfg.code_style.variables },
-  phpIdentifier = { fg = c.orange, fmt = cfg.code_style.variables },
+  phpVarSelector = vim.tbl_extend(
+    'force',
+    { fg = c.orange },
+    cfg.code_style.variables
+  ),
+  phpIdentifier = vim.tbl_extend(
+    'force',
+    { fg = c.orange },
+    cfg.code_style.variables
+  ),
   phpBoolean = colors.Cyan,
   phpHereDoc = colors.Green,
   phpNowDoc = colors.Green,
-  phpSCKeyword = { fg = c.purple, fmt = cfg.code_style.keywords },
-  phpFCKeyword = { fg = c.purple, fmt = cfg.code_style.keywords },
+  phpSCKeyword = vim.tbl_extend(
+    'force',
+    { fg = c.purple },
+    cfg.code_style.keywords
+  ),
+  phpFCKeyword = vim.tbl_extend(
+    'force',
+    { fg = c.purple },
+    cfg.code_style.keywords
+  ),
   phpRegion = colors.Blue,
 }
 
@@ -875,7 +920,11 @@ hl.langs.scala = {
   scalaInterpolation = colors.Purple,
   scalaTypeOperator = colors.Red,
   scalaOperator = colors.Red,
-  scalaKeywordModifier = { fg = c.red, fmt = cfg.code_style.keywords },
+  scalaKeywordModifier = vim.tbl_extend(
+    'force',
+    { fg = c.red },
+    cfg.code_style.keywords
+  ),
 }
 
 hl.langs.tex = {
@@ -900,8 +949,12 @@ hl.langs.vim = {
   vimNotation = colors.Red,
   vimMapLhs = colors.Fg,
   vimMapRhs = colors.Blue,
-  vimVar = { fg = c.fg, fmt = cfg.code_style.variables },
-  vimCommentTitle = { fg = c.yellow, fmt = cfg.code_style.comments },
+  vimVar = vim.tbl_extend('force', { fg = c.fg }, cfg.code_style.variables),
+  vimCommentTitle = vim.tbl_extend(
+    'force',
+    { fg = c.yellow },
+    cfg.code_style.comments
+  ),
 }
 
 local lsp_kind_icons_color = {
@@ -947,15 +1000,13 @@ function M.setup()
   for kind, color in pairs(lsp_kind_icons_color) do
     hl.plugins.cmp['CmpItemKind' .. kind] = {
       fg = color,
-      fmt = cfg.cmp_itemkind_reverse and 'reverse',
+      reverse = cfg.cmp_itemkind_reverse,
     }
     hl.plugins.outline['Aerial' .. kind .. 'Icon'] = { fg = color }
     hl.plugins.navic['NavicIcons' .. kind] = { fg = color }
   end
   -- custom, specific overrides
-  hl.plugins.cmp['CmpItemKindSnippet'].fmt = cfg.cmp_itemkind_reverse
-      and 'italic,reverse'
-    or 'italic'
+  hl.plugins.cmp['CmpItemKindSnippet'].italic = true
 
   vim_highlights(hl.common)
   vim_highlights(hl.syntax)

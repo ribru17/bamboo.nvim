@@ -57,14 +57,14 @@ local default_config = {
 
   -- Changing Formats --
   code_style = {
-    comments = 'italic',
-    conditionals = 'italic',
-    keywords = 'none',
-    functions = 'none',
-    namespaces = 'italic',
-    parameters = 'italic',
-    strings = 'none',
-    variables = 'none',
+    comments = { italic = true },
+    conditionals = { italic = true },
+    keywords = {},
+    functions = {},
+    namespaces = { italic = true },
+    parameters = { italic = true },
+    strings = {},
+    variables = {},
   },
 
   -- Lualine options --
@@ -96,8 +96,14 @@ function M.setup(opts)
   if opts then
     vim.g.bamboo_config =
       vim.tbl_deep_extend('force', vim.g.bamboo_config, opts)
-    if opts.toggle_style_list then -- this table cannot be extended, it has to be replaced
+    -- these tables cannot be extended, they have to be replaced
+    if opts.toggle_style_list then
       M.set_options('toggle_style_list', opts.toggle_style_list)
+    end
+    if opts.code_style then
+      local cfg = vim.g.bamboo_config
+      cfg.code_style = vim.tbl_extend('force', cfg.code_style, opts.code_style)
+      vim.g.bamboo_config = cfg
     end
   end
   if vim.g.bamboo_config.toggle_style_key then
