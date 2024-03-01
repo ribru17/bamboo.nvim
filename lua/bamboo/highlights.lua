@@ -188,6 +188,8 @@ hl.treesitter = {
   ['@comment.note'] = { fg = c.black, bg = c.blue, bold = true },
   ['@comment.todo'] = { link = 'Todo' },
   ['@comment.warning'] = { fg = c.black, bg = c.orange, bold = true },
+  -- overflow highlight
+  ['@comment.warning.gitcommit'] = { fg = c.black, bg = c.orange },
   ['@constant'] = { link = 'Constant' },
   ['@constant.builtin'] = { link = 'Constant' },
   ['@constant.macro'] = { link = 'Constant' },
