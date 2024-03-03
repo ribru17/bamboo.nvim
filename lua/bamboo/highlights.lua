@@ -49,6 +49,10 @@ local normal_bg = cfg.transparent and c.none or c.bg0
 local dimmable_bg = cfg.dim_inactive and util.darken(c.bg0, 0.125) or normal_bg
 local light_blue = util.lighten(c.blue, 0.375)
 local light_purple = util.blend(c.purple, c.fg, 0.375)
+local dark_red = util.darken(c.red, 0.2)
+local dark_yellow = util.darken(c.yellow, 0.2)
+local dark_purple = util.darken(c.purple, 0.2)
+local dark_cyan = util.darken(c.cyan, 0.2)
 local rainbows = {
   red = util.lighten(c.red, 0.25),
   orange = util.lighten(c.orange, 0.25),
@@ -414,12 +418,12 @@ hl.lsp = {
 
 hl.treesitter.TreesitterContext = { bg = c.bg1 }
 
-local diagnostics_error_color = cfg.diagnostics.darker and c.dark_red or c.red
-local diagnostics_hint_color = cfg.diagnostics.darker and c.dark_purple
+local diagnostics_error_color = cfg.diagnostics.darker and dark_red or c.red
+local diagnostics_hint_color = cfg.diagnostics.darker and dark_purple
   or c.purple
-local diagnostics_warn_color = cfg.diagnostics.darker and c.dark_yellow
+local diagnostics_warn_color = cfg.diagnostics.darker and dark_yellow
   or c.yellow
-local diagnostics_info_color = cfg.diagnostics.darker and c.dark_cyan or c.cyan
+local diagnostics_info_color = cfg.diagnostics.darker and dark_cyan or c.cyan
 hl.plugins.lsp = {
   LspCxxHlGroupEnumConstant = colors.Orange,
   LspCxxHlGroupMemberVariable = colors.Orange,
@@ -681,7 +685,7 @@ hl.plugins.nvim_tree = {
   NvimTreeSpecialFile = { fg = c.yellow, underline = true },
   NvimTreeSignColumn = { nocombine = true },
   NvimTreeIndentMarker = colors.Fg,
-  NvimTreeImageFile = { fg = c.dark_purple },
+  NvimTreeImageFile = { fg = dark_purple },
   NvimTreeFolderName = colors.Blue,
   NvimTreeOpenedFile = { fg = c.coral, bold = true, italic = true },
 }
@@ -701,7 +705,7 @@ hl.plugins.dashboard = {
   DashboardShortCut = colors.Blue,
   DashboardHeader = colors.Yellow,
   DashboardCenter = colors.Cyan,
-  DashboardFooter = { fg = c.dark_red, italic = true },
+  DashboardFooter = { fg = dark_red, italic = true },
   DashboardMruTitle = colors.Cyan,
   DashboardProjectTitle = colors.Cyan,
   DashboardFiles = colors.Fg,
@@ -780,7 +784,7 @@ hl.plugins.mini = {
   MiniJump2dSpot = { fg = c.red, bold = true, nocombine = true },
 
   MiniStarterCurrent = { nocombine = true },
-  MiniStarterFooter = { fg = c.dark_red, italic = true },
+  MiniStarterFooter = { fg = dark_red, italic = true },
   MiniStarterHeader = colors.Yellow,
   MiniStarterInactive = { link = 'Comment' },
   MiniStarterItem = { fg = c.fg, bg = normal_bg },
