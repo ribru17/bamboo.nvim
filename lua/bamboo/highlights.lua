@@ -50,6 +50,15 @@ local dimmable_bg = cfg.dim_inactive and util.darken(c.bg0, 0.125) or normal_bg
 local light_blue = util.lighten(c.blue, 0.375)
 local const_purple = util.blend(c.purple, c.orange, 0.25)
 local light_purple = util.blend(c.purple, c.fg, 0.375)
+local rainbows = {
+  red = util.lighten(c.red, 0.25),
+  orange = util.lighten(c.orange, 0.25),
+  yellow = util.lighten(c.yellow, 0.25),
+  green = util.lighten(c.green, 0.25),
+  cyan = util.lighten(c.cyan, 0.25),
+  blue = util.lighten(c.blue, 0.25),
+  purple = util.lighten(c.purple, 0.25),
+}
 
 hl.common = {
   Normal = { fg = c.fg, bg = normal_bg },
@@ -228,21 +237,13 @@ hl.treesitter = {
   ['@keyword.return'] = { link = 'Keyword' },
   ['@keyword.storage'] = { link = 'StorageClass' },
   ['@label'] = { link = 'Label' },
-  ['@markup.environment'] = { fg = c.cyan, bold = true },
-  ['@markup.environment.name'] = { link = 'Type' },
   ['@markup.heading'] = { fg = c.orange, bold = true },
-  ['@markup.heading.1'] = { fg = c.red, bold = true },
-  ['@markup.heading.1.marker'] = { link = '@markup.heading' },
-  ['@markup.heading.2'] = { fg = c.yellow, bold = true },
-  ['@markup.heading.2.marker'] = { link = '@markup.heading' },
-  ['@markup.heading.3'] = { fg = c.green, bold = true },
-  ['@markup.heading.3.marker'] = { link = '@markup.heading' },
-  ['@markup.heading.4'] = { fg = c.cyan, bold = true },
-  ['@markup.heading.4.marker'] = { link = '@markup.heading' },
-  ['@markup.heading.5'] = { fg = c.blue, bold = true },
-  ['@markup.heading.5.marker'] = { link = '@markup.heading' },
-  ['@markup.heading.6'] = { fg = c.purple, bold = true },
-  ['@markup.heading.6.marker'] = { link = '@markup.heading' },
+  ['@markup.heading.1'] = { fg = rainbows.red, bold = true },
+  ['@markup.heading.2'] = { fg = rainbows.orange, bold = true },
+  ['@markup.heading.3'] = { fg = rainbows.yellow, bold = true },
+  ['@markup.heading.4'] = { fg = rainbows.green, bold = true },
+  ['@markup.heading.5'] = { fg = rainbows.cyan, bold = true },
+  ['@markup.heading.6'] = { fg = rainbows.blue, bold = true },
   ['@markup.italic'] = { fg = c.fg, italic = true },
   ['@markup.italic.markdown_inline'] = { fg = c.orange, italic = true },
   ['@markup.link'] = { link = 'Tag' },
@@ -721,42 +722,42 @@ hl.plugins.navic = {
 }
 
 hl.plugins.ts_rainbow = {
-  rainbowcol1 = colors.Red,
-  rainbowcol2 = colors.Yellow,
-  rainbowcol3 = colors.Blue,
-  rainbowcol4 = colors.Orange,
-  rainbowcol5 = { fg = util.blend(c.green, c.fg, 0.375) },
-  rainbowcol6 = colors.Purple,
-  rainbowcol7 = colors.Cyan,
+  rainbowcol1 = { fg = rainbows.red },
+  rainbowcol2 = { fg = rainbows.yellow },
+  rainbowcol3 = { fg = rainbows.blue },
+  rainbowcol4 = { fg = rainbows.orange },
+  rainbowcol5 = { fg = rainbows.green },
+  rainbowcol6 = { fg = rainbows.purple },
+  rainbowcol7 = { fg = rainbows.cyan },
 }
 
 hl.plugins.ts_rainbow2 = {
-  TSRainbowRed = { link = 'rainbowcol1' },
-  TSRainbowYellow = { link = 'rainbowcol2' },
-  TSRainbowBlue = { link = 'rainbowcol3' },
-  TSRainbowOrange = { link = 'rainbowcol4' },
-  TSRainbowGreen = { link = 'rainbowcol5' },
-  TSRainbowViolet = { link = 'rainbowcol6' },
-  TSRainbowCyan = { link = 'rainbowcol7' },
+  TSRainbowRed = { fg = rainbows.red },
+  TSRainbowYellow = { fg = rainbows.yellow },
+  TSRainbowBlue = { fg = rainbows.blue },
+  TSRainbowOrange = { fg = rainbows.orange },
+  TSRainbowGreen = { fg = rainbows.green },
+  TSRainbowViolet = { fg = rainbows.purple },
+  TSRainbowCyan = { fg = rainbows.cyan },
 }
 
 hl.plugins.rainbow_delimiters = {
-  RainbowDelimiterRed = { link = 'rainbowcol1' },
-  RainbowDelimiterYellow = { link = 'rainbowcol2' },
-  RainbowDelimiterBlue = { link = 'rainbowcol3' },
-  RainbowDelimiterOrange = { link = 'rainbowcol4' },
-  RainbowDelimiterGreen = { link = 'rainbowcol5' },
-  RainbowDelimiterViolet = { link = 'rainbowcol6' },
-  RainbowDelimiterCyan = { link = 'rainbowcol7' },
+  RainbowDelimiterRed = { fg = rainbows.red },
+  RainbowDelimiterYellow = { fg = rainbows.yellow },
+  RainbowDelimiterBlue = { fg = rainbows.blue },
+  RainbowDelimiterOrange = { fg = rainbows.orange },
+  RainbowDelimiterGreen = { fg = rainbows.green },
+  RainbowDelimiterViolet = { fg = rainbows.purple },
+  RainbowDelimiterCyan = { fg = rainbows.cyan },
 }
 
 hl.plugins.indent_blankline = {
-  IndentBlanklineIndent1 = colors.Blue,
-  IndentBlanklineIndent2 = colors.Green,
-  IndentBlanklineIndent3 = colors.Cyan,
+  IndentBlanklineIndent1 = { fg = rainbows.blue },
+  IndentBlanklineIndent2 = { fg = rainbows.green },
+  IndentBlanklineIndent3 = { fg = rainbows.cyan },
   IndentBlanklineIndent4 = colors.LightGrey,
-  IndentBlanklineIndent5 = colors.Purple,
-  IndentBlanklineIndent6 = colors.Red,
+  IndentBlanklineIndent5 = { fg = rainbows.purple },
+  IndentBlanklineIndent6 = { fg = rainbows.red },
   IndentBlanklineChar = { fg = c.bg1, nocombine = true },
   IndentBlanklineContextChar = { fg = c.light_grey, nocombine = true },
   IndentBlanklineContextStart = { bg = c.bg1 },
