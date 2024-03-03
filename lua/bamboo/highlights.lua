@@ -270,6 +270,11 @@ hl.treesitter = {
     cfg.code_style.namespaces
   ),
   ['@module.builtin'] = { link = '@variable.builtin' },
+  ['@module.latex'] = vim.tbl_extend(
+    'force',
+    colors.Cyan,
+    cfg.code_style.namespaces
+  ),
   ['@none'] = colors.Fg,
   ['@number'] = { link = 'Number' },
   ['@number.float'] = { link = 'Float' },
@@ -302,11 +307,6 @@ hl.treesitter = {
   ['@variable.builtin'] = vim.tbl_extend(
     'force',
     { fg = c.red },
-    cfg.code_style.variables
-  ),
-  ['@variable.global'] = vim.tbl_extend(
-    'force',
-    { fg = util.lighten(c.red, 0.375) },
     cfg.code_style.variables
   ),
   ['@variable.member'] = colors.Cyan,
@@ -402,7 +402,11 @@ hl.lsp = {
   ['@lsp.typemod.variable.callable'] = { link = '@function' },
   ['@lsp.typemod.variable.constant.rust'] = { link = '@constant' },
   ['@lsp.typemod.variable.defaultLibrary'] = { link = '@variable.builtin' },
-  ['@lsp.typemod.variable.global'] = { link = '@variable.global' },
+  ['@lsp.typemod.variable.global'] = vim.tbl_extend(
+    'force',
+    { fg = util.lighten(c.red, 0.375) },
+    cfg.code_style.variables
+  ),
   ['@lsp.typemod.variable.injected'] = { link = '@variable' },
   ['@lsp.typemod.variable.mutable'] = { fg = util.blend(c.fg, c.green, 0.375) },
   ['@lsp.typemod.variable.static'] = { fg = light_blue },
