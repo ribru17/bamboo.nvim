@@ -255,7 +255,6 @@ hl.treesitter = {
   ['@markup.quote'] = { fg = util.blend(c.fg, c.light_grey, 0.5) },
   ['@markup.raw'] = colors.Green,
   ['@markup.raw.block'] = { link = '@markup.raw' },
-  ['@markup.raw.delimiter'] = colors.LightGrey,
   ['@markup.strikethrough'] = { fg = c.fg, strikethrough = true },
   ['@markup.strikethrough.markdown_inline'] = {
     fg = c.orange,
