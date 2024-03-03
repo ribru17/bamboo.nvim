@@ -1,0 +1,123 @@
+colors:
+  # Theme colors
+  background_color: "171f17"
+  purple: "ae93e0"
+  khaki: "dcbf84"
+  pink: "dc4f62"
+  cyan: "71ada2"
+  green: "81af58"
+  orange: "cebe69"
+
+  # Others
+  white: "fff8f0"
+  black: "171f17"
+  red: "dc4f62"
+  gray: "b6b6b6"
+  dimgray: "5a5e5a"
+  gold: "cebe69"
+  springgreen: "81af58"
+  darkgray: "383d37"
+
+core:
+  normal_text: {}
+  regular_file: {}
+  reset_to_normal: {}
+
+  directory:
+    foreground: cyan
+
+  symlink:
+    foreground: pink
+
+  multi_hard_link: {}
+
+  fifo:
+    foreground: black
+    background: cyan
+
+  socket:
+    foreground: black
+    background: pink
+
+  door:
+    foreground: black
+    background: pink
+
+  block_device:
+    foreground: cyan
+    background: darkgray
+
+  character_device:
+    foreground: pink
+    background: darkgray
+
+  broken_symlink:
+    foreground: black
+    background: red
+
+  missing_symlink_target:
+    foreground: black
+    background: red
+
+  setuid: {}
+
+  setgid: {}
+
+  file_with_capability: {}
+
+  sticky_other_writable: {}
+
+  other_writable: {}
+
+  sticky: {}
+
+  executable_file:
+    foreground: pink
+    font-style: bold
+
+text:
+  special:
+    foreground: black
+    background: khaki
+
+  todo:
+    font-style: bold
+
+  licenses:
+    foreground: gray
+
+  configuration:
+    foreground: green
+
+  other:
+    foreground: gold
+
+markup:
+  foreground: gold
+
+programming:
+  source:
+    foreground: springgreen
+
+  tooling:
+    foreground: green
+
+    continuous-integration:
+      foreground: khaki
+
+media:
+  foreground: orange
+
+office:
+  foreground: khaki
+
+archives:
+  foreground: pink
+  font-style: underline
+
+executable:
+  foreground: pink
+  font-style: bold
+
+unimportant:
+  foreground: dimgray
