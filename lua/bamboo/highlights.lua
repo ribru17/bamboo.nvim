@@ -75,7 +75,7 @@ hl.common = {
   ColorColumn = { bg = util.blend(c.bg1, c.green, 0.125) },
   CursorLineNr = { fg = c.fg },
   LineNr = { fg = c.grey },
-  Conceal = { fg = c.grey },
+  Conceal = colors.LightGrey,
   DiffAdd = { fg = c.none, bg = c.diff_add },
   DiffChange = { fg = c.none, bg = c.diff_change },
   DiffDelete = { fg = c.none, bg = c.diff_delete },
@@ -190,6 +190,7 @@ hl.treesitter = {
   ['@comment.warning'] = { fg = c.black, bg = c.orange, bold = true },
   -- overflow highlight
   ['@comment.warning.gitcommit'] = { fg = c.black, bg = c.orange },
+  ['@conceal'] = { link = 'Conceal' },
   ['@constant'] = { link = 'Constant' },
   ['@constant.builtin'] = { link = 'Constant' },
   ['@constant.macro'] = { link = 'Constant' },
