@@ -48,7 +48,6 @@ local colors = {
 local normal_bg = cfg.transparent and c.none or c.bg0
 local dimmable_bg = cfg.dim_inactive and util.darken(c.bg0, 0.125) or normal_bg
 local light_blue = util.lighten(c.blue, 0.375)
-local const_purple = util.blend(c.purple, c.orange, 0.25)
 local light_purple = util.blend(c.purple, c.fg, 0.375)
 local rainbows = {
   red = util.lighten(c.red, 0.25),
@@ -163,7 +162,7 @@ hl.syntax = {
   ),
   Repeat = { link = 'Keyword' },
   Statement = colors.Purple,
-  Macro = { fg = const_purple },
+  Macro = { fg = c.bright_purple },
   Error = colors.Red,
   Label = { fg = c.red, bold = true },
   Special = colors.Red,
@@ -218,7 +217,7 @@ hl.treesitter = {
   ['@function.call'] = { link = 'Function' },
   ['@function.macro'] = vim.tbl_extend(
     'force',
-    { fg = const_purple },
+    { fg = c.bright_purple },
     cfg.code_style.functions
   ),
   ['@function.method'] = { link = 'Function' },
@@ -992,7 +991,7 @@ local lsp_kind_icons_color = {
   Package = c.yellow,
   Property = c.cyan,
   Reference = c.orange,
-  Snippet = const_purple,
+  Snippet = c.bright_purple,
   String = c.green,
   Struct = c.yellow,
   Text = c.light_grey,
