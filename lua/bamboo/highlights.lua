@@ -201,7 +201,9 @@ hl.treesitter = {
   ['@comment.todo'] = { link = 'Todo' },
   ['@comment.warning'] = { fg = c.black, bg = c.orange, bold = true },
   -- overflow highlight
-  ['@comment.warning.gitcommit'] = { fg = c.black, bg = c.orange },
+  ['@comment.warning.gitcommit'] = {
+    bg = util.blend(c.orange, c.bg0, 0.75),
+  },
   ['@conceal'] = { link = 'Conceal' },
   ['@constant'] = { link = 'Constant' },
   ['@constant.builtin'] = { link = 'Constant' },
