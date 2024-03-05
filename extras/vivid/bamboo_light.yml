@@ -2,11 +2,11 @@ colors:
   # Theme colors
   background_color: "c7c7af"
   purple: "8a4adf"
-  khaki: "956515"
+  khaki: "855505"
   pink: "c72a3c"
   cyan: "00a2be"
   green: "4fa533"
-  orange: "bb9651"
+  orange: "bb9631"
 
   # Others
   white: "fff8f0"
@@ -14,7 +14,7 @@ colors:
   red: "c72a3c"
   gray: "b6b6b6"
   dimgray: "a1a7a0"
-  gold: "bb9651"
+  gold: "bb9631"
   springgreen: "4fa533"
   darkgray: "dadac2"
 

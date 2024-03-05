@@ -6,7 +6,7 @@ colors:
   pink: "dc4f62"
   cyan: "68baae"
   green: "81af58"
-  orange: "cebe69"
+  orange: "ceba49"
 
   # Others
   white: "fff8f0"
@@ -14,7 +14,7 @@ colors:
   red: "dc4f62"
   gray: "b6b6b6"
   dimgray: "5a5e5a"
-  gold: "cebe69"
+  gold: "ceba49"
   springgreen: "81af58"
   darkgray: "383d37"
 

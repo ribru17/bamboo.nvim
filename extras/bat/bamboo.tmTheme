@@ -36,9 +36,9 @@
 				<key>foreground</key>
 				<string>#f1e9d2</string>
 				<key>invisibles</key>
-				<string>#dbb671</string>
+				<string>#dbb651</string>
 				<key>lineHighlight</key>
-				<string>#dbb671</string>
+				<string>#dbb651</string>
 				<key>selection</key>
 				<string>#8fb573</string>
 			</dict>
