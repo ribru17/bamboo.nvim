@@ -250,7 +250,7 @@ hl.treesitter = {
   ['@markup.italic'] = { fg = c.fg, italic = true },
   ['@markup.italic.markdown_inline'] = { fg = c.orange, italic = true },
   ['@markup.link'] = { link = 'Tag' },
-  ['@markup.link.label'] = { link = 'Tag' },
+  ['@markup.link.label'] = { fg = c.blue, underline = true },
   ['@markup.link.url'] = { fg = c.cyan, underline = true, italic = true },
   ['@markup.list'] = { link = 'Special' },
   ['@markup.list.checked'] = { fg = c.yellow, bold = true },
