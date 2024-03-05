@@ -431,6 +431,8 @@ hl.plugins.lsp = {
   LspCxxHlSkippedRegion = colors.Grey,
   LspCxxHlSkippedRegionBeginEnd = colors.Red,
 
+  DiagnosticDeprecated = { link = 'Strike' },
+  DiagnosticOk = { fg = c.green },
   DiagnosticUnnecessary = { link = 'Comment' },
   DiagnosticError = { fg = c.red },
   DiagnosticHint = { fg = c.purple },
@@ -481,6 +483,11 @@ hl.plugins.lsp = {
     undercurl = cfg.diagnostics.undercurl,
     underline = not cfg.diagnostics.undercurl,
     sp = c.yellow,
+  },
+  DiagnosticUnderlineOk = {
+    undercurl = cfg.diagnostics.undercurl,
+    underline = not cfg.diagnostics.undercurl,
+    sp = c.green,
   },
 
   LspReferenceText = { bg = c.bg2 },
