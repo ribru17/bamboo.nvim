@@ -178,6 +178,11 @@ hl.syntax = {
   Comment = vim.tbl_extend('force', { fg = c.grey }, cfg.code_style.comments),
   SpecialComment = { link = 'Comment' },
   Todo = { fg = c.black, bg = c.purple, bold = true },
+  Namespace = vim.tbl_extend(
+    'force',
+    { fg = light_blue },
+    cfg.code_style.namespaces
+  ),
 
   Underlined = { underline = true },
   Bold = { bold = true },
@@ -269,11 +274,7 @@ hl.treesitter = {
   ['@markup.strong'] = { fg = c.fg, bold = true },
   ['@markup.strong.markdown_inline'] = { fg = c.orange, bold = true },
   ['@markup.underline'] = { fg = c.fg, underline = true },
-  ['@module'] = vim.tbl_extend(
-    'force',
-    { fg = light_blue },
-    cfg.code_style.namespaces
-  ),
+  ['@module'] = { link = 'Namespace' },
   ['@module.builtin'] = { link = '@variable.builtin' },
   ['@module.latex'] = vim.tbl_extend(
     'force',
@@ -355,7 +356,7 @@ hl.lsp = {
   ['@lsp.type.macro'] = { link = 'Macro' },
   ['@lsp.type.magicFunction'] = { link = '@function.builtin' },
   ['@lsp.type.method'] = { link = '@function.method' },
-  ['@lsp.type.namespace'] = { link = '@module' },
+  ['@lsp.type.namespace'] = { link = 'Namespace' },
   ['@lsp.type.number'] = { link = '@number' },
   ['@lsp.type.operator'] = { link = '@operator' },
   -- don't highlight cpp operators, the LSP is too generous with these
