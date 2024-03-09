@@ -204,7 +204,6 @@ hl.treesitter = {
   ['@comment.warning.gitcommit'] = {
     bg = util.blend(c.orange, c.bg0, 0.75),
   },
-  ['@conceal'] = { link = 'Conceal' },
   ['@constant'] = { link = 'Constant' },
   ['@constant.builtin'] = { link = 'Constant' },
   ['@constant.macro'] = { link = 'Constant' },
