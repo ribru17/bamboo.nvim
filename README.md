@@ -30,8 +30,8 @@ _For earlier versions of Neovim and/or Tree-sitter, pin the color scheme to
 <details open>
 <summary>Click to toggle previews</summary>
 
-![bamboomdshowcase](https://github.com/ribru17/bamboo.nvim/assets/55766287/815631da-853c-40ad-8e00-ce36bd442856)
-![bamboocodeshowcase](https://github.com/ribru17/bamboo.nvim/assets/55766287/e605d574-3304-40f9-a483-4cb58b3857ed)
+![bamboo md](https://github.com/ribru17/bamboo.nvim/assets/55766287/203a3dfb-26fb-45d3-ab55-36624e263b7d)
+![bamboo lua](https://github.com/ribru17/bamboo.nvim/assets/55766287/dcaaced0-e0e4-4608-9e6c-790f79217fab)
 
 </details>
 
@@ -40,8 +40,8 @@ _For earlier versions of Neovim and/or Tree-sitter, pin the color scheme to
 <details>
 <summary>Click to toggle previews</summary>
 
-![bamboomultiplexmdshowcase](https://github.com/ribru17/bamboo.nvim/assets/55766287/a9b1ebd1-9347-44fb-bea2-76245cd29727)
-![bamboomultiplexcodeshowcase](https://github.com/ribru17/bamboo.nvim/assets/55766287/71315cf6-cd0a-4480-85f1-f56c6944ebb2)
+![bamboo multiplex md](https://github.com/ribru17/bamboo.nvim/assets/55766287/bef716dc-f51f-4a8c-8851-06f2e6d3b81a)
+![bamboo multiplex lua](https://github.com/ribru17/bamboo.nvim/assets/55766287/296b03fe-e6ce-44e5-a5cc-0b50adfe4f5a)
 
 </details>
 
@@ -50,8 +50,8 @@ _For earlier versions of Neovim and/or Tree-sitter, pin the color scheme to
 <details>
 <summary>Click to toggle previews</summary>
 
-![bamboolightmdshowcase](https://github.com/ribru17/bamboo.nvim/assets/55766287/63f2b9e7-085f-4b32-bded-6573ef91eea1)
-![bamboolightcodeshowcase](https://github.com/ribru17/bamboo.nvim/assets/55766287/f65dda17-caea-4906-a638-00c8e5073eed)
+![bamboo light md](https://github.com/ribru17/bamboo.nvim/assets/55766287/e452867d-9b5f-4bd2-affa-58c068915a63)
+![bamboo light lua](https://github.com/ribru17/bamboo.nvim/assets/55766287/08faf1b6-85ef-4175-b4b5-2db40cc143c9)
 
 </details>
 <br/>
