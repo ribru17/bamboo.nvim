@@ -379,6 +379,7 @@ hl.lsp = {
     link = '@constant.builtin',
   },
   ['@lsp.typemod.function.defaultLibrary'] = { link = '@function.builtin' },
+  ['@lsp.typemod.function.builtin'] = { link = '@function.builtin' },
   ['@lsp.typemod.function.readonly'] = { link = '@function.method' },
   -- For things like `#![allow(unused_variables, unused_mut)]` in Rust
   ['@lsp.typemod.generic.attribute'] = { link = '@keyword' },
