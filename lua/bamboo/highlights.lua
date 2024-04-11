@@ -47,7 +47,6 @@ local colors = {
 
 local normal_bg = cfg.transparent and c.none or c.bg0
 local dimmable_bg = cfg.dim_inactive and util.darken(c.bg0, 0.125) or normal_bg
-local light_blue = util.lighten(c.blue, 0.375)
 local light_purple = util.blend(c.purple, c.fg, 0.375)
 local dark_red = util.darken(c.red, 0.2)
 local dark_yellow = util.darken(c.yellow, 0.2)
@@ -256,7 +255,7 @@ hl.treesitter = {
   ['@markup.list'] = { link = 'Special' },
   ['@markup.list.checked'] = { fg = c.yellow, bold = true },
   ['@markup.list.unchecked'] = { fg = c.light_grey, bold = true },
-  ['@markup.math'] = { fg = light_blue },
+  ['@markup.math'] = { fg = c.light_blue },
   ['@markup.quote'] = { fg = util.blend(c.fg, c.light_grey, 0.5) },
   ['@markup.raw'] = colors.Green,
   ['@markup.raw.block'] = { link = '@markup.raw' },
@@ -270,7 +269,7 @@ hl.treesitter = {
   ['@markup.underline'] = { fg = c.fg, underline = true },
   ['@module'] = vim.tbl_extend(
     'force',
-    { fg = light_blue },
+    { fg = c.light_blue },
     cfg.code_style.namespaces
   ),
   ['@module.builtin'] = { link = '@variable.builtin' },
@@ -292,7 +291,7 @@ hl.treesitter = {
   ['@string.escape'] = { fg = c.coral },
   ['@string.regexp'] = { link = 'Constant' },
   ['@string.special'] = { link = 'Special' },
-  ['@string.special.path'] = { fg = light_blue, underline = true },
+  ['@string.special.path'] = { fg = c.light_blue, underline = true },
   ['@string.special.symbol'] = { link = '@variable.member' },
   ['@string.special.url'] = { fg = c.cyan, underline = true, italic = true },
   ['@tag'] = colors.Purple,
@@ -413,7 +412,7 @@ hl.lsp = {
   ),
   ['@lsp.typemod.variable.injected'] = { link = '@variable' },
   ['@lsp.typemod.variable.mutable'] = { fg = util.blend(c.fg, c.green, 0.375) },
-  ['@lsp.typemod.variable.static'] = { fg = light_blue },
+  ['@lsp.typemod.variable.static'] = { fg = c.light_blue },
   ['@lsp.typemod.variable.static.rust'] = {},
 }
 
@@ -631,7 +630,7 @@ hl.plugins.gitsigns = {
 }
 
 hl.plugins.lazy = {
-  LazyReasonColorscheme = { fg = light_blue },
+  LazyReasonColorscheme = { fg = c.light_blue },
   LazyReasonCmd = colors.Green,
   LazyReasonFt = colors.Yellow,
   LazyReasonSource = colors.Blue,
@@ -988,14 +987,14 @@ local lsp_kind_icons_color = {
   Event = c.yellow,
   Field = c.cyan,
   File = c.green,
-  Folder = light_blue,
+  Folder = c.light_blue,
   Function = c.blue,
   Interface = c.green,
   Key = c.cyan,
   Keyword = c.purple,
   Method = c.blue,
-  Module = light_blue,
-  Namespace = light_blue,
+  Module = c.light_blue,
+  Namespace = c.light_blue,
   Null = c.grey,
   Number = c.orange,
   Object = c.red,
