@@ -32,7 +32,7 @@ ble-face -s syntax_comment fg=#855505
 ble-face -s syntax_delimiter fg=#838781
 ble-face -s syntax_document fg=cyan,bold
 ble-face -s syntax_document_begin fg=cyan,bold
-ble-face -s syntax_error bg=red
+ble-face -s syntax_error fg=black,bg=red
 ble-face -s syntax_escape fg=#d06060
 ble-face -s syntax_expr fg=#6c47a0
 ble-face -s syntax_function_name fg=blue
