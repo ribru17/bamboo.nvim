@@ -5,7 +5,7 @@ colors:
   khaki: "855505"
   pink: "c72a3c"
   cyan: "188a9e"
-  green: "4fa533"
+  green: "27850b"
   orange: "bb9631"
 
   # Others
@@ -15,7 +15,7 @@ colors:
   gray: "b6b6b6"
   dimgray: "a1a7a0"
   gold: "bb9631"
-  springgreen: "4fa533"
+  springgreen: "27850b"
   darkgray: "dadac2"
 
 core:
