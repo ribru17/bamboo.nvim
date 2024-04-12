@@ -65,7 +65,7 @@ return {
     fg = '#3a4238',
     purple = '#8a4adf',
     bright_purple = '#c810d0',
-    green = '#4fa533',
+    green = '#27850b',
     orange = '#df5926',
     blue = '#1745d5',
     light_blue = '#177fff',
