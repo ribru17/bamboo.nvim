@@ -28,7 +28,7 @@ scrollbar_thumb = "#c7c7af"
 selection_bg = "#a1a7a0"
 selection_fg = "#3a4238"
 split = "#838781"
-compose_cursor = "#df7946"
+compose_cursor = "#df5926"
 visual_bell = "#e4e4cc"
 
 [colors.indexed]

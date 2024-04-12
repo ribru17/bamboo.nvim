@@ -53,7 +53,7 @@
 				<key>fontStyle</key>
 				<string>italic</string>
 				<key>foreground</key>
-				<string>#d06060</string>
+				<string>#c05050</string>
 			</dict>
 		</dict>
 		<dict>
@@ -231,7 +231,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#df7946</string>
+				<string>#df5926</string>
 			</dict>
 		</dict>
 		<dict>
@@ -242,7 +242,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#df7946</string>
+				<string>#df5926</string>
 			</dict>
 		</dict>
 		<dict>
@@ -253,7 +253,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#df7946</string>
+				<string>#df5926</string>
 			</dict>
 		</dict>
 		<dict>
@@ -264,7 +264,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#df7946</string>
+				<string>#df5926</string>
 			</dict>
 		</dict>
 		<dict>
@@ -345,7 +345,7 @@
 				<key>fontStyle</key>
 				<string>bold</string>
 				<key>foreground</key>
-				<string>#df7946</string>
+				<string>#df5926</string>
 			</dict>
 		</dict>
 		<dict>
@@ -369,7 +369,7 @@
 				<key>fontStyle</key>
 				<string>bold</string>
 				<key>foreground</key>
-				<string>#df7946</string>
+				<string>#df5926</string>
 			</dict>
 		</dict>
 		<dict>
@@ -382,7 +382,7 @@
 				<key>fontStyle</key>
 				<string>italic</string>
 				<key>foreground</key>
-				<string>#df7946</string>
+				<string>#df5926</string>
 			</dict>
 		</dict>
 		<dict>
@@ -494,7 +494,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#df7946</string>
+				<string>#df5926</string>
 			</dict>
 		</dict>
 		<dict>
@@ -505,7 +505,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#d06060</string>
+				<string>#c05050</string>
 			</dict>
 		</dict>
 		<dict>
