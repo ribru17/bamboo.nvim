@@ -1,6 +1,6 @@
 return {
   vulgaris = {
-    black = '#111210',
+    contrast = '#111210',
     bg0 = '#252623',
     bg1 = '#2f312c',
     bg2 = '#383b35',
@@ -26,7 +26,7 @@ return {
     diff_text = '#3a4a67',
   },
   multiplex = {
-    black = '#101210',
+    contrast = '#101210',
     bg0 = '#232923',
     bg1 = '#2d312c',
     bg2 = '#363b35',
@@ -52,7 +52,7 @@ return {
     diff_text = '#3a4a67',
   },
   light = {
-    black = '#111210',
+    contrast = '#fff8f0',
     bg0 = '#fafae0',
     bg1 = '#eaead0',
     bg2 = '#e4e4cc',

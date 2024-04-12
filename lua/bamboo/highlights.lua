@@ -177,7 +177,7 @@ hl.syntax = {
   Delimiter = colors.LightGrey,
   Comment = vim.tbl_extend('force', { fg = c.grey }, cfg.code_style.comments),
   SpecialComment = { link = 'Comment' },
-  Todo = { fg = c.black, bg = c.purple, bold = true },
+  Todo = { fg = c.contrast, bg = c.purple, bold = true },
 
   Underlined = { underline = true },
   Bold = { bold = true },
@@ -196,10 +196,10 @@ hl.treesitter = {
     { fg = c.bg_yellow },
     cfg.code_style.comments
   ),
-  ['@comment.error'] = { fg = c.black, bg = c.red, bold = true },
-  ['@comment.note'] = { fg = c.black, bg = c.blue, bold = true },
+  ['@comment.error'] = { fg = c.contrast, bg = c.red, bold = true },
+  ['@comment.note'] = { fg = c.contrast, bg = c.blue, bold = true },
   ['@comment.todo'] = { link = 'Todo' },
-  ['@comment.warning'] = { fg = c.black, bg = c.orange, bold = true },
+  ['@comment.warning'] = { fg = c.contrast, bg = c.orange, bold = true },
   -- overflow highlight
   ['@comment.warning.gitcommit'] = {
     bg = util.blend(c.orange, c.bg0, 0.75),

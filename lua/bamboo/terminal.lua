@@ -6,7 +6,7 @@ function M.setup()
   if not cfg.term_colors then
     return
   end
-  vim.g.terminal_color_0 = c.black
+  vim.g.terminal_color_0 = c.contrast
   vim.g.terminal_color_1 = c.red
   vim.g.terminal_color_2 = c.green
   vim.g.terminal_color_3 = c.yellow
