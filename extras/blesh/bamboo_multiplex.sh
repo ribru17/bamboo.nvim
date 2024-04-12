@@ -1,6 +1,6 @@
 # NOTE: Best used with the appropriate bamboo terminal emulator theme!!!
 
-ble-face -s argument_error bg=red
+ble-face -s argument_error fg=black,bg=red
 ble-face -s argument_option fg=#e07870,italic
 ble-face -s auto_complete fg=#5a5e5a,italic
 ble-face -s cmdinfo_cd_cdpath fg=#88c1e9,bg=black,italic
