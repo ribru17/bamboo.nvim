@@ -70,7 +70,7 @@ return {
     blue = '#1745d5',
     light_blue = '#177fff',
     yellow = '#a77b00',
-    cyan = '#00a2be',
+    cyan = '#188a9e',
     red = '#c72a3c',
     coral = '#c05050',
     grey = '#a1a7a0',
