@@ -52,14 +52,15 @@ local dark_red = util.darken(c.red, 0.2)
 local dark_yellow = util.darken(c.yellow, 0.2)
 local dark_purple = util.darken(c.purple, 0.2)
 local dark_cyan = util.darken(c.cyan, 0.2)
+local rainblend = 0.25
 local rainbows = {
-  red = util.lighten(c.red, 0.25),
-  orange = util.lighten(c.orange, 0.25),
-  yellow = util.lighten(c.yellow, 0.25),
-  green = util.lighten(c.green, 0.25),
-  cyan = util.lighten(c.cyan, 0.25),
-  blue = util.lighten(c.blue, 0.25),
-  purple = util.lighten(c.purple, 0.25),
+  red = util.blend(c.red, c.inverse, rainblend),
+  orange = util.blend(c.orange, c.inverse, rainblend),
+  yellow = util.blend(c.yellow, c.inverse, rainblend),
+  green = util.blend(c.green, c.inverse, rainblend),
+  cyan = util.blend(c.cyan, c.inverse, rainblend),
+  blue = util.blend(c.blue, c.inverse, rainblend),
+  purple = util.blend(c.purple, c.inverse, rainblend),
 }
 
 hl.common = {

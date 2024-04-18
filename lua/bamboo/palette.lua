@@ -1,6 +1,7 @@
 return {
   vulgaris = {
     contrast = '#111210',
+    inverse = '#ffffff',
     bg0 = '#252623',
     bg1 = '#2f312c',
     bg2 = '#383b35',
@@ -28,6 +29,7 @@ return {
   },
   multiplex = {
     contrast = '#101210',
+    inverse = '#ffffff',
     bg0 = '#232923',
     bg1 = '#2d312c',
     bg2 = '#363b35',
@@ -55,6 +57,7 @@ return {
   },
   light = {
     contrast = '#fff8f0',
+    inverse = '#000000',
     bg0 = '#fafae0',
     bg1 = '#eaead0',
     bg2 = '#e4e4cc',
