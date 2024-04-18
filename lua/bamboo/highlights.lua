@@ -288,7 +288,7 @@ hl.treesitter = {
   ['@punctuation.delimiter'] = { link = 'Delimiter' },
   ['@punctuation.special'] = { link = 'Special' },
   ['@string'] = { link = 'String' },
-  ['@string.documentation'] = { link = '@comment' },
+  ['@string.documentation'] = { fg = rainbows.green },
   ['@string.escape'] = { fg = c.coral },
   ['@string.regexp'] = { link = 'Constant' },
   ['@string.special'] = { link = 'Special' },
