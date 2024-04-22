@@ -105,6 +105,7 @@ hl.common = {
   Search = { fg = c.bg0, bg = c.bg_yellow },
   Substitute = { fg = c.bg0, bg = c.green },
   MatchParen = { fg = c.orange, bg = c.grey, bold = true },
+  ModeMsg = { fg = rainbows.cyan, bold = true },
   NonText = { fg = c.grey },
   Whitespace = { link = 'NonText' },
   SpecialKey = { link = 'NonText' },
