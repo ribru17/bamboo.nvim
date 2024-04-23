@@ -241,6 +241,7 @@ hl.treesitter = {
   ['@keyword.operator'] = { link = 'Keyword' },
   ['@keyword.repeat'] = { link = 'Repeat' },
   ['@keyword.return'] = { link = 'Keyword' },
+  ['@keyword.type'] = { link = 'Keyword' },
   ['@label'] = { link = 'Label' },
   ['@markup.heading'] = { fg = c.orange, bold = true },
   ['@markup.heading.1'] = { fg = rainbows.red, bold = true },
