@@ -37,11 +37,7 @@ function M.toggle()
   end
   M.set_options('style', vim.g.bamboo_config.toggle_style_list[index])
   M.set_options('toggle_style_index', index)
-  if vim.g.bamboo_config.style == 'light' then
-    vim.o.background = 'light'
-  else
-    vim.o.background = 'dark'
-  end
+  vim.cmd.colorscheme('bamboo-' .. vim.g.bamboo_config.style)
 end
 
 local default_config = {
