@@ -351,7 +351,7 @@ hl.lsp = {
   ['@lsp.type.escapeSequence'] = { link = '@string.escape' },
   ['@lsp.type.event'] = { link = 'Label' },
   ['@lsp.type.formatSpecifier'] = { link = '@punctuation.special' },
-  ['@lsp.type.generic'] = { link = '@markup' },
+  ['@lsp.type.generic'] = {},
   ['@lsp.type.interface'] = { link = '@type' },
   ['@lsp.type.keyword'] = { link = '@keyword' },
   ['@lsp.type.lifetime'] = { link = 'StorageClass' },
