@@ -399,7 +399,7 @@ hl.lsp = {
     fg = util.blend(c.coral, c.purple, 0.2),
   },
   ['@lsp.typemod.parameter.readonly'] = {
-    fg = util.blend(c.coral, c.yellow, 0.375),
+    fg = util.blend(c.coral, c.orange, 0.5),
   },
   ['@lsp.typemod.property.readonly'] = {
     fg = util.blend(c.cyan, c.green, 0.5),
