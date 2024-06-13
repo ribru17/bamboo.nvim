@@ -111,7 +111,7 @@ hl.common = {
   SpecialKey = { link = 'NonText' },
   Pmenu = { fg = c.fg, bg = c.bg1 },
   PmenuSbar = { fg = c.none, bg = c.bg1 },
-  PmenuSel = { fg = c.bg0, bg = c.bg_blue },
+  PmenuSel = { link = 'Visual' },
   WildMenu = { fg = c.bg0, bg = c.blue },
   PmenuThumb = { fg = c.none, bg = c.grey },
   Question = { fg = c.yellow },
@@ -129,7 +129,7 @@ hl.common = {
   Visual = { bg = c.bg3 },
   VisualNOS = { fg = c.none, bg = c.bg2, underline = true },
   WinSeparator = { fg = c.bg3 },
-  WinBar = { fg = c.coral },
+  WinBar = colors.LightGrey,
   WinBarNC = { link = 'WinBar' },
   QuickFixLine = { fg = c.blue, underline = true },
   Debug = { fg = c.orange },
@@ -259,7 +259,7 @@ hl.treesitter = {
   ['@markup.list.checked'] = { fg = c.yellow, bold = true },
   ['@markup.list.unchecked'] = { fg = c.light_grey, bold = true },
   ['@markup.math'] = { fg = c.light_blue },
-  ['@markup.quote'] = { fg = util.blend(c.fg, c.light_grey, 0.5) },
+  ['@markup.quote'] = colors.LightGrey,
   ['@markup.raw'] = { link = 'markdownCode' },
   ['@markup.raw.block'] = { link = 'markdownCodeBlock' },
   ['@markup.strikethrough'] = { link = 'markdownStrike' },
@@ -545,18 +545,9 @@ hl.plugins.cmp = {
   CmpItemAbbrMatchFuzzy = { fg = c.cyan, underline = true },
   CmpItemMenu = colors.LightGrey,
   CmpItemKind = { fg = c.purple, reverse = cfg.cmp_itemkind_reverse },
-  CmpItemKindCopilot = {
-    fg = c.fg,
-    reverse = cfg.cmp_itemkind_reverse,
-  },
-  CmpItemKindCodeium = {
-    fg = c.fg,
-    reverse = cfg.cmp_itemkind_reverse,
-  },
-  CmpItemKindTabNine = {
-    fg = c.fg,
-    reverse = cfg.cmp_itemkind_reverse,
-  },
+  CmpItemKindCopilot = { fg = c.fg, reverse = cfg.cmp_itemkind_reverse },
+  CmpItemKindCodeium = { fg = c.fg, reverse = cfg.cmp_itemkind_reverse },
+  CmpItemKindTabNine = { fg = c.fg, reverse = cfg.cmp_itemkind_reverse },
 }
 
 hl.plugins.coc = {
@@ -612,6 +603,11 @@ hl.plugins.diffview = {
   DiffviewStatusUnmerged = colors.Blue,
   DiffviewStatusUntracked = colors.Yellow,
   DiffviewVertSplit = { link = 'VertSplit' },
+}
+
+hl.plugins.dropbar = {
+  DropBarMenuNormalFloat = { link = 'Pmenu' },
+  DropBarMenuCurrentContext = { fg = rainbows.orange, bold = true },
 }
 
 hl.plugins.gitsigns = {
