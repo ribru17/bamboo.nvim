@@ -111,7 +111,7 @@ hl.common = {
   SpecialKey = { link = 'NonText' },
   Pmenu = { fg = c.fg, bg = c.bg1 },
   PmenuSbar = { fg = c.none, bg = c.bg1 },
-  PmenuSel = { link = 'Visual' },
+  PmenuSel = { bg = c.bg3 },
   WildMenu = { fg = c.bg0, bg = c.blue },
   PmenuThumb = { fg = c.none, bg = c.grey },
   Question = { fg = c.yellow },
