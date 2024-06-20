@@ -862,6 +862,18 @@ hl.langs.cpp = {
   cppStatement = { fg = c.purple, bold = true },
 }
 
+hl.langs.csv = {
+  csvCol0 = { fg = c.red },
+  csvCol1 = { fg = c.orange },
+  csvCol2 = { fg = c.yellow },
+  csvCol3 = { fg = c.green },
+  csvCol4 = { fg = c.cyan },
+  csvCol5 = { fg = c.blue },
+  csvCol6 = { fg = c.purple },
+  csvCol7 = { fg = c.bright_purple },
+  csvCol8 = { fg = c.fg },
+}
+
 hl.langs.html = {
   htmlH1 = { fg = rainbows.red, bold = true },
   htmlH2 = { fg = rainbows.orange, bold = true },
