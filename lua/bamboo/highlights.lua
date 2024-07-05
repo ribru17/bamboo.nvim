@@ -774,17 +774,99 @@ hl.plugins.indent_blankline = {
 }
 
 hl.plugins.mini = {
+  MiniAnimateCursor = { reverse = true, nocombine = true },
+  MiniAnimateNormalFloat = hl.common.NormalFloat,
+
+  MiniClueBorder = hl.common.FloatBorder,
+  MiniClueDescGroup = hl.plugins.lsp.DiagnosticWarn,
+  MiniClueDescSingle = hl.common.NormalFloat,
+  MiniClueNextKey = hl.plugins.lsp.DiagnosticHint,
+  MiniClueNextKeyWithPostkeys = hl.plugins.lsp.DiagnosticError,
+  MiniClueSeparator = hl.plugins.lsp.DiagnosticInfo,
+  MiniClueTitle = colors.Cyan,
+
   MiniCompletionActiveParameter = { underline = true },
 
   MiniCursorword = { underline = true },
   MiniCursorwordCurrent = { underline = true },
+
+  MiniDepsChangeAdded = hl.common.Added,
+  MiniDepsChangeRemoved = hl.common.Removed,
+  MiniDepsHint = hl.plugins.lsp.DiagnosticHint,
+  MiniDepsInfo = hl.plugins.lsp.DiagnosticInfo,
+  MiniDepsMsgBreaking = hl.plugins.lsp.DiagnosticWarn,
+  MiniDepsPlaceholder = hl.syntax.Comment,
+  MiniDepsTitle = hl.syntax.Title,
+  MiniDepsTitleError = hl.common.DiffDelete,
+  MiniDepsTitleSame = hl.common.DiffText,
+  MiniDepsTitleUpdate = hl.common.DiffAdd,
+
+  MiniDiffSignAdd = colors.Green,
+  MiniDiffSignChange = colors.Blue,
+  MiniDiffSignDelete = colors.Red,
+  MiniDiffOverAdd = hl.common.DiffAdd,
+  MiniDiffOverChange = hl.common.DiffText,
+  MiniDiffOverContext = hl.common.DiffChange,
+  MiniDiffOverDelete = hl.common.DiffDelete,
+
+  MiniFilesBorder = hl.common.FloatBorder,
+  MiniFilesBorderModified = hl.plugins.lsp.DiagnosticWarn,
+  MiniFilesCursorLine = { bg = c.bg2 },
+  MiniFilesDirectory = hl.common.Directory,
+  MiniFilesFile = { fg = c.fg },
+  MiniFilesNormal = hl.common.NormalFloat,
+  MiniFilesTitle = colors.Cyan,
+  MiniFilesTitleFocused = { fg = c.cyan, bold = true },
+
+  MiniHipatternsFixme = { fg = c.bg0, bg = c.red, bold = true },
+  MiniHipatternsHack = { fg = c.bg0, bg = c.yellow, bold = true },
+  MiniHipatternsNote = { fg = c.bg0, bg = c.cyan, bold = true },
+  MiniHipatternsTodo = { fg = c.bg0, bg = c.purple, bold = true },
+
+  MiniIconsAzure = { fg = c.bg_blue },
+  MiniIconsBlue = { fg = c.blue },
+  MiniIconsCyan = { fg = c.cyan },
+  MiniIconsGreen = { fg = c.green },
+  MiniIconsGrey = { fg = c.fg },
+  MiniIconsOrange = { fg = c.orange },
+  MiniIconsPurple = { fg = c.purple },
+  MiniIconsRed = { fg = c.red },
+  MiniIconsYellow = { fg = c.yellow },
 
   MiniIndentscopeSymbol = { fg = c.light_grey },
   MiniIndentscopePrefix = { nocombine = true }, -- Make it invisible
 
   MiniJump = { fg = c.purple, underline = true, sp = c.purple },
 
+  MiniJump2dDim = { fg = c.grey, nocombine = true },
   MiniJump2dSpot = { fg = c.red, bold = true, nocombine = true },
+  MiniJump2dSpotAhead = { fg = c.cyan, bg = c.bg0, nocombine = true },
+  MiniJump2dSpotUnique = { fg = c.yellow, bold = true, nocombine = true },
+
+  MiniMapNormal = hl.common.NormalFloat,
+  MiniMapSymbolCount = hl.syntax.Special,
+  MiniMapSymbolLine = hl.syntax.Title,
+  MiniMapSymbolView = hl.syntax.Delimiter,
+
+  MiniNotifyBorder = hl.common.FloatBorder,
+  MiniNotifyNormal = hl.common.NormalFloat,
+  MiniNotifyTitle = colors.Cyan,
+
+  MiniOperatorsExchangeFrom = hl.common.IncSearch,
+
+  MiniPickBorder = hl.common.FloatBorder,
+  MiniPickBorderBusy = hl.plugins.lsp.DiagnosticWarn,
+  MiniPickBorderText = { fg = c.cyan, bold = true },
+  MiniPickIconDirectory = hl.common.Directory,
+  MiniPickIconFile = hl.common.NormalFloat,
+  MiniPickHeader = hl.plugins.lsp.DiagnosticHint,
+  MiniPickMatchCurrent = { bg = c.bg2 },
+  MiniPickMatchMarked = { bg = c.diff_text },
+  MiniPickMatchRanges = hl.plugins.lsp.DiagnosticHint,
+  MiniPickNormal = hl.common.NormalFloat,
+  MiniPickPreviewLine = { bg = c.bg2 },
+  MiniPickPreviewRegion = hl.common.IncSearch,
+  MiniPickPrompt = hl.plugins.lsp.DiagnosticInfo,
 
   MiniStarterCurrent = { nocombine = true },
   MiniStarterFooter = { fg = dark_red, italic = true },
