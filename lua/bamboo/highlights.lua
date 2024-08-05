@@ -610,6 +610,21 @@ hl.plugins.dropbar = {
   DropBarMenuCurrentContext = { fg = rainbows.orange, bold = true },
 }
 
+hl.plugins.gitgraph = {
+  GitGraphHash = { link = 'Constant' },
+  GitGraphTimestamp = { link = 'Special' },
+  GitGraphAuthor = { link = 'Function' },
+  GitGraphBranchMsg = { link = 'String' },
+  GitGraphBranchName = { link = 'Macro' },
+  GitGraphBranchTag = { link = 'Keyword' },
+
+  GitGraphBranch1 = { fg = rainbows.red },
+  GitGraphBranch2 = { fg = rainbows.orange },
+  GitGraphBranch3 = { fg = rainbows.yellow },
+  GitGraphBranch4 = { fg = rainbows.green },
+  GitGraphBranch5 = { fg = rainbows.blue },
+}
+
 hl.plugins.gitsigns = {
   GitSignsAdd = colors.Green,
   GitSignsAddLn = colors.Green,
