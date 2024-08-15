@@ -133,7 +133,7 @@ hl.common = {
   WinBarNC = { link = 'WinBar' },
   QuickFixLine = { fg = c.blue, underline = true },
   Debug = { fg = c.orange },
-  debugPC = { fg = c.bg0, bg = c.green },
+  debugPC = { bg = c.bg_d },
   debugBreakpoint = { fg = c.bg0, bg = c.red },
   ToolbarButton = { fg = c.bg0, bg = c.bg_blue },
 }
