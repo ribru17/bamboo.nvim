@@ -564,6 +564,17 @@ hl.plugins.whichkey = {
   WhichKeySeparator = colors.Green,
 }
 
+hl.plugins.fzf_lua = {
+  FzfLuaBorder = { link = 'FloatBorder' },
+  FzfLuaHeaderText = { link = 'WarningMsg' },
+  FzfLuaFzfScrollbar = { link = 'Special' },
+  FzfLuaPreviewTitle = { link = 'Label' },
+  FzfLuaFzfGutter = { link = 'Function' },
+  FzfLuaFzfPointer = { link = 'Constant' },
+  FzfLuaFzfMarker = { link = 'Function' },
+  FzfLuaFzfPrompt = { link = '@string.special.path' },
+}
+
 hl.plugins.gitgutter = {
   GitGutterAdd = { fg = c.green },
   GitGutterChange = { fg = c.blue },
