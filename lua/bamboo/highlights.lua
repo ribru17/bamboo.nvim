@@ -207,7 +207,7 @@ hl.treesitter = {
   },
   ['@constant'] = { link = 'Constant' },
   ['@constant.builtin'] = { link = 'Constant' },
-  ['@constant.macro'] = { link = 'Constant' },
+  ['@constant.macro'] = { link = 'Macro' },
   ['@constructor'] = { fg = c.yellow, bold = true },
   ['@constructor.lua'] = { fg = c.yellow },
   ['@diff.delta'] = { link = 'DiffChange' },
