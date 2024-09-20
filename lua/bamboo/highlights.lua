@@ -853,7 +853,7 @@ hl.plugins.mini = {
   MiniIconsBlue = { fg = c.blue },
   MiniIconsCyan = { fg = c.cyan },
   MiniIconsGreen = { fg = c.green },
-  MiniIconsGrey = { fg = c.fg },
+  MiniIconsGrey = { fg = c.light_grey },
   MiniIconsOrange = { fg = c.orange },
   MiniIconsPurple = { fg = c.purple },
   MiniIconsRed = { fg = c.red },
