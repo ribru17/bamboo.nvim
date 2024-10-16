@@ -361,7 +361,8 @@ hl.lsp = {
   ['@lsp.type.property'] = { link = '@property' },
   ['@lsp.type.selfKeyword'] = { link = '@variable.builtin' },
   ['@lsp.type.selfTypeKeyword'] = { link = '@type' },
-  ['@lsp.type.string'] = { link = '@string' },
+  -- don't override regex injections in e.g. golang
+  ['@lsp.type.string'] = { link = '' },
   ['@lsp.type.typeAlias'] = { link = '@type.definition' },
   ['@lsp.type.typeParameter'] = { link = '@type' },
   ['@lsp.type.unresolvedReference'] = {
