@@ -981,6 +981,15 @@ hl.langs.csv = {
   csvCol6 = { fg = c.purple },
   csvCol7 = { fg = c.bright_purple },
   csvCol8 = { fg = c.fg },
+  escCsvCol0 = { link = 'csvCol0' },
+  escCsvCol1 = { link = 'csvCol1' },
+  escCsvCol2 = { link = 'csvCol2' },
+  escCsvCol3 = { link = 'csvCol3' },
+  escCsvCol4 = { link = 'csvCol4' },
+  escCsvCol5 = { link = 'csvCol5' },
+  escCsvCol6 = { link = 'csvCol6' },
+  escCsvCol7 = { link = 'csvCol7' },
+  escCsvCol8 = { link = 'csvCol8' },
 }
 
 hl.langs.html = {
