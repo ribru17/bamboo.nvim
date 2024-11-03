@@ -176,7 +176,11 @@ hl.syntax = {
   Operator = { fg = light_purple },
   Tag = colors.Blue,
   Delimiter = colors.LightGrey,
-  Comment = vim.tbl_extend('force', { fg = c.grey }, cfg.code_style.comments),
+  Comment = vim.tbl_extend(
+    'force',
+    { fg = c.light_grey },
+    cfg.code_style.comments
+  ),
   SpecialComment = { link = 'Comment' },
   Todo = { fg = c.contrast, bg = c.purple, bold = true },
 
@@ -498,6 +502,8 @@ hl.plugins.lsp = {
   LspCodeLens = { link = 'Comment' },
   LspCodeLensSeparator = { fg = c.grey },
   LspInfoBorder = { link = 'FloatBorder' },
+
+  LspInlayHint = colors.Grey,
 }
 
 hl.plugins.lsp.LspDiagnosticsDefaultError = hl.plugins.lsp.DiagnosticError
