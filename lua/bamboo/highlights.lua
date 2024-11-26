@@ -280,7 +280,6 @@ hl.treesitter = {
     colors.Cyan,
     cfg.code_style.namespaces
   ),
-  ['@none'] = colors.Fg,
   ['@number'] = { link = 'Number' },
   ['@number.float'] = { link = 'Float' },
   ['@operator'] = { link = 'Operator' },
