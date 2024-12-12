@@ -544,6 +544,25 @@ hl.plugins.barbar = {
   BufferVisibleTarget = { fg = c.light_grey, bg = c.bg0 },
 }
 
+hl.plugins.blinkcmp = {
+  BlinkCmpGhostText = {
+    fg = c.light_grey,
+    bg = c.bg0,
+    italic = true,
+    nocombine = true,
+  },
+  BlinkCmpLabel = colors.Fg,
+  BlinkCmpLabelMatch = colors.Cyan,
+  BlinkCmpLabelDeprecated = { fg = c.light_grey, strikethrough = true },
+  BlinkCmpKind = { fg = c.purple, reverse = cfg.cmp_itemkind_reverse },
+  BlinkCmpKindCopilot = { fg = c.fg, reverse = cfg.cmp_itemkind_reverse },
+  BlinkCmpKindCodeium = { fg = c.fg, reverse = cfg.cmp_itemkind_reverse },
+  BlinkCmpKindTabNine = { fg = c.fg, reverse = cfg.cmp_itemkind_reverse },
+  BlinkCmpMenu = { link = 'FloatNormal' },
+  BlinkCmpMenuBorder = { link = 'FloatBorder' },
+  BlinkCmpDocBorder = { link = 'FloatBorder' },
+}
+
 hl.plugins.cmp = {
   CmpItemAbbr = colors.Fg,
   CmpItemAbbrDeprecated = { fg = c.light_grey, strikethrough = true },
@@ -1186,11 +1205,16 @@ function M.setup()
       fg = color,
       reverse = cfg.cmp_itemkind_reverse,
     }
+    hl.plugins.blinkcmp['BlinkCmpKind' .. kind] = {
+      fg = color,
+      reverse = cfg.cmp_itemkind_reverse,
+    }
     hl.plugins.outline['Aerial' .. kind .. 'Icon'] = { fg = color }
     hl.plugins.navic['NavicIcons' .. kind] = { fg = color }
   end
   -- custom, specific overrides
   hl.plugins.cmp['CmpItemKindSnippet'].italic = true
+  hl.plugins.blinkcmp['BlinkCmpKindSnippet'].italic = true
 
   vim_highlights(hl.common)
   vim_highlights(hl.syntax)
