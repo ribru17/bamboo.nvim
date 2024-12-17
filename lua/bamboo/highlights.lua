@@ -558,7 +558,7 @@ hl.plugins.blinkcmp = {
   BlinkCmpKindCopilot = { fg = c.fg, reverse = cfg.cmp_itemkind_reverse },
   BlinkCmpKindCodeium = { fg = c.fg, reverse = cfg.cmp_itemkind_reverse },
   BlinkCmpKindTabNine = { fg = c.fg, reverse = cfg.cmp_itemkind_reverse },
-  BlinkCmpMenu = { link = 'FloatNormal' },
+  BlinkCmpMenu = { link = 'NormalFloat' },
   BlinkCmpMenuBorder = { link = 'FloatBorder' },
   BlinkCmpDocBorder = { link = 'FloatBorder' },
 }
