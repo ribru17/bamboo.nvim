@@ -1,0 +1,147 @@
+{
+    "variables": {
+        "contrast": "#fff8f0",
+        "inverse": "#000000",
+        "bg0": "#fafae0",
+        "bg1": "#eaead0",
+        "bg2": "#e4e4cc",
+        "bg3": "#dadac2",
+        "bg_d": "#c7c7af",
+        "bg_blue": "#589ed8",
+        "bg_yellow": "#6f4c05",
+        "fg": "#3a4238",
+        "purple": "#8a4adf",
+        "bright_purple": "#c810d0",
+        "green": "#27850b",
+        "orange": "#df5926",
+        "blue": "#1745d5",
+        "light_blue": "#177fff",
+        "yellow": "#a77b00",
+        "cyan": "#188a9e",
+        "red": "#c72a3c",
+        "coral": "#c05050",
+        "grey": "#a1a7a0",
+        "light_grey": "#838781",
+        "diff_add": "#c0e3ab",
+        "diff_delete": "#f9afb5",
+        "diff_change": "#d2dceb",
+        "diff_text": "#c2ccdb"
+    },
+    "globals": {
+        "background": "var(bg0)",
+        "foreground": "var(fg)",
+        "caret": "var(fg)",
+        "invisibles": "var(bg_d)",
+        "line_highlight": "var(bg1)",
+        "selection": "var(bg2)",
+        "selection_border": "var(bg2)",
+        "inactive_selection": "var(bg3)",
+        "cursor": "var(fg)",
+        "gutter": "var(bg0)",
+        "gutter_foreground": "var(fg)",
+        "gutter_background": "var(bg1)",
+        "accent": "var(fg)"
+    },
+    "rules": [
+        {
+            "name": "String",
+            "scope": "string",
+            "foreground": "var(green)"
+        },
+        {
+            "name": "Keyword",
+            "scope": "keyword",
+            "foreground": "var(purple)"
+        },
+        {
+            "name": "Special Method",
+            "scope": "keyword.other.special-method",
+            "foreground": "var(orange)"
+        },
+        {
+            "name": "Constant",
+            "scope": "constant",
+            "foreground": "var(orange)"
+        },
+        {
+            "name": "Comment",
+            "scope": "comment",
+            "foreground": "var(bg_yellow)"
+        },
+        {
+            "name": "Function Names",
+            "scope": "meta.function, entity.name.function, variable.function, support.function",
+            "foreground": "var(blue)"
+        },
+        {
+            "name": "Variable",
+            "scope": "variable",
+            "foreground": "var(fg)"
+        },
+        {
+            "name": "Built-in Keywords",
+            "scope": "keyword.control",
+            "foreground": "var(purple)"
+        },
+        {
+            "name": "Number",
+            "scope": "constant.numeric",
+            "foreground": "var(yellow)"
+        },
+        {
+            "name": "Operator",
+            "scope": "keyword.operator",
+            "foreground": "var(fg)"
+        },
+        {
+            "name": "Class",
+            "scope": "entity.name.class, support.class",
+            "foreground": "var(yellow)"
+        },
+        {
+            "name": "Property",
+            "scope": "variable.other",
+            "foreground": "var(coral)"
+        },
+        {
+            "name": "Member Variable",
+            "scope": "variable.other.member",
+            "foreground": "var(cyan)"
+        },
+        {
+            "name": "Symbols",
+            "scope": "variable.other.symbol, constant.other.symbol",
+            "foreground": "var(cyan)"
+        },
+        {
+            "name": "Regex",
+            "scope": "string.regexp",
+            "foreground": "var(orange)"
+        },
+        {
+            "name": "Function Calls",
+            "scope": "meta.function-call",
+            "foreground": "var(blue)"
+        },
+        {
+            "name": "Diff Add",
+            "scope": "markup.inserted.diff",
+            "foreground": "var(diff_add)"
+        },
+        {
+            "name": "Diff Delete",
+            "scope": "markup.deleted.diff",
+            "foreground": "var(diff_delete)"
+        },
+        {
+            "name": "Diff Change",
+            "scope": "markup.changed.diff",
+            "foreground": "var(diff_change)"
+        },
+        {
+            "name": "Diff Text",
+            "scope": "markup.diff",
+            "foreground": "var(diff_text)"
+        }
+    ]
+}
