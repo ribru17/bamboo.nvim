@@ -544,6 +544,16 @@ hl.plugins.barbar = {
   BufferVisibleTarget = { fg = c.light_grey, bg = c.bg0 },
 }
 
+hl.plugins.blink_delimiters = {
+  RainbowRed = { fg = rainbows.red },
+  RainbowOrange = { fg = rainbows.orange },
+  RainbowYellow = { fg = rainbows.yellow },
+  RainbowGreen = { fg = rainbows.green },
+  RainbowCyan = { fg = rainbows.cyan },
+  RainbowBlue = { fg = rainbows.blue },
+  RainbowPurple = { fg = rainbows.purple },
+}
+
 hl.plugins.blinkcmp = {
   BlinkCmpGhostText = {
     fg = c.light_grey,
