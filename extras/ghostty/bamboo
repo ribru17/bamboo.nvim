@@ -1,0 +1,38 @@
+cursor-color=#fff8f0
+cursor-text=#0f0800
+foreground=#f1e9d2
+background=#252623
+selection-foreground=#f1e9d2
+selection-background=#5b5e5a
+
+# black
+palette = 0=#1c1e1b
+palette = 8=#5b5e5a
+
+# red
+palette = 1=#e75a7c
+palette = 9=#e75a7c
+
+# green
+palette = 2=#8fb573
+palette = 10=#8fb573
+
+# yellow
+palette = 3=#dbb651
+palette = 11=#dbb651
+
+# blue
+palette = 4=#57a5e5
+palette = 12=#57a5e5
+
+# magenta
+palette = 5=#aaaaff
+palette = 13=#aaaaff
+
+# cyan
+palette = 6=#70c2be
+palette = 14=#70c2be
+
+# white
+palette = 7=#f1e9dc
+palette = 15=#fff8f0
