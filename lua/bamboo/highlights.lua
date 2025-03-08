@@ -552,6 +552,8 @@ hl.plugins.blinkcmp = {
     nocombine = true,
   },
   BlinkCmpLabel = colors.Fg,
+  BlinkCmpLabelDescription = colors.LightGrey,
+  BlinkCmpLabelDetail = { link = 'Comment' },
   BlinkCmpLabelMatch = colors.Cyan,
   BlinkCmpLabelDeprecated = { fg = c.light_grey, strikethrough = true },
   BlinkCmpKind = { fg = c.purple, reverse = cfg.cmp_itemkind_reverse },
@@ -561,6 +563,7 @@ hl.plugins.blinkcmp = {
   BlinkCmpMenu = { link = 'NormalFloat' },
   BlinkCmpMenuBorder = { link = 'FloatBorder' },
   BlinkCmpDocBorder = { link = 'FloatBorder' },
+  BlinkCmpSource = colors.Fg,
 }
 
 hl.plugins.cmp = {
