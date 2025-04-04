@@ -1,0 +1,23 @@
+{
+	"background": "#FAFAE0",
+	"black": "#DADAC2",
+	"blue": "#1745D5",
+	"brightBlack": "#C7C7AF",
+	"brightBlue": "#1745D5",
+	"brightCyan": "#188A9E",
+	"brightGreen": "#27850B",
+	"brightPurple": "#8A4ADF",
+	"brightRed": "#C72A3C",
+	"brightWhite": "#252623",
+	"brightYellow": "#A77B00",
+	"cursorColor": "#0F0800",
+	"cyan": "#188A9E",
+	"foreground": "#3A4238",
+	"green": "#27850B",
+	"name": "Bamboo Light",
+	"purple": "#8A4ADF",
+	"red": "#C72A3C",
+	"selectionBackground": "#A1A7A0",
+	"white": "#3A4238",
+	"yellow": "#A77B00"
+}

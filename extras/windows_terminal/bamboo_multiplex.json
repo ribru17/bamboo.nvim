@@ -1,0 +1,23 @@
+{
+	"background": "#232923",
+	"black": "#171F17",
+	"blue": "#409CDC",
+	"brightBlack": "#5A5E5A",
+	"brightBlue": "#409CDC",
+	"brightCyan": "#68BAAE",
+	"brightGreen": "#81AF58",
+	"brightPurple": "#A09AF8",
+	"brightRed": "#DC4F62",
+	"brightWhite": "#FFF8F0",
+	"brightYellow": "#CEBA49",
+	"cursorColor": "#FFF8F0",
+	"cyan": "#68BAAE",
+	"foreground": "#ECE1C0",
+	"green": "#81AF58",
+	"name": "Bamboo Multiplex",
+	"purple": "#A09AF8",
+	"red": "#DC4F62",
+	"selectionBackground": "#5A5E5A",
+	"white": "#ECE1C0",
+	"yellow": "#CEBA49"
+}

@@ -1,0 +1,23 @@
+{
+	"background": "#252623",
+	"black": "#1C1E1B",
+	"blue": "#57A5E5",
+	"brightBlack": "#5B5E5A",
+	"brightBlue": "#57A5E5",
+	"brightCyan": "#70C2BE",
+	"brightGreen": "#8FB573",
+	"brightPurple": "#AAAAFF",
+	"brightRed": "#E75A7C",
+	"brightWhite": "#FFF8F0",
+	"brightYellow": "#DBB651",
+	"cursorColor": "#FFF8F0",
+	"cyan": "#70C2BE",
+	"foreground": "#F1E9D2",
+	"green": "#8FB573",
+	"name": "Bamboo",
+	"purple": "#AAAAFF",
+	"red": "#E75A7C",
+	"selectionBackground": "#5B5E5A",
+	"white": "#F1E9DC",
+	"yellow": "#DBB651"
+}
