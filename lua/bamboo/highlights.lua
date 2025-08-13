@@ -1274,6 +1274,16 @@ function M.setup()
       )
     end
   end
+
+  if cfg.lualine.transparent then
+    local base_statusline_highlights = {
+      'StatusLine',
+      'StatusLineNC',
+    }
+    for _, hl_group in ipairs(base_statusline_highlights) do
+      set_hl(0, hl_group, { bg = 'none' })
+    end
+  end
 end
 
 return M
