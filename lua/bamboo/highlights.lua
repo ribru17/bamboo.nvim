@@ -563,6 +563,7 @@ hl.plugins.blinkcmp = {
   BlinkCmpMenu = { link = 'NormalFloat' },
   BlinkCmpMenuBorder = { link = 'FloatBorder' },
   BlinkCmpDocBorder = { link = 'FloatBorder' },
+  BlinkCmpSignatureHelpBorder = { link = 'FloatBorder' },
   BlinkCmpSource = colors.Fg,
 }
 
