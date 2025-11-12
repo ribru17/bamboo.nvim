@@ -420,7 +420,7 @@ hl.lsp = {
   ['@lsp.typemod.variable.static.rust'] = {},
 }
 
-hl.treesitter.TreesitterContext = { bg = c.bg1 }
+hl.treesitter.TreesitterContext = { underline = true, sp = c.grey }
 
 local diagnostics_error_color = cfg.diagnostics.darker and dark_red or c.red
 local diagnostics_hint_color = cfg.diagnostics.darker and dark_purple
