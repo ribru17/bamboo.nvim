@@ -124,7 +124,7 @@ hl.common = {
   TabLine = { fg = c.fg, bg = c.bg1 },
   TabLineFill = {
     fg = c.grey,
-    bg = cfg.lualine.transparent and c.none or c.bg1,
+    bg = cfg.transparent and c.none or c.bg1,
   },
   TabLineSel = { fg = c.bg0, bg = c.fg },
   VertSplit = { fg = c.bg3 },
